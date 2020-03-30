@@ -27,7 +27,7 @@ export default {
             MadeWithLoveInIsrael: "Made with ❤️ in Israel"
         },
         placeholders: {
-            FullName: "Elon Mask",
+            FullName: "Elon Musk",
             IDNumber: "ID Number"
         },
         common: {
