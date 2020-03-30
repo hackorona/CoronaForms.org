@@ -1,0 +1,191 @@
+{
+    "loan_number": {
+        "x": 190,
+        "y": 777,
+        "type": "STRING",
+        "question": "-",
+        "payload": null
+    },
+    "full_name": {
+        "x": 549,
+        "y": 734,
+        "type": "STRING",
+        "question": "-",
+        "payload": null
+    },
+    "id": {
+        "x": 410,
+        "y": 734,
+        "type": "STRING",
+        "question": "-",
+        "payload": null
+    },
+    "phone_number": {
+        "x": 328,
+        "y": 734,
+        "type": "STRING",
+        "question": "-",
+        "payload": null
+    },
+    "email": {
+        "x": 240,
+        "y": 734,
+        "type": "STRING",
+        "question": "-",
+        "payload": null
+    },
+    "voucher_name": {
+        "x": 548,
+        "y": 663,
+        "type": "STRING",
+        "question": "-",
+        "payload": null
+    },
+    "voucher_id": {
+        "x": 401,
+        "y": 663,
+        "type": "STRING",
+        "question": "-",
+        "payload": null
+    },
+    "voucher_name_2": {
+        "x": 289,
+        "y": 663,
+        "type": "STRING",
+        "question": "-",
+        "payload": null
+    },
+    "voucher_id_2": {
+        "x": 147,
+        "y": 663,
+        "type": "STRING",
+        "question": "-",
+        "payload": null
+    },
+    "keren_plus_ribit": {
+        "x": 538,
+        "y": 622,
+        "type": "BOOLEAN",
+        "question": "-",
+        "payload": null
+    },
+    "only_keren": {
+        "x": 538,
+        "y": 591,
+        "type": "BOOLEAN",
+        "question": "-",
+        "payload": null
+    },
+    "monthly_relief": {
+        "x": 537,
+        "y": 554,
+        "type": "BOOLEAN",
+        "question": "-",
+        "payload": null
+    },
+    "prisa": {
+        "x": 379,
+        "y": 554,
+        "type": "BOOLEAN",
+        "question": "-",
+        "payload": null
+    },
+    "kiboa_ribit": {
+        "x": 537,
+        "y": 540,
+        "type": "BOOLEAN",
+        "question": "-",
+        "payload": null
+    },
+    "gisor": {
+        "x": 379,
+        "y": 540,
+        "type": "BOOLEAN",
+        "question": "-",
+        "payload": null
+    },
+    "description": {
+        "x": 537,
+        "y": 504,
+        "type": "STRING",
+        "question": "-",
+        "payload": null
+    },
+    "description_2": {
+        "x": 537,
+        "y": 489,
+        "type": "STRING",
+        "question": "-",
+        "payload": null
+    },
+    "sig_1": {
+        "x": 445,
+        "y": 313,
+        "type": "SIG",
+        "question": "-",
+        "payload": null
+    },
+    "sig_2": {
+        "x": 315,
+        "y": 315,
+        "type": "SIG",
+        "question": "2",
+        "payload": null
+    },
+    "sig_3": {
+        "x": 445,
+        "y": 291,
+        "type": "SIG",
+        "question": "-",
+        "payload": null
+    },
+    "sig_4": {
+        "x": 320,
+        "y": 291,
+        "type": "SIG",
+        "question": "-",
+        "payload": null
+    },
+    "current_date_1": {
+        "x": 151,
+        "y": 315,
+        "type": "CURRENT_DATE",
+        "question": "-",
+        "payload": null
+    },
+    "current_date_2": {
+        "x": 149,
+        "y": 290,
+        "type": "CURRENT_DATE",
+        "question": "-",
+        "payload": null
+    },
+    "full_name_2": {
+        "x": 547,
+        "y": 717,
+        "type": "STRING",
+        "question": "-",
+        "payload": null
+    },
+    "id_2": {
+        "x": 409,
+        "y": 717,
+        "type": "STRING",
+        "question": "-",
+        "payload": null
+    },
+    "phone_number_2": {
+        "x": 328,
+        "y": 717,
+        "type": "STRING",
+        "question": "-",
+        "payload": null
+    },
+    "email_2": {
+        "x": 240,
+        "y": 717,
+        "type": "STRING",
+        "question": "-",
+        "payload": null
+    }
+}

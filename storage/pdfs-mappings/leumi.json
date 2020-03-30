@@ -1,0 +1,149 @@
+{
+    "last_name": {
+        "x": 520,
+        "y": 661,
+        "type": "STRING",
+        "question": "what is your last name?",
+        "payload": null
+    },
+    "first_name": {
+        "x": 387,
+        "y": 661,
+        "type": "STRING",
+        "question": "what is your first name?",
+        "payload": null
+    },
+    "id": {
+        "x": 246,
+        "y": 661,
+        "type": "STRING",
+        "question": "what is your id?",
+        "payload": null
+    },
+    "last_name_2": {
+        "x": 520,
+        "y": 648,
+        "type": "STRING",
+        "question": "what is your last name?",
+        "payload": null
+    },
+    "first_name_2": {
+        "x": 387,
+        "y": 648,
+        "type": "STRING",
+        "question": "what is your first name?",
+        "payload": null
+    },
+    "id_2": {
+        "x": 246,
+        "y": 648,
+        "type": "STRING",
+        "question": "what is your id?",
+        "payload": null
+    },
+    "last_name_3": {
+        "x": 520,
+        "y": 635,
+        "type": "STRING",
+        "question": "what is your last name?",
+        "payload": null
+    },
+    "first_name_3": {
+        "x": 387,
+        "y": 635,
+        "type": "STRING",
+        "question": "what is your first name?",
+        "payload": null
+    },
+    "id_3": {
+        "x": 246,
+        "y": 635,
+        "type": "STRING",
+        "question": "what is your id?",
+        "payload": null
+    },
+    "last_name_4": {
+        "x": 520,
+        "y": 623,
+        "type": "STRING",
+        "question": "what is your last name?",
+        "payload": null
+    },
+    "first_name_4": {
+        "x": 387,
+        "y": 623,
+        "type": "STRING",
+        "question": "what is your first name?",
+        "payload": null
+    },
+    "id_4": {
+        "x": 246,
+        "y": 623,
+        "type": "STRING",
+        "question": "what is your id?",
+        "payload": null
+    },
+    "all_loans": {
+        "x": 543,
+        "y": 549,
+        "type": "BOOLEAN",
+        "question": "-",
+        "payload": null
+    },
+    "specific_loans": {
+        "x": 543,
+        "y": 534,
+        "type": "BOOLEAN",
+        "question": "-",
+        "payload": null
+    },
+    "loans_numbers": {
+        "x": 521,
+        "y": 525,
+        "type": "STRING",
+        "question": "Enter the relevant loans numbers",
+        "payload": null
+    },
+    "bank_account_number": {
+        "x": 303,
+        "y": 245,
+        "type": "STRING",
+        "question": "what is your bank account number?",
+        "payload": null
+    },
+    "near_mortgage_date": {
+        "x": 418,
+        "y": 227,
+        "type": "DATE",
+        "question": "what is your next payment date?",
+        "payload": null
+    },
+    "phone_number": {
+        "x": 175,
+        "y": 227,
+        "type": "STRING",
+        "question": "what is your phone number?",
+        "payload": null
+    },
+    "full_name": {
+        "x": 538,
+        "y": 108,
+        "type": "STRING",
+        "question": "what is your full name?",
+        "payload": null
+    },
+    "current_date": {
+        "x": 347,
+        "y": 108,
+        "type": "CURRENT_DATE",
+        "question": "-",
+        "payload": null
+    },
+    "sig": {
+        "x": 100,
+        "y": 70,
+        "type": "SIG",
+        "question": "sign here please",
+        "payload": null
+    }
+}
