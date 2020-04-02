@@ -1257,13 +1257,6 @@ var _jsxFileName = "/Users/ronmasas/Desktop/coronaforms.org/ui/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
 
 
 
@@ -1272,42 +1265,53 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   const {
-    0: data,
-    1: setData
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({});
-  const {
     0: step,
     1: setStep
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("main");
   const {
     0: language,
     1: setLanguage
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("hebrew");
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
+  const {
+    0: bank,
+    1: setBank
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
 
-  function handleUpdate(key, value, next = null) {
-    let newData = _objectSpread({}, data);
+  function changeLangauge(lang) {
+    setLanguage(lang);
+    set("lang", lang);
+  }
 
-    newData[key] = value;
-    setData(newData);
+  function get(key, defaultValue) {
+    if (localStorage) {
+      return localStorage.getItem(key) || defaultValue;
+    }
 
-    if (next) {
-      setStep(next);
+    return defaultValue;
+  }
+
+  function set(key, value) {
+    if (localStorage) {
+      localStorage.setItem(key, value);
     }
   }
 
-  return __jsx("div", {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    setLanguage(get("lang", navigator.language.indexOf("he") === 0 ? "hebrew" : "english"));
+  }, []);
+  return language && __jsx("div", {
     className: language,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
-      columnNumber: 12
+      lineNumber: 36,
+      columnNumber: 24
     }
   }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Container"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 37,
       columnNumber: 9
     }
   }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Row"], {
@@ -1315,7 +1319,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 38,
       columnNumber: 13
     }
   }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Col"], {
@@ -1323,7 +1327,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 39,
       columnNumber: 17
     }
   }, __jsx("img", {
@@ -1332,7 +1336,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 39,
       columnNumber: 29
     }
   })), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Col"], {
@@ -1341,7 +1345,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 40,
       columnNumber: 17
     }
   }, __jsx("a", {
@@ -1349,7 +1353,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 41,
       columnNumber: 21
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Header.OurMission), __jsx("a", {
@@ -1357,7 +1361,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 42,
       columnNumber: 21
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Header.Terms))), __jsx("div", {
@@ -1365,21 +1369,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 45,
       columnNumber: 13
     }
   }, __jsx(_components_Hero__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 46,
       columnNumber: 17
     }
   }, step === "main" && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 47,
       columnNumber: 41
     }
   }, __jsx("h1", {
@@ -1387,7 +1391,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 48,
       columnNumber: 25
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Hero.title), __jsx("h2", {
@@ -1395,7 +1399,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 49,
       columnNumber: 25
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Hero.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1406,7 +1410,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 50,
       columnNumber: 25
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Hero.SmallBusinessAid), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1416,14 +1420,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 51,
       columnNumber: 25
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Hero.MortgageSuspension)), step === "choose_bank" && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 53,
       columnNumber: 48
     }
   }, __jsx("h1", {
@@ -1431,7 +1435,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 54,
       columnNumber: 25
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Forms.ChooseBank.title), __jsx("h2", {
@@ -1439,57 +1443,55 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 55,
       columnNumber: 25
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Forms.ChooseBank.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     rtl: language == "hebrew",
-    onClick: () => handleUpdate("bank", "leumi", "bank_form"),
+    onClick: () => (setBank("leumi"), setStep("bank_form")),
     arrow: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 56,
       columnNumber: 25
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Common.Leumi), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     rtl: language == "hebrew",
     disabled: true,
-    onClick: () => handleUpdate("bank", "discount", "bank_form"),
+    onClick: () => (setBank("discount"), setStep("bank_form")),
     arrow: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 57,
       columnNumber: 25
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Common.Discount), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     rtl: language == "hebrew",
     disabled: true,
-    onClick: () => handleUpdate("bank", "jerusalem", "bank_form"),
+    onClick: () => (setBank("jerusalem"), setStep("bank_form")),
     arrow: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 58,
       columnNumber: 25
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Common.Jerusalem)), step === "bank_form" && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 60,
       columnNumber: 46
     }
-  }, data.bank === "leumi" && __jsx(_components_LeumiForm__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, bank === "leumi" && __jsx(_components_LeumiForm__WEBPACK_IMPORTED_MODULE_5__["default"], {
     language: language,
-    data: data,
-    handleUpdate: handleUpdate,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
-      columnNumber: 51
+      lineNumber: 61,
+      columnNumber: 46
     }
   })))), __jsx("div", {
     id: "mission",
@@ -1497,42 +1499,42 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 65,
       columnNumber: 13
     }
   }, __jsx("h3", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 66,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].OurMission.title), __jsx("p", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 67,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].OurMission.p1), __jsx("p", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 68,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].OurMission.p2), __jsx("p", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 69,
       columnNumber: 17
     }
   }, __jsx("strong", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 69,
       columnNumber: 20
     }
   }, "CoronaForms"), " ", _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].OurMission.p3), __jsx("div", {
@@ -1540,7 +1542,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 70,
       columnNumber: 17
     }
   }, __jsx("img", {
@@ -1548,7 +1550,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 71,
       columnNumber: 21
     }
   })))), __jsx("div", {
@@ -1556,7 +1558,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 75,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -1564,33 +1566,75 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 76,
       columnNumber: 13
     }
   }), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Container"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 77,
       columnNumber: 13
+    }
+  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Row"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78,
+      columnNumber: 17
+    }
+  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+    xs: 6,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79,
+      columnNumber: 21
     }
   }, __jsx("div", {
     className: "mb-1 pt-1",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
-      columnNumber: 17
+      lineNumber: 80,
+      columnNumber: 25
     }
   }, "CoronaForms.org ", new Date().getFullYear()), __jsx("div", {
     className: "mb-1",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
-      columnNumber: 17
+      lineNumber: 83,
+      columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Footer.MadeWithLoveInIsrael)), __jsx("div", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Footer.MadeWithLoveInIsrael)), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+    xs: 6,
+    className: "language-links",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85,
+      columnNumber: 21
+    }
+  }, language === "hebrew" && __jsx("a", {
+    href: "#",
+    onClick: () => changeLangauge("english"),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86,
+      columnNumber: 51
+    }
+  }, "Also available in English"), language === "english" && __jsx("a", {
+    href: "#",
+    onClick: () => changeLangauge("hebrew"),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87,
+      columnNumber: 52
+    }
+  }, "\u05D6\u05DE\u05D9\u05DF \u05D2\u05DD \u05D1\u05E2\u05D1\u05E8\u05D9\u05EA")))), __jsx("div", {
     style: {
       background: "#000",
       height: 20
@@ -1598,7 +1642,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 91,
       columnNumber: 13
     }
   })));

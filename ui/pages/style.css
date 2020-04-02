@@ -63,13 +63,13 @@ form .name_and_id{
 .english form .name_and_id button{
     position: absolute;
     right: 0;
-    top: 50px;
+    top: 47px;
 }
 
 .hebrew form .name_and_id button{
     position: absolute;
     left: 10px;
-    top: 50px;
+    top: 47px;
 }
 
 p{font-size: 20px;line-height: 28px;}
@@ -166,4 +166,17 @@ p{font-size: 20px;line-height: 28px;}
     width: 100%;
     position: absolute;
     background: #121212;
+}
+
+.footer .language-links a{
+    color: white;
+}
+
+.footer .language-links{
+    line-height: 80px;
+    text-align: right;
+}
+
+.hebrew .footer .language-links{
+    text-align: left;
 }

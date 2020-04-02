@@ -2,25 +2,38 @@ import "./style.css";
 import Hero from "../components/Hero";
 import strings from "../strings.json";
 import Button from "../components/Button";
-import { useState, Fragment } from "react";
+import { useState, Fragment, useEffect } from "react";
 import LeumiForm from "../components/LeumiForm";
 import { Container, Row, Col } from "react-grid-system";
 
 export default () => {
-    const [data, setData] = useState({});
     const [step, setStep] = useState("main");
-    const [language, setLanguage] = useState("hebrew");
+    const [language, setLanguage] = useState(null);
+    const [bank, setBank] = useState(null);
 
-    function handleUpdate(key, value, next = null) {
-        let newData = { ...data };
-        newData[key] = value;
-        setData(newData);
-        if (next) {
-            setStep(next);
+    function changeLangauge(lang) {
+        setLanguage(lang);
+        set("lang", lang);
+    }
+
+    function get(key, defaultValue) {
+        if (localStorage) {
+            return localStorage.getItem(key) || defaultValue;
+        }
+        return defaultValue;
+    }
+
+    function set(key, value) {
+        if (localStorage) {
+            localStorage.setItem(key, value);
         }
     }
 
-    return <div className={language}>
+    useEffect(() => {
+        setLanguage(get("lang", navigator.language.indexOf("he") === 0 ? "hebrew" : "english"));
+    }, []);
+
+    return language && <div className={language}>
         <Container>
             <Row className="header">
                 <Col xs={4}><img onClick={() => setStep("main")} src="/logo.svg" /></Col>
@@ -40,12 +53,12 @@ export default () => {
                     {step === "choose_bank" && <Fragment>
                         <h1 className="mb-2">{strings[language].Forms.ChooseBank.title}</h1>
                         <h2 className="mb-2">{strings[language].Forms.ChooseBank.subtitle}</h2>
-                        <Button rtl={language == "hebrew"} onClick={() => handleUpdate("bank", "leumi", "bank_form")} arrow>{strings[language].Common.Leumi}</Button>
-                        <Button rtl={language == "hebrew"} disabled onClick={() => handleUpdate("bank", "discount", "bank_form")} arrow>{strings[language].Common.Discount}</Button>
-                        <Button rtl={language == "hebrew"} disabled onClick={() => handleUpdate("bank", "jerusalem", "bank_form")} arrow>{strings[language].Common.Jerusalem}</Button>
+                        <Button rtl={language == "hebrew"} onClick={() => (setBank("leumi"), setStep("bank_form"))} arrow>{strings[language].Common.Leumi}</Button>
+                        <Button rtl={language == "hebrew"} disabled onClick={() => (setBank("discount"), setStep("bank_form"))} arrow>{strings[language].Common.Discount}</Button>
+                        <Button rtl={language == "hebrew"} disabled onClick={() => (setBank("jerusalem"), setStep("bank_form"))} arrow>{strings[language].Common.Jerusalem}</Button>
                     </Fragment>}
                     {step === "bank_form" && <Fragment>
-                        {data.bank === "leumi" && <LeumiForm language={language} data={data} handleUpdate={handleUpdate} />}
+                        {bank === "leumi" && <LeumiForm language={language} />}
                     </Fragment>}
                 </Hero>
             </div>
@@ -62,10 +75,18 @@ export default () => {
         <div className="footer">
             <div className="floor"></div>
             <Container>
-                <div className="mb-1 pt-1">
-                    CoronaForms.org {new Date().getFullYear()}
-                </div>
-                <div className="mb-1">{strings[language].Footer.MadeWithLoveInIsrael}</div>
+                <Row>
+                    <Col xs={6}>
+                        <div className="mb-1 pt-1">
+                            CoronaForms.org {new Date().getFullYear()}
+                        </div>
+                        <div className="mb-1">{strings[language].Footer.MadeWithLoveInIsrael}</div>
+                    </Col>
+                    <Col xs={6} className="language-links">
+                        {language === "hebrew" && <a href="#" onClick={() => changeLangauge("english")}>Also available in English</a>}
+                        {language === "english" && <a href="#" onClick={() => changeLangauge("hebrew")}>זמין גם בעברית</a>}
+                    </Col>
+                </Row>
             </Container>
             <div style={{ background: "#000", height: 20 }}></div>
         </div>
