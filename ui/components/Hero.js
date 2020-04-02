@@ -9,7 +9,7 @@ function Hero(props) {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch("http://localhost:8080/api/v1/geo");
+            const response = await fetch("https://api.coronaforms.org/api/v1/geo");
             const jsonData = await response.json();
             setCountry(jsonData.countryName);
             setTimeout(() => {
