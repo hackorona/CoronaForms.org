@@ -42,7 +42,9 @@ export default (props) => {
 
     function processPdfDocument(_download) {
         setDownload(_download ? "1" : "0");
-        formEl.current.submit();
+        setTimeout(() => {
+            formEl.current.submit();
+        }, 100);
     }
 
     return <Fragment>
