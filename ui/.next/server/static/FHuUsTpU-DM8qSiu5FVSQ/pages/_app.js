@@ -271,7 +271,7 @@ var Input_jsx = external_react_default.a.createElement;
   function handleLabelClick() {
     setTimeout(() => {
       el.current.focus();
-    }, 50);
+    }, 150);
   }
 
   return Input_jsx(external_react_["Fragment"], null, Input_jsx(external_styled_jsx_style_default.a, {
