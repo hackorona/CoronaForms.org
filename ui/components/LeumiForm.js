@@ -40,6 +40,11 @@ export default (props) => {
         }
     }
 
+    function setStepOnSubmit(event, stepValue) {
+        event.preventDefault();
+        setStep(stepValue);
+    }
+
     function processPdfDocument(_download) {
         setDownload(_download ? "1" : "0");
         setTimeout(() => {
@@ -68,7 +73,7 @@ export default (props) => {
         {step === 0 && <Fragment>
             <h1 className="mb-2">{strings[props.language].Forms.Accounts.title}</h1>
             <h2 className="mb-2">{strings[props.language].Forms.Accounts.subtitle}</h2>
-            <form onSubmit={() => setStep(1)}>
+            <form onSubmit={(e) => setStepOnSubmit(e, 1)}>
                 <Input rtl={props.language === "hebrew" ? true : false} autoFocus required value={fullName1} onChange={e => setFullName1(e.target.value)} className="field not-round" placeholder={strings[props.language].Common.FullName} />
                 <Input rtl={props.language === "hebrew" ? true : false} required value={IDNumber1} onChange={e => setIDNumber1(e.target.value)} className="field not-round" placeholder={strings[props.language].Common.IDNumber} />
                 {accountVisible1 && <div className="mt-2 name_and_id">
@@ -94,7 +99,7 @@ export default (props) => {
             <Button rtl={props.language === "hebrew" ? true : false} onClick={() => (setLoanType("specific_loans"), setStep(2))}>{strings[props.language].Common.ChooseMortgageLoans}</Button>
         </Fragment>}
         {step === 2 && <Fragment>
-            <form onSubmit={() => setStep(3)}>
+            <form onSubmit={(e) => setStepOnSubmit(e, 3)}>
                 <h1 className="mb-2">{strings[props.language].Forms.MortgageLoanNumbers.title}</h1>
                 <h2 className="mb-2">{strings[props.language].Forms.MortgageLoanNumbers.subtitle}</h2>
                 <Input rtl={props.language === "hebrew" ? true : false} autoFocus value={loanNumbers} onChange={e => setLoanNumbers(e.target.value)} required className="field not-round" label={strings[props.language].Common.LoanNumbers} />
@@ -102,7 +107,7 @@ export default (props) => {
             </form>
         </Fragment>}
         {step === 3 && <Fragment>
-            <form onSubmit={() => setStep(4)}>
+            <form onSubmit={(e) => setStepOnSubmit(e, 4)}>
                 <h1 className="mb-2">{strings[props.language].Forms.BankAndContactInforamtion.title}</h1>
                 <h2 className="mb-2">{strings[props.language].Forms.BankAndContactInforamtion.subtitle}</h2>
                 <Input rtl={props.language === "hebrew" ? true : false} autoFocus value={bankAccountNumber} onChange={e => setBankAccountNumber(e.target.value)} required className="field not-round" placeholder={strings[props.language].Common.BankAccountNumber} />

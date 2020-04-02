@@ -22,7 +22,7 @@ export default props => {
     function handleLabelClick() {
         setTimeout(() => {
             el.current.focus();
-        }, 1);
+        }, 50);
     }
 
     return <Fragment>
