@@ -134,7 +134,7 @@ function Hero(props) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("http://localhost:8080/api/v1/geo"));
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("https://api.coronaforms.org/api/v1/geo"));
 
             case 2:
               response = _context.sent;
@@ -289,24 +289,24 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
       columnNumber: 12
     }
   }, __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    id: "1611414408",
+    id: "933849060",
     dynamic: [props.rtl ? "right" : "left", props.rtl ? "right" : "left", props.rtl ? "rtl" : "ltr"],
     __self: _this
-  }, ".input-field.__jsx-style-dynamic-selector{position:relative;}.input-field.__jsx-style-dynamic-selector label.__jsx-style-dynamic-selector{display:block;position:absolute;top:19px;".concat(props.rtl ? "right" : "left", ":20px;font-size:24px;color:#757575;-webkit-transition:.15s ease;transition:.15s ease;-webkit-transition-property:all;transition-property:all;}.input-field.focus.__jsx-style-dynamic-selector label.__jsx-style-dynamic-selector{top:8px;font-size:16px;font-weight:bold;color:#000;}.input-field.__jsx-style-dynamic-selector input.__jsx-style-dynamic-selector{border:none;outline:none;width:100%;padding:20px;font-size:24px;padding-top:28px;padding-bottom:10px;padding-right:20px;-webkit-transition:.15s ease;transition:.15s ease;box-sizing:border-box;-webkit-transition-property:all;transition-property:all;border-top-left-radius:10px;border-top-right-radius:10px;border-bottom:2px solid #ccc;text-align:").concat(props.rtl ? "right" : "left", ";direction:").concat(props.rtl ? "rtl" : "ltr", ";}.input-field.focus.__jsx-style-dynamic-selector input.__jsx-style-dynamic-selector{border-color:#000;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9yb25tYXNhcy9EZXNrdG9wL2Nvcm9uYWZvcm1zLm9yZy91aS9jb21wb25lbnRzL0lucHV0LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTRCb0IsQUFHK0IsQUFHSixBQVVOLEFBTUksQUFrQk0sUUF2QkgsSUFNRixFQWhCSyxJQUh0QixBQXFDQSxLQXZCcUIsRUFNTixPQWhCRixJQWlCSSxJQU5GLENBVnVCLFFBaUJuQixFQU5uQixhQU9xQixXQWpCRixNQWtCSyxTQWpCTixXQWtCSyxHQWpCRSxnQkFrQkEsa0NBakJHLGdCQWtCRixzQkFDRSxrQkFsQjVCLHNDQW1CZ0MsNEJBQ0MsNkJBQ0EsNkJBQ1csd0NBQ0QsdUNBQzNDIiwiZmlsZSI6Ii9Vc2Vycy9yb25tYXNhcy9EZXNrdG9wL2Nvcm9uYWZvcm1zLm9yZy91aS9jb21wb25lbnRzL0lucHV0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXNlU3RhdGUsIHVzZVJlZiwgRnJhZ21lbnQgfSBmcm9tIFwicmVhY3RcIjtcblxuZXhwb3J0IGRlZmF1bHQgcHJvcHMgPT4ge1xuICAgIGNvbnN0IGVsID0gdXNlUmVmKG51bGwpO1xuICAgIGNvbnN0IFt2YWx1ZSwgc2V0VmFsdWVdID0gdXNlU3RhdGUoXCJcIik7XG4gICAgY29uc3QgW2ZvY3VzLCBzZXRGb2N1c10gPSB1c2VTdGF0ZShmYWxzZSk7XG5cbiAgICBmdW5jdGlvbiBoYW5kbGVDaGFuZ2UoZXZlbnQpIHtcbiAgICAgICAgc2V0VmFsdWUoZXZlbnQudGFyZ2V0LnZhbHVlKTtcbiAgICAgICAgaWYgKHByb3BzLm9uQ2hhbmdlKSB7XG4gICAgICAgICAgICBwcm9wcy5vbkNoYW5nZShldmVudCk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICBmdW5jdGlvbiBoYW5kbGVCbHVyKCkge1xuICAgICAgICBpZiAodmFsdWUgIT09IFwiXCIpIHtcbiAgICAgICAgICAgIHJldHVybjtcbiAgICAgICAgfVxuICAgICAgICBzZXRGb2N1cyhmYWxzZSk7XG4gICAgfVxuXG4gICAgZnVuY3Rpb24gaGFuZGxlTGFiZWxDbGljaygpIHtcbiAgICAgICAgc2V0VGltZW91dCgoKSA9PiB7XG4gICAgICAgICAgICBlbC5jdXJyZW50LmZvY3VzKCk7XG4gICAgICAgIH0sIDEpO1xuICAgIH1cblxuICAgIHJldHVybiA8RnJhZ21lbnQ+XG4gICAgICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgICAgLmlucHV0LWZpZWxke1xuICAgICAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgICB9XG4gICAgICAgIC5pbnB1dC1maWVsZCBsYWJlbHtcbiAgICAgICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICAgICAgdG9wOiAxOXB4O1xuICAgICAgICAgICAgJHtwcm9wcy5ydGwgPyBcInJpZ2h0XCIgOiBcImxlZnRcIn06IDIwcHg7XG4gICAgICAgICAgICBmb250LXNpemU6IDI0cHg7XG4gICAgICAgICAgICBjb2xvcjogIzc1NzU3NTtcbiAgICAgICAgICAgIHRyYW5zaXRpb246IC4xNXMgZWFzZTtcbiAgICAgICAgICAgIHRyYW5zaXRpb24tcHJvcGVydHk6IGFsbDtcbiAgICAgICAgfVxuICAgICAgICAuaW5wdXQtZmllbGQuZm9jdXMgbGFiZWx7XG4gICAgICAgICAgICB0b3A6IDhweDtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgICAgICAgICAgY29sb3I6ICMwMDA7XG4gICAgICAgIH1cbiAgICAgICAgLmlucHV0LWZpZWxkIGlucHV0e1xuICAgICAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgICAgICAgb3V0bGluZTogbm9uZTtcbiAgICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgICAgcGFkZGluZzogMjBweDtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMjRweDtcbiAgICAgICAgICAgIHBhZGRpbmctdG9wOiAyOHB4O1xuICAgICAgICAgICAgcGFkZGluZy1ib3R0b206IDEwcHg7XG4gICAgICAgICAgICBwYWRkaW5nLXJpZ2h0OiAyMHB4O1xuICAgICAgICAgICAgdHJhbnNpdGlvbjogLjE1cyBlYXNlO1xuICAgICAgICAgICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICAgICAgICAgIHRyYW5zaXRpb24tcHJvcGVydHk6IGFsbDtcbiAgICAgICAgICAgIGJvcmRlci10b3AtbGVmdC1yYWRpdXM6IDEwcHg7XG4gICAgICAgICAgICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogMTBweDtcbiAgICAgICAgICAgIGJvcmRlci1ib3R0b206IDJweCBzb2xpZCAjY2NjO1xuICAgICAgICAgICAgdGV4dC1hbGlnbjogJHtwcm9wcy5ydGwgPyBcInJpZ2h0XCIgOiBcImxlZnRcIn07XG4gICAgICAgICAgICBkaXJlY3Rpb246ICR7cHJvcHMucnRsID8gXCJydGxcIiA6IFwibHRyXCJ9O1xuICAgICAgICB9XG4gICAgICAgIC5pbnB1dC1maWVsZC5mb2N1cyBpbnB1dHtcbiAgICAgICAgICAgIGJvcmRlci1jb2xvcjogIzAwMDtcbiAgICAgICAgfVxuICAgICAgICBgfTwvc3R5bGU+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPXtbXCJpbnB1dC1maWVsZFwiLCBmb2N1cyA/IFwiZm9jdXNcIiA6IFwiXCJdLmpvaW4oXCIgXCIpfT5cbiAgICAgICAgICAgIDxsYWJlbCBvbkNsaWNrPXtoYW5kbGVMYWJlbENsaWNrfT57cHJvcHMubGFiZWwgfHwgcHJvcHMucGxhY2Vob2xkZXJ9PC9sYWJlbD5cbiAgICAgICAgICAgIDxpbnB1dCBhdXRvRm9jdXM9e3Byb3BzLmF1dG9Gb2N1c30gcmVxdWlyZWQgdHlwZT17KHByb3BzLnR5cGUgPT09IFwiZGF0ZVwiICYmIGZvY3VzKSA/IFwiZGF0ZVwiIDogXCJ0ZXh0XCJ9IHJlZj17ZWx9IHZhbHVlPXt2YWx1ZX0gb25DaGFuZ2U9e2hhbmRsZUNoYW5nZX0gb25Gb2N1cz17KCkgPT4gc2V0Rm9jdXModHJ1ZSl9IG9uQmx1cj17aGFuZGxlQmx1cn0gLz5cbiAgICAgICAgPC9kaXY+XG4gICAgPC9GcmFnbWVudD5cbn0iXX0= */\n/*@ sourceURL=/Users/ronmasas/Desktop/coronaforms.org/ui/components/Input.js */")), __jsx("div", {
-    className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["1611414408", [props.rtl ? "right" : "left", props.rtl ? "right" : "left", props.rtl ? "rtl" : "ltr"]]]) + " " + (["input-field", focus ? "focus" : ""].join(" ") || ""),
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 71,
-      columnNumber: 9
-    }
-  }, __jsx("label", {
-    onClick: handleLabelClick,
-    className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["1611414408", [props.rtl ? "right" : "left", props.rtl ? "right" : "left", props.rtl ? "rtl" : "ltr"]]]),
+  }, ".input-field.__jsx-style-dynamic-selector{position:relative;}.input-field.__jsx-style-dynamic-selector label.__jsx-style-dynamic-selector{display:block;position:absolute;top:19px;".concat(props.rtl ? "right" : "left", ":20px;font-size:24px;color:#757575;-webkit-transition:.15s ease;transition:.15s ease;-webkit-transition-property:all;transition-property:all;}.input-field.focus.__jsx-style-dynamic-selector label.__jsx-style-dynamic-selector{top:8px;font-size:16px;font-weight:bold;color:#000;}.input-field.__jsx-style-dynamic-selector input.__jsx-style-dynamic-selector{border:none;outline:none;width:100%;padding:20px;font-size:24px;padding-top:28px;padding-right:20px;padding-bottom:10px;-webkit-transition:.15s ease;transition:.15s ease;box-sizing:border-box;-webkit-appearance:none;-webkit-transition-property:all;transition-property:all;border-top-left-radius:10px;border-top-right-radius:10px;border-bottom:2px solid #ccc;text-align:").concat(props.rtl ? "right" : "left", ";direction:").concat(props.rtl ? "rtl" : "ltr", ";}.input-field.focus.__jsx-style-dynamic-selector input.__jsx-style-dynamic-selector{border-color:#000;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9yb25tYXNhcy9EZXNrdG9wL2Nvcm9uYWZvcm1zLm9yZy91aS9jb21wb25lbnRzL0lucHV0LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTRCb0IsQUFHK0IsQUFHSixBQVVOLEFBTUksQUFtQk0sUUF4QkgsSUFNRixFQWhCSyxJQUh0QixBQXNDQSxLQXhCcUIsRUFNTixPQWhCRixJQWlCSSxJQU5GLENBVnVCLFFBaUJuQixFQU5uQixhQU9xQixXQWpCRixNQWtCSSxTQWpCTCxVQWtCTSxJQWpCQyxnQkFrQkEsa0NBakJHLGdCQWtCRixzQkFDRSxrQkFsQjVCLE1BbUI0Qix3REFDSSw0QkFDQyw2QkFDQSw2QkFDVyx3Q0FDRCx1Q0FDM0MiLCJmaWxlIjoiL1VzZXJzL3Jvbm1hc2FzL0Rlc2t0b3AvY29yb25hZm9ybXMub3JnL3VpL2NvbXBvbmVudHMvSW5wdXQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1c2VTdGF0ZSwgdXNlUmVmLCBGcmFnbWVudCB9IGZyb20gXCJyZWFjdFwiO1xuXG5leHBvcnQgZGVmYXVsdCBwcm9wcyA9PiB7XG4gICAgY29uc3QgZWwgPSB1c2VSZWYobnVsbCk7XG4gICAgY29uc3QgW3ZhbHVlLCBzZXRWYWx1ZV0gPSB1c2VTdGF0ZShcIlwiKTtcbiAgICBjb25zdCBbZm9jdXMsIHNldEZvY3VzXSA9IHVzZVN0YXRlKGZhbHNlKTtcblxuICAgIGZ1bmN0aW9uIGhhbmRsZUNoYW5nZShldmVudCkge1xuICAgICAgICBzZXRWYWx1ZShldmVudC50YXJnZXQudmFsdWUpO1xuICAgICAgICBpZiAocHJvcHMub25DaGFuZ2UpIHtcbiAgICAgICAgICAgIHByb3BzLm9uQ2hhbmdlKGV2ZW50KTtcbiAgICAgICAgfVxuICAgIH1cblxuICAgIGZ1bmN0aW9uIGhhbmRsZUJsdXIoKSB7XG4gICAgICAgIGlmICh2YWx1ZSAhPT0gXCJcIikge1xuICAgICAgICAgICAgcmV0dXJuO1xuICAgICAgICB9XG4gICAgICAgIHNldEZvY3VzKGZhbHNlKTtcbiAgICB9XG5cbiAgICBmdW5jdGlvbiBoYW5kbGVMYWJlbENsaWNrKCkge1xuICAgICAgICBzZXRUaW1lb3V0KCgpID0+IHtcbiAgICAgICAgICAgIGVsLmN1cnJlbnQuZm9jdXMoKTtcbiAgICAgICAgfSwgMSk7XG4gICAgfVxuXG4gICAgcmV0dXJuIDxGcmFnbWVudD5cbiAgICAgICAgPHN0eWxlIGpzeD57YFxuICAgICAgICAuaW5wdXQtZmllbGR7XG4gICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgIH1cbiAgICAgICAgLmlucHV0LWZpZWxkIGxhYmVse1xuICAgICAgICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgICAgICB0b3A6IDE5cHg7XG4gICAgICAgICAgICAke3Byb3BzLnJ0bCA/IFwicmlnaHRcIiA6IFwibGVmdFwifTogMjBweDtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMjRweDtcbiAgICAgICAgICAgIGNvbG9yOiAjNzU3NTc1O1xuICAgICAgICAgICAgdHJhbnNpdGlvbjogLjE1cyBlYXNlO1xuICAgICAgICAgICAgdHJhbnNpdGlvbi1wcm9wZXJ0eTogYWxsO1xuICAgICAgICB9XG4gICAgICAgIC5pbnB1dC1maWVsZC5mb2N1cyBsYWJlbHtcbiAgICAgICAgICAgIHRvcDogOHB4O1xuICAgICAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgICAgICAgICBjb2xvcjogIzAwMDtcbiAgICAgICAgfVxuICAgICAgICAuaW5wdXQtZmllbGQgaW5wdXR7XG4gICAgICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICAgICAgICBvdXRsaW5lOiBub25lO1xuICAgICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgICBwYWRkaW5nOiAyMHB4O1xuICAgICAgICAgICAgZm9udC1zaXplOiAyNHB4O1xuICAgICAgICAgICAgcGFkZGluZy10b3A6IDI4cHg7XG4gICAgICAgICAgICBwYWRkaW5nLXJpZ2h0OiAyMHB4O1xuICAgICAgICAgICAgcGFkZGluZy1ib3R0b206IDEwcHg7XG4gICAgICAgICAgICB0cmFuc2l0aW9uOiAuMTVzIGVhc2U7XG4gICAgICAgICAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgICAgICAgICAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lO1xuICAgICAgICAgICAgdHJhbnNpdGlvbi1wcm9wZXJ0eTogYWxsO1xuICAgICAgICAgICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMTBweDtcbiAgICAgICAgICAgIGJvcmRlci10b3AtcmlnaHQtcmFkaXVzOiAxMHB4O1xuICAgICAgICAgICAgYm9yZGVyLWJvdHRvbTogMnB4IHNvbGlkICNjY2M7XG4gICAgICAgICAgICB0ZXh0LWFsaWduOiAke3Byb3BzLnJ0bCA/IFwicmlnaHRcIiA6IFwibGVmdFwifTtcbiAgICAgICAgICAgIGRpcmVjdGlvbjogJHtwcm9wcy5ydGwgPyBcInJ0bFwiIDogXCJsdHJcIn07XG4gICAgICAgIH1cbiAgICAgICAgLmlucHV0LWZpZWxkLmZvY3VzIGlucHV0e1xuICAgICAgICAgICAgYm9yZGVyLWNvbG9yOiAjMDAwO1xuICAgICAgICB9XG4gICAgICAgIGB9PC9zdHlsZT5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9e1tcImlucHV0LWZpZWxkXCIsIGZvY3VzID8gXCJmb2N1c1wiIDogXCJcIl0uam9pbihcIiBcIil9PlxuICAgICAgICAgICAgPGxhYmVsIG9uQ2xpY2s9e2hhbmRsZUxhYmVsQ2xpY2t9Pntwcm9wcy5sYWJlbCB8fCBwcm9wcy5wbGFjZWhvbGRlcn08L2xhYmVsPlxuICAgICAgICAgICAgPGlucHV0IGF1dG9Gb2N1cz17cHJvcHMuYXV0b0ZvY3VzfSByZXF1aXJlZCB0eXBlPXsocHJvcHMudHlwZSA9PT0gXCJkYXRlXCIgJiYgZm9jdXMpID8gXCJkYXRlXCIgOiBcInRleHRcIn0gcmVmPXtlbH0gdmFsdWU9e3ZhbHVlfSBvbkNoYW5nZT17aGFuZGxlQ2hhbmdlfSBvbkZvY3VzPXsoKSA9PiBzZXRGb2N1cyh0cnVlKX0gb25CbHVyPXtoYW5kbGVCbHVyfSAvPlxuICAgICAgICA8L2Rpdj5cbiAgICA8L0ZyYWdtZW50PlxufSJdfQ== */\n/*@ sourceURL=/Users/ronmasas/Desktop/coronaforms.org/ui/components/Input.js */")), __jsx("div", {
+    className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["933849060", [props.rtl ? "right" : "left", props.rtl ? "right" : "left", props.rtl ? "rtl" : "ltr"]]]) + " " + (["input-field", focus ? "focus" : ""].join(" ") || ""),
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 72,
+      columnNumber: 9
+    }
+  }, __jsx("label", {
+    onClick: handleLabelClick,
+    className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["933849060", [props.rtl ? "right" : "left", props.rtl ? "right" : "left", props.rtl ? "rtl" : "ltr"]]]),
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73,
       columnNumber: 13
     }
   }, props.label || props.placeholder), __jsx("input", {
@@ -320,11 +320,11 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
       return setFocus(true);
     },
     onBlur: handleBlur,
-    className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["1611414408", [props.rtl ? "right" : "left", props.rtl ? "right" : "left", props.rtl ? "rtl" : "ltr"]]]),
+    className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["933849060", [props.rtl ? "right" : "left", props.rtl ? "right" : "left", props.rtl ? "rtl" : "ltr"]]]),
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 74,
       columnNumber: 13
     }
   })));
@@ -365,61 +365,65 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       step = _useState[0],
       setStep = _useState[1];
 
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      fullName1 = _useState2[0],
-      setFullName1 = _useState2[1];
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      download = _useState2[0],
+      setDownload = _useState2[1];
 
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      fullName2 = _useState3[0],
-      setFullName2 = _useState3[1];
+      fullName1 = _useState3[0],
+      setFullName1 = _useState3[1];
 
   var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      fullName3 = _useState4[0],
-      setFullName3 = _useState4[1];
+      fullName2 = _useState4[0],
+      setFullName2 = _useState4[1];
 
   var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      IDNumber1 = _useState5[0],
-      setIDNumber1 = _useState5[1];
+      fullName3 = _useState5[0],
+      setFullName3 = _useState5[1];
 
   var _useState6 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      IDNumber2 = _useState6[0],
-      setIDNumber2 = _useState6[1];
+      IDNumber1 = _useState6[0],
+      setIDNumber1 = _useState6[1];
 
   var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      IDNumber3 = _useState7[0],
-      setIDNumber3 = _useState7[1];
+      IDNumber2 = _useState7[0],
+      setIDNumber2 = _useState7[1];
 
-  var _useState8 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      accountVisible1 = _useState8[0],
-      setAccountVisible1 = _useState8[1];
+  var _useState8 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      IDNumber3 = _useState8[0],
+      setIDNumber3 = _useState8[1];
 
   var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
-      accountVisible2 = _useState9[0],
-      setAccountVisible2 = _useState9[1];
+      accountVisible1 = _useState9[0],
+      setAccountVisible1 = _useState9[1];
 
-  var _useState10 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      signature = _useState10[0],
-      setSignature = _useState10[1];
+  var _useState10 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      accountVisible2 = _useState10[0],
+      setAccountVisible2 = _useState10[1];
 
   var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      loanType = _useState11[0],
-      setLoanType = _useState11[1];
+      signature = _useState11[0],
+      setSignature = _useState11[1];
 
   var _useState12 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      loanNumbers = _useState12[0],
-      setLoanNumbers = _useState12[1];
+      loanType = _useState12[0],
+      setLoanType = _useState12[1];
 
   var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      bankAccountNumber = _useState13[0],
-      setBankAccountNumber = _useState13[1];
+      loanNumbers = _useState13[0],
+      setLoanNumbers = _useState13[1];
 
   var _useState14 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      nearMortgageDate = _useState14[0],
-      setNearMortgageDate = _useState14[1];
+      bankAccountNumber = _useState14[0],
+      setBankAccountNumber = _useState14[1];
 
   var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
-      phoneNumber = _useState15[0],
-      setPhoneNumber = _useState15[1];
+      nearMortgageDate = _useState15[0],
+      setNearMortgageDate = _useState15[1];
+
+  var _useState16 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+      phoneNumber = _useState16[0],
+      setPhoneNumber = _useState16[1];
 
   function addAccountOwner() {
     if (!accountVisible1) {
@@ -435,7 +439,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     }
   }
 
-  function previewPdfDocument() {
+  function processPdfDocument(_download) {
+    setDownload(_download ? true : false);
     formEl.current.submit();
   }
 
@@ -443,7 +448,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 48,
       columnNumber: 12
     }
   }, __jsx("form", {
@@ -453,11 +458,11 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     ref: formEl,
     method: "POST",
     target: "_blank",
-    action: "http://localhost:8080/api/v1/pdf/leumi",
+    action: "https://api.coronaforms.org/api/v1/pdf/leumi".concat(download ? "?download=1" : ""),
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 49,
       columnNumber: 9
     }
   }, __jsx("input", {
@@ -467,7 +472,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 50,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -477,7 +482,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 51,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -487,7 +492,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 52,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -497,7 +502,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 53,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -507,7 +512,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 54,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -517,7 +522,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 55,
       columnNumber: 13
     }
   }), loanType === "all_loans" && __jsx("input", {
@@ -527,7 +532,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 56,
       columnNumber: 42
     }
   }), loanType === "specific_loans" && __jsx("input", {
@@ -537,7 +542,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 57,
       columnNumber: 47
     }
   }), __jsx("input", {
@@ -547,7 +552,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 58,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -557,7 +562,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 59,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -567,7 +572,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 60,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -577,7 +582,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 61,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -587,7 +592,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 62,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -597,14 +602,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 63,
       columnNumber: 13
     }
   })), step === 0 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 65,
       columnNumber: 24
     }
   }, __jsx("h1", {
@@ -612,7 +617,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 66,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Accounts.title), __jsx("h2", {
@@ -620,7 +625,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 67,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Accounts.subtitle), __jsx("form", {
@@ -630,7 +635,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 68,
       columnNumber: 13
     }
   }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -646,7 +651,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 69,
       columnNumber: 17
     }
   }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -661,7 +666,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 70,
       columnNumber: 17
     }
   }), accountVisible1 && __jsx("div", {
@@ -669,7 +674,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 71,
       columnNumber: 37
     }
   }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -684,7 +689,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 72,
       columnNumber: 21
     }
   }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -699,7 +704,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 73,
       columnNumber: 21
     }
   }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -710,7 +715,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 74,
       columnNumber: 21
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Remove)), accountVisible2 && __jsx("div", {
@@ -718,7 +723,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 76,
       columnNumber: 37
     }
   }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -733,7 +738,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 77,
       columnNumber: 21
     }
   }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -748,7 +753,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 78,
       columnNumber: 21
     }
   }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -759,7 +764,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 79,
       columnNumber: 21
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Remove)), __jsx("div", {
@@ -767,7 +772,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 81,
       columnNumber: 17
     }
   }, (!accountVisible1 || !accountVisible2) && __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -777,7 +782,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 82,
       columnNumber: 64
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.AddAccountOwner), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -786,14 +791,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 83,
       columnNumber: 21
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Next)))), step === 1 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 87,
       columnNumber: 24
     }
   }, __jsx("h1", {
@@ -801,7 +806,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 88,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageTypeSelection.title), __jsx("h2", {
@@ -809,7 +814,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 89,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageTypeSelection.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -821,7 +826,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 90,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.AllMyMortgageLoans), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -832,14 +837,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 91,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.ChooseMortgageLoans)), step === 2 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 93,
       columnNumber: 24
     }
   }, __jsx("form", {
@@ -849,7 +854,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 94,
       columnNumber: 13
     }
   }, __jsx("h1", {
@@ -857,7 +862,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 95,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageLoanNumbers.title), __jsx("h2", {
@@ -865,7 +870,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 96,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageLoanNumbers.subtitle), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -881,7 +886,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 97,
       columnNumber: 17
     }
   }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -891,14 +896,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 98,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Next))), step === 3 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 101,
       columnNumber: 24
     }
   }, __jsx("form", {
@@ -908,7 +913,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 102,
       columnNumber: 13
     }
   }, __jsx("h1", {
@@ -916,7 +921,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 103,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.BankAndContactInforamtion.title), __jsx("h2", {
@@ -924,7 +929,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 104,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.BankAndContactInforamtion.subtitle), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -940,7 +945,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 105,
       columnNumber: 17
     }
   }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -956,7 +961,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 106,
       columnNumber: 17
     }
   }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -971,7 +976,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105,
+      lineNumber: 107,
       columnNumber: 17
     }
   }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -984,14 +989,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 108,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Next))), step === 4 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 111,
       columnNumber: 24
     }
   }, __jsx("h1", {
@@ -999,7 +1004,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 112,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Signature.title), __jsx("h2", {
@@ -1007,7 +1012,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 113,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Signature.subtitle), __jsx(_components_SignaturePad__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1017,21 +1022,36 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 114,
       columnNumber: 13
     }
   }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
     rtl: props.language === "hebrew" ? true : false,
-    onClick: previewPdfDocument,
+    onClick: function onClick() {
+      return processPdfDocument(false);
+    },
     className: "mt-2",
     arrow: true,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 115,
       columnNumber: 13
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.PreviewRequest)));
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.PreviewRequest), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    onClick: function onClick() {
+      return processPdfDocument(true);
+    },
+    className: "mt-2",
+    arrow: true,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 116,
+      columnNumber: 13
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Download)));
 });
 
 /***/ }),
@@ -1536,7 +1556,7 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "body{\n    margin: 0;\n    padding: 0;\n    background: #FCF9E9;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    -webkit-backface-visibility: hidden;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n}\n\n.hebrew{\n    text-align: right;\n    direction: rtl;\n}\n\nh1,h2,h3,h4,h5,h6{\n    margin: 0;\n    padding: 0;\n}\n\n.loading{\n    margin-top: 105px;\n}\n\n.newsletter{\n    position: relative;\n}\n\ninput.field{\n    border: none;\n    outline: none;\n    width: 100%;\n    padding: 20px;\n    font-size: 24px;\n    padding-right: 50px;\n    transition: .15s ease;\n    box-sizing: border-box;\n    transition-property: all;\n    border-top-left-radius: 10px;\n    border-top-right-radius: 10px;\n    border-bottom: 2px solid #ccc;\n}\n\ninput.field.not-round{\n    border-top-left-radius: 0px;\n    border-top-right-radius: 0px;\n}\n\ninput.field:focus{\n    border-bottom: 2px solid #000;\n}\n\nform.newsletter button{\n    top: 15px;\n    right: 16px;\n    position: absolute;\n}\n\nform .name_and_id{\n    position: relative;\n}\n\n.english form .name_and_id button{\n    position: absolute;\n    right: 0;\n    top: 47px;\n}\n\n.hebrew form .name_and_id button{\n    position: absolute;\n    left: 10px;\n    top: 47px;\n}\n\np{font-size: 20px;line-height: 28px;}\n\n.auto{margin: auto;}\n\n.text-center{text-align: center;}\n.text-left{text-align: left;}\n.text-right{text-align: right;}\n\n.pb-1{padding-bottom:13px;}\n\n.pt-1{padding-top:13px;}\n.pt-2{padding-top:26px;}\n.pt-3{padding-top:39px;}\n\n.mr-1{margin-right: 13px;}\n.mr-2{margin-right: 26px;}\n\n.ml-1{margin-left: 13px;}\n.ml-2{margin-left: 26px;}\n\n.mb-1{margin-bottom: 13px;}\n.mb-2{margin-bottom: 26px;}\n.mb-3{margin-bottom: 39px;}\n\n.mt-1{margin-top: 13px;}\n.mt-2{margin-top: 26px;}\n.mt-3{margin-top: 39px;}\n.mt-4{margin-top: 52px;}\n.mt-5{margin-top: 65px;}\n.mt-6{margin-top: 78px;}\n.mt-7{margin-top: 91px;}\n.mt-8{margin-top: 104px;}\n\n.hero{max-width: 700px;min-height: 200px;}\n.hero h1{font-size: 42px;}\n.hero h2{font-weight: normal;font-size: 20px;line-height: 30px;}\n\n.header{height: 70px; line-height: 70px;}\n.header .menuItems {text-align: right;}\n.header .menuItems a{margin-left: 13px;color:black;}\n.hebrew .header .menuItems {text-align: left;}\n\n.arrow-right{\n    width: 0; \n    height: 0;\n    top: 13px;\n    right: 12px;\n    position: absolute;\n    border-left: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.arrow-left{\n    width: 0; \n    height: 0;\n    top: 13px;\n    left: 12px;\n    position: absolute;\n    border-right: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.mission {margin-top: 100px !important;}\n.mission h3{font-size:32px;}\n.mission img{max-width: 800px;width:100%;margin-top: 100px !important;}\n\n@media only screen and (max-width: 600px) {\n    .hero h1{font-size: 28px;}\n    .header img{width: 170px;}\n    .mission h3{font-size:28px;}\n    .hero{min-height: auto;}\n    form.newsletter input{font-size: 18px;}\n    form.newsletter button{\n        width: auto;\n        top: 10px;\n        right: 10px;\n    }\n}\n\n.footer{\n    color:#ffffff;\n    min-height: 100px;\n    position: relative;\n    background: #121212;\n}\n\n.footer .floor{\n    top: -5px;\n    height: 5px;\n    width: 100%;\n    position: absolute;\n    background: #121212;\n}\n\n.footer .language-links a{\n    color: white;\n}\n\n.footer .language-links{\n    line-height: 80px;\n    text-align: right;\n}\n\n.hebrew .footer .language-links{\n    text-align: left;\n}", "",{"version":3,"sources":["style.css"],"names":[],"mappings":"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","file":"style.css","sourcesContent":["body{\n    margin: 0;\n    padding: 0;\n    background: #FCF9E9;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    -webkit-backface-visibility: hidden;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n}\n\n.hebrew{\n    text-align: right;\n    direction: rtl;\n}\n\nh1,h2,h3,h4,h5,h6{\n    margin: 0;\n    padding: 0;\n}\n\n.loading{\n    margin-top: 105px;\n}\n\n.newsletter{\n    position: relative;\n}\n\ninput.field{\n    border: none;\n    outline: none;\n    width: 100%;\n    padding: 20px;\n    font-size: 24px;\n    padding-right: 50px;\n    transition: .15s ease;\n    box-sizing: border-box;\n    transition-property: all;\n    border-top-left-radius: 10px;\n    border-top-right-radius: 10px;\n    border-bottom: 2px solid #ccc;\n}\n\ninput.field.not-round{\n    border-top-left-radius: 0px;\n    border-top-right-radius: 0px;\n}\n\ninput.field:focus{\n    border-bottom: 2px solid #000;\n}\n\nform.newsletter button{\n    top: 15px;\n    right: 16px;\n    position: absolute;\n}\n\nform .name_and_id{\n    position: relative;\n}\n\n.english form .name_and_id button{\n    position: absolute;\n    right: 0;\n    top: 47px;\n}\n\n.hebrew form .name_and_id button{\n    position: absolute;\n    left: 10px;\n    top: 47px;\n}\n\np{font-size: 20px;line-height: 28px;}\n\n.auto{margin: auto;}\n\n.text-center{text-align: center;}\n.text-left{text-align: left;}\n.text-right{text-align: right;}\n\n.pb-1{padding-bottom:13px;}\n\n.pt-1{padding-top:13px;}\n.pt-2{padding-top:26px;}\n.pt-3{padding-top:39px;}\n\n.mr-1{margin-right: 13px;}\n.mr-2{margin-right: 26px;}\n\n.ml-1{margin-left: 13px;}\n.ml-2{margin-left: 26px;}\n\n.mb-1{margin-bottom: 13px;}\n.mb-2{margin-bottom: 26px;}\n.mb-3{margin-bottom: 39px;}\n\n.mt-1{margin-top: 13px;}\n.mt-2{margin-top: 26px;}\n.mt-3{margin-top: 39px;}\n.mt-4{margin-top: 52px;}\n.mt-5{margin-top: 65px;}\n.mt-6{margin-top: 78px;}\n.mt-7{margin-top: 91px;}\n.mt-8{margin-top: 104px;}\n\n.hero{max-width: 700px;min-height: 200px;}\n.hero h1{font-size: 42px;}\n.hero h2{font-weight: normal;font-size: 20px;line-height: 30px;}\n\n.header{height: 70px; line-height: 70px;}\n.header .menuItems {text-align: right;}\n.header .menuItems a{margin-left: 13px;color:black;}\n.hebrew .header .menuItems {text-align: left;}\n\n.arrow-right{\n    width: 0; \n    height: 0;\n    top: 13px;\n    right: 12px;\n    position: absolute;\n    border-left: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.arrow-left{\n    width: 0; \n    height: 0;\n    top: 13px;\n    left: 12px;\n    position: absolute;\n    border-right: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.mission {margin-top: 100px !important;}\n.mission h3{font-size:32px;}\n.mission img{max-width: 800px;width:100%;margin-top: 100px !important;}\n\n@media only screen and (max-width: 600px) {\n    .hero h1{font-size: 28px;}\n    .header img{width: 170px;}\n    .mission h3{font-size:28px;}\n    .hero{min-height: auto;}\n    form.newsletter input{font-size: 18px;}\n    form.newsletter button{\n        width: auto;\n        top: 10px;\n        right: 10px;\n    }\n}\n\n.footer{\n    color:#ffffff;\n    min-height: 100px;\n    position: relative;\n    background: #121212;\n}\n\n.footer .floor{\n    top: -5px;\n    height: 5px;\n    width: 100%;\n    position: absolute;\n    background: #121212;\n}\n\n.footer .language-links a{\n    color: white;\n}\n\n.footer .language-links{\n    line-height: 80px;\n    text-align: right;\n}\n\n.hebrew .footer .language-links{\n    text-align: left;\n}"]}]);
+exports.push([module.i, "body{\n    margin: 0;\n    padding: 0;\n    background: #FCF9E9;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    -webkit-backface-visibility: hidden;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n}\n\n.hebrew{\n    text-align: right;\n    direction: rtl;\n}\n\nh1,h2,h3,h4,h5,h6{\n    margin: 0;\n    padding: 0;\n}\n\n.loading{\n    margin-top: 105px;\n}\n\n.newsletter{\n    position: relative;\n}\n\ninput.field{\n    border: none;\n    outline: none;\n    width: 100%;\n    padding: 20px;\n    font-size: 24px;\n    padding-right: 50px;\n    transition: .15s ease;\n    box-sizing: border-box;\n    transition-property: all;\n    -webkit-appearance: none;\n    border-top-left-radius: 10px;\n    border-top-right-radius: 10px;\n    border-bottom: 2px solid #ccc;\n}\n\ninput.field.not-round{\n    border-top-left-radius: 0px;\n    border-top-right-radius: 0px;\n}\n\ninput.field:focus{\n    border-bottom: 2px solid #000;\n}\n\nform.newsletter button{\n    top: 15px;\n    right: 16px;\n    position: absolute;\n}\n\nform .name_and_id{\n    position: relative;\n}\n\n.english form .name_and_id button{\n    position: absolute;\n    right: 0;\n    top: 47px;\n}\n\n.hebrew form .name_and_id button{\n    position: absolute;\n    left: 10px;\n    top: 47px;\n}\n\np{font-size: 20px;line-height: 28px;}\n\n.auto{margin: auto;}\n\n.text-center{text-align: center;}\n.text-left{text-align: left;}\n.text-right{text-align: right;}\n\n.pb-1{padding-bottom:13px;}\n\n.pt-1{padding-top:13px;}\n.pt-2{padding-top:26px;}\n.pt-3{padding-top:39px;}\n\n.mr-1{margin-right: 13px;}\n.mr-2{margin-right: 26px;}\n\n.ml-1{margin-left: 13px;}\n.ml-2{margin-left: 26px;}\n\n.mb-1{margin-bottom: 13px;}\n.mb-2{margin-bottom: 26px;}\n.mb-3{margin-bottom: 39px;}\n\n.mt-1{margin-top: 13px;}\n.mt-2{margin-top: 26px;}\n.mt-3{margin-top: 39px;}\n.mt-4{margin-top: 52px;}\n.mt-5{margin-top: 65px;}\n.mt-6{margin-top: 78px;}\n.mt-7{margin-top: 91px;}\n.mt-8{margin-top: 104px;}\n\n.hero{max-width: 700px;min-height: 200px;}\n.hero h1{font-size: 42px;}\n.hero h2{font-weight: normal;font-size: 20px;line-height: 30px;}\n\n.header{height: 70px; line-height: 70px;}\n.header .menuItems {text-align: right;}\n.header .menuItems a{margin-left: 13px;color:black;}\n.hebrew .header .menuItems {text-align: left;}\n.header img{cursor: pointer;}\n.arrow-right{\n    width: 0; \n    height: 0;\n    top: 13px;\n    right: 12px;\n    position: absolute;\n    border-left: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.arrow-left{\n    width: 0; \n    height: 0;\n    top: 13px;\n    left: 12px;\n    position: absolute;\n    border-right: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.mission {margin-top: 100px !important;}\n.mission h3{font-size:32px;}\n.mission img{max-width: 800px;width:100%;margin-top: 100px !important;}\n\n@media only screen and (max-width: 600px) {\n    .hero h1{font-size: 28px;}\n    .header img{width: 170px;}\n    .mission h3{font-size:28px;}\n    .hero{min-height: auto;}\n    form.newsletter input{font-size: 18px;-webkit-appearance: none;}\n    form.newsletter button{\n        width: auto;\n        top: 10px;\n        right: 10px;\n    }\n}\n\n.footer{\n    color:#ffffff;\n    min-height: 100px;\n    position: relative;\n    background: #121212;\n}\n\n.footer .floor{\n    top: -5px;\n    height: 5px;\n    width: 100%;\n    position: absolute;\n    background: #121212;\n}\n\n.footer .language-links a{\n    color: white;\n}\n\n.footer .language-links{\n    line-height: 80px;\n    text-align: right;\n}\n\n.hebrew .footer .language-links{\n    text-align: left;\n}\n\n@media only screen and (max-width: 600px) {\n    .footer{\n        font-size: 15px;\n        text-align: center;\n    }\n    .footer .language-links{\n        text-align: center !important;\n    }\n}", "",{"version":3,"sources":["style.css"],"names":[],"mappings":"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","file":"style.css","sourcesContent":["body{\n    margin: 0;\n    padding: 0;\n    background: #FCF9E9;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    -webkit-backface-visibility: hidden;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n}\n\n.hebrew{\n    text-align: right;\n    direction: rtl;\n}\n\nh1,h2,h3,h4,h5,h6{\n    margin: 0;\n    padding: 0;\n}\n\n.loading{\n    margin-top: 105px;\n}\n\n.newsletter{\n    position: relative;\n}\n\ninput.field{\n    border: none;\n    outline: none;\n    width: 100%;\n    padding: 20px;\n    font-size: 24px;\n    padding-right: 50px;\n    transition: .15s ease;\n    box-sizing: border-box;\n    transition-property: all;\n    -webkit-appearance: none;\n    border-top-left-radius: 10px;\n    border-top-right-radius: 10px;\n    border-bottom: 2px solid #ccc;\n}\n\ninput.field.not-round{\n    border-top-left-radius: 0px;\n    border-top-right-radius: 0px;\n}\n\ninput.field:focus{\n    border-bottom: 2px solid #000;\n}\n\nform.newsletter button{\n    top: 15px;\n    right: 16px;\n    position: absolute;\n}\n\nform .name_and_id{\n    position: relative;\n}\n\n.english form .name_and_id button{\n    position: absolute;\n    right: 0;\n    top: 47px;\n}\n\n.hebrew form .name_and_id button{\n    position: absolute;\n    left: 10px;\n    top: 47px;\n}\n\np{font-size: 20px;line-height: 28px;}\n\n.auto{margin: auto;}\n\n.text-center{text-align: center;}\n.text-left{text-align: left;}\n.text-right{text-align: right;}\n\n.pb-1{padding-bottom:13px;}\n\n.pt-1{padding-top:13px;}\n.pt-2{padding-top:26px;}\n.pt-3{padding-top:39px;}\n\n.mr-1{margin-right: 13px;}\n.mr-2{margin-right: 26px;}\n\n.ml-1{margin-left: 13px;}\n.ml-2{margin-left: 26px;}\n\n.mb-1{margin-bottom: 13px;}\n.mb-2{margin-bottom: 26px;}\n.mb-3{margin-bottom: 39px;}\n\n.mt-1{margin-top: 13px;}\n.mt-2{margin-top: 26px;}\n.mt-3{margin-top: 39px;}\n.mt-4{margin-top: 52px;}\n.mt-5{margin-top: 65px;}\n.mt-6{margin-top: 78px;}\n.mt-7{margin-top: 91px;}\n.mt-8{margin-top: 104px;}\n\n.hero{max-width: 700px;min-height: 200px;}\n.hero h1{font-size: 42px;}\n.hero h2{font-weight: normal;font-size: 20px;line-height: 30px;}\n\n.header{height: 70px; line-height: 70px;}\n.header .menuItems {text-align: right;}\n.header .menuItems a{margin-left: 13px;color:black;}\n.hebrew .header .menuItems {text-align: left;}\n.header img{cursor: pointer;}\n.arrow-right{\n    width: 0; \n    height: 0;\n    top: 13px;\n    right: 12px;\n    position: absolute;\n    border-left: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.arrow-left{\n    width: 0; \n    height: 0;\n    top: 13px;\n    left: 12px;\n    position: absolute;\n    border-right: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.mission {margin-top: 100px !important;}\n.mission h3{font-size:32px;}\n.mission img{max-width: 800px;width:100%;margin-top: 100px !important;}\n\n@media only screen and (max-width: 600px) {\n    .hero h1{font-size: 28px;}\n    .header img{width: 170px;}\n    .mission h3{font-size:28px;}\n    .hero{min-height: auto;}\n    form.newsletter input{font-size: 18px;-webkit-appearance: none;}\n    form.newsletter button{\n        width: auto;\n        top: 10px;\n        right: 10px;\n    }\n}\n\n.footer{\n    color:#ffffff;\n    min-height: 100px;\n    position: relative;\n    background: #121212;\n}\n\n.footer .floor{\n    top: -5px;\n    height: 5px;\n    width: 100%;\n    position: absolute;\n    background: #121212;\n}\n\n.footer .language-links a{\n    color: white;\n}\n\n.footer .language-links{\n    line-height: 80px;\n    text-align: right;\n}\n\n.hebrew .footer .language-links{\n    text-align: left;\n}\n\n@media only screen and (max-width: 600px) {\n    .footer{\n        font-size: 15px;\n        text-align: center;\n    }\n    .footer .language-links{\n        text-align: center !important;\n    }\n}"]}]);
 
 
 /***/ }),
@@ -8354,7 +8374,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       columnNumber: 17
     }
   }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Col"], {
-    xs: 6,
+    md: 6,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -8378,7 +8398,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       columnNumber: 25
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Footer.MadeWithLoveInIsrael)), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Col"], {
-    xs: 6,
+    md: 6,
     className: "language-links",
     __self: _this,
     __source: {

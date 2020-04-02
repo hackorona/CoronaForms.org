@@ -7,6 +7,7 @@ import SignaturePad from "../components/SignaturePad";
 export default (props) => {
     const formEl = useRef(null);
     const [step, setStep] = useState(0);
+    const [download, setDownload] = useState(false);
     const [fullName1, setFullName1] = useState("");
     const [fullName2, setFullName2] = useState("");
     const [fullName3, setFullName3] = useState("");
@@ -39,12 +40,13 @@ export default (props) => {
         }
     }
 
-    function previewPdfDocument() {
+    function processPdfDocument(_download) {
+        setDownload(_download ? true : false);
         formEl.current.submit();
     }
 
     return <Fragment>
-        <form style={{ display: "none" }} ref={formEl} method="POST" target="_blank" action="https://api.coronaforms.org/api/v1/pdf/leumi">
+        <form style={{ display: "none" }} ref={formEl} method="POST" target="_blank" action={`https://api.coronaforms.org/api/v1/pdf/leumi${download ? "?download=1" : ""}`}>
             <input type="text" name="full_name" value={fullName1} />
             <input type="text" name="full_name_2" value={fullName2} />
             <input type="text" name="full_name_3" value={fullName3} />
@@ -110,7 +112,8 @@ export default (props) => {
             <h1 className="mb-2">{strings[props.language].Forms.Signature.title}</h1>
             <h2 className="mb-2">{strings[props.language].Forms.Signature.subtitle}</h2>
             <SignaturePad onChange={signatureDataURL => setSignature(signatureDataURL)} />
-            <Button rtl={props.language === "hebrew" ? true : false} onClick={previewPdfDocument} className="mt-2" arrow>{strings[props.language].Common.PreviewRequest}</Button>
+            <Button rtl={props.language === "hebrew" ? true : false} onClick={() => processPdfDocument(false)} className="mt-2" arrow>{strings[props.language].Common.PreviewRequest}</Button>
+            <Button rtl={props.language === "hebrew" ? true : false} onClick={() => processPdfDocument(true)} className="mt-2" arrow>{strings[props.language].Common.Download}</Button>
         </Fragment>}
     </Fragment>
 }

@@ -51,7 +51,7 @@ app.post("/api/v1/pdf/:bank", (req, res) => __awaiter(void 0, void 0, void 0, fu
         req.body.first_name_3 = parts[0];
         req.body.last_name_3 = parts[1];
     }
-    res.setHeader('Content-Disposition', 'inline; filename="file.pdf"');
+    res.setHeader('Content-Disposition', `${req.query.download ? 'attachment' : 'inline'}; filename="request.pdf"`);
     res.setHeader('Content-Type', 'application/pdf');
     res.send(yield bank_pdf_1.default(req.params.bank, req.body));
     res.end();

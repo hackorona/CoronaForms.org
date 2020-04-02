@@ -36,6 +36,7 @@ input.field{
     transition: .15s ease;
     box-sizing: border-box;
     transition-property: all;
+    -webkit-appearance: none;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom: 2px solid #ccc;
@@ -113,7 +114,7 @@ p{font-size: 20px;line-height: 28px;}
 .header .menuItems {text-align: right;}
 .header .menuItems a{margin-left: 13px;color:black;}
 .hebrew .header .menuItems {text-align: left;}
-
+.header img{cursor: pointer;}
 .arrow-right{
     width: 0; 
     height: 0;
@@ -145,7 +146,7 @@ p{font-size: 20px;line-height: 28px;}
     .header img{width: 170px;}
     .mission h3{font-size:28px;}
     .hero{min-height: auto;}
-    form.newsletter input{font-size: 18px;}
+    form.newsletter input{font-size: 18px;-webkit-appearance: none;}
     form.newsletter button{
         width: auto;
         top: 10px;
@@ -179,4 +180,14 @@ p{font-size: 20px;line-height: 28px;}
 
 .hebrew .footer .language-links{
     text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+    .footer{
+        font-size: 15px;
+        text-align: center;
+    }
+    .footer .language-links{
+        text-align: center !important;
+    }
 }

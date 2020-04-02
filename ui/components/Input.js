@@ -53,10 +53,11 @@ export default props => {
             padding: 20px;
             font-size: 24px;
             padding-top: 28px;
-            padding-bottom: 10px;
             padding-right: 20px;
+            padding-bottom: 10px;
             transition: .15s ease;
             box-sizing: border-box;
+            -webkit-appearance: none;
             transition-property: all;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;

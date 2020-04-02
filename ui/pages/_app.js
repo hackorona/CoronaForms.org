@@ -76,13 +76,13 @@ export default () => {
             <div className="floor"></div>
             <Container>
                 <Row>
-                    <Col xs={6}>
+                    <Col md={6}>
                         <div className="mb-1 pt-1">
                             CoronaForms.org {new Date().getFullYear()}
                         </div>
                         <div className="mb-1">{strings[language].Footer.MadeWithLoveInIsrael}</div>
                     </Col>
-                    <Col xs={6} className="language-links">
+                    <Col md={6} className="language-links">
                         {language === "hebrew" && <a href="#" onClick={() => changeLangauge("english")}>Also available in English</a>}
                         {language === "english" && <a href="#" onClick={() => changeLangauge("hebrew")}>זמין גם בעברית</a>}
                     </Col>
