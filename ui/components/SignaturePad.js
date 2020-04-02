@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState, Fragment } from "react";
 import SignaturePad from "signature_pad";
+import strings from "../strings.json";
 
 export default (props) => {
     const el = useRef(null);
@@ -42,7 +43,7 @@ export default (props) => {
         `}</style>
         <div className="signature_wrapper">
             <canvas width="275" height="100" ref={el}></canvas>
-            <button onClick={() => pad.clear()} type="button">RESET</button>
+            <button onClick={() => pad.clear()} type="button">{strings[props.language].Common.Reset}</button>
         </div>
     </Fragment>;
 }

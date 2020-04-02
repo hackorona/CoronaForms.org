@@ -1,6 +1,8 @@
 {
     "english": {
         "Common": {
+            "Reset": "Clear",
+            "Download": "Download",
             "BankAccountNumber": "Bank Account Number",
             "AddAccountOwner": "Add Account Owner",
             "Leumi": "Leumi Bank",
@@ -73,6 +75,8 @@
     },
     "hebrew": {
         "Common": {
+            "Reset": "מחק",
+            "Download": "הורדה",
             "BankAccountNumber": "מספר חשבון בנק",
             "AddAccountOwner": "הוסף בעל חשבון",
             "Leumi": "בנק לאומי",

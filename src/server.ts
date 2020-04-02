@@ -42,7 +42,7 @@ app.post("/api/v1/pdf/:bank", async (req: Request, res: Response) => {
         req.body.first_name_3 = parts[0];
         req.body.last_name_3 = parts[1];
     }
-    res.setHeader('Content-Disposition', `${req.query.download ? 'attachment' : 'inline'}; filename="request.pdf"`);
+    res.setHeader('Content-Disposition', `${req.body.download === "1" ? "attachment" : "inline"}; filename="request.pdf"`);
     res.setHeader('Content-Type', 'application/pdf');
     res.send(await bankPdf(req.params.bank, req.body));
     res.end();

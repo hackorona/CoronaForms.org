@@ -508,7 +508,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   }
 
   function processPdfDocument(_download) {
-    setDownload(_download ? true : false);
+    setDownload(_download ? "1" : "0");
     formEl.current.submit();
   }
 
@@ -526,7 +526,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     ref: formEl,
     method: "POST",
     target: "_blank",
-    action: `https://api.coronaforms.org/api/v1/pdf/leumi${download ? "?download=1" : ""}`,
+    action: "https://api.coronaforms.org/api/v1/pdf/leumi",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -673,11 +673,21 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       lineNumber: 63,
       columnNumber: 13
     }
+  }), __jsx("input", {
+    type: "text",
+    name: "download",
+    value: download,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64,
+      columnNumber: 13
+    }
   })), step === 0 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 66,
       columnNumber: 24
     }
   }, __jsx("h1", {
@@ -685,7 +695,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 67,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Accounts.title), __jsx("h2", {
@@ -693,7 +703,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 68,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Accounts.subtitle), __jsx("form", {
@@ -701,7 +711,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 69,
       columnNumber: 13
     }
   }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -715,7 +725,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 70,
       columnNumber: 17
     }
   }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -728,7 +738,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 71,
       columnNumber: 17
     }
   }), accountVisible1 && __jsx("div", {
@@ -736,7 +746,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 72,
       columnNumber: 37
     }
   }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -749,7 +759,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 73,
       columnNumber: 21
     }
   }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -762,7 +772,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 74,
       columnNumber: 21
     }
   }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -771,7 +781,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 75,
       columnNumber: 21
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Remove)), accountVisible2 && __jsx("div", {
@@ -779,7 +789,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 77,
       columnNumber: 37
     }
   }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -792,7 +802,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 78,
       columnNumber: 21
     }
   }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -805,7 +815,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 79,
       columnNumber: 21
     }
   }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -814,7 +824,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 80,
       columnNumber: 21
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Remove)), __jsx("div", {
@@ -822,7 +832,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 82,
       columnNumber: 17
     }
   }, (!accountVisible1 || !accountVisible2) && __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -832,7 +842,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 83,
       columnNumber: 64
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.AddAccountOwner), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -841,14 +851,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 84,
       columnNumber: 21
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Next)))), step === 1 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 88,
       columnNumber: 24
     }
   }, __jsx("h1", {
@@ -856,7 +866,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 89,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageTypeSelection.title), __jsx("h2", {
@@ -864,7 +874,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 90,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageTypeSelection.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -874,7 +884,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90,
+      lineNumber: 91,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.AllMyMortgageLoans), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -883,14 +893,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 92,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.ChooseMortgageLoans)), step === 2 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 94,
       columnNumber: 24
     }
   }, __jsx("form", {
@@ -898,7 +908,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 95,
       columnNumber: 13
     }
   }, __jsx("h1", {
@@ -906,7 +916,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 96,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageLoanNumbers.title), __jsx("h2", {
@@ -914,7 +924,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 97,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageLoanNumbers.subtitle), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -928,7 +938,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97,
+      lineNumber: 98,
       columnNumber: 17
     }
   }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -938,14 +948,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 99,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Next))), step === 3 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 102,
       columnNumber: 24
     }
   }, __jsx("form", {
@@ -953,7 +963,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 103,
       columnNumber: 13
     }
   }, __jsx("h1", {
@@ -961,7 +971,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 104,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.BankAndContactInforamtion.title), __jsx("h2", {
@@ -969,7 +979,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 105,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.BankAndContactInforamtion.subtitle), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -983,7 +993,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105,
+      lineNumber: 106,
       columnNumber: 17
     }
   }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -997,7 +1007,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 107,
       columnNumber: 17
     }
   }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -1010,7 +1020,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107,
+      lineNumber: 108,
       columnNumber: 17
     }
   }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1021,14 +1031,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 109,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Next))), step === 4 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 112,
       columnNumber: 24
     }
   }, __jsx("h1", {
@@ -1036,7 +1046,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 113,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Signature.title), __jsx("h2", {
@@ -1044,15 +1054,16 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 114,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Signature.subtitle), __jsx(_components_SignaturePad__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    language: props.language,
     onChange: signatureDataURL => setSignature(signatureDataURL),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 115,
       columnNumber: 13
     }
   }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1063,7 +1074,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 116,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.PreviewRequest), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1074,7 +1085,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 117,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Download)));
@@ -1184,10 +1195,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var signature_pad__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! signature_pad */ "signature_pad");
 /* harmony import */ var signature_pad__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(signature_pad__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _strings_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../strings.json */ "./strings.json");
+var _strings_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../strings.json */ "./strings.json", 1);
 var _jsxFileName = "/Users/ronmasas/Desktop/coronaforms.org/ui/components/SignaturePad.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (props => {
@@ -1209,18 +1223,18 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 18,
       columnNumber: 12
     }
   }, __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
     id: "2057520806",
     __self: undefined
-  }, ".signature_wrapper.jsx-2057520806{width:275px;margin:auto;background:#eee;position:relative;border:2px solid #ccc;}.signature_wrapper.jsx-2057520806 button.jsx-2057520806{position:absolute;left:5px;bottom:5px;padding:5px 10px;border:none;outline:none;background:#F8D57E;color:#000;cursor:pointer;border-radius:3px;font-size:14px;font-weight:bold;opacity:0.7;}.signature_wrapper.jsx-2057520806 button.jsx-2057520806:hover{opacity:1;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9yb25tYXNhcy9EZXNrdG9wL2Nvcm9uYWZvcm1zLm9yZy91aS9jb21wb25lbnRzL1NpZ25hdHVyZVBhZC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFpQm9CLEFBRzZCLEFBT00sQUFjb0IsVUFBQyxFQXBCM0IsTUFPSCxNQU5PLEdBT0wsV0FDTSxFQVBDLGVBUU4sR0FQVSxTQVFULGFBUGpCLEFBUXVCLG1CQUNSLFdBQ0ksZUFDRyxrQkFDSCxlQUNFLGlCQUNMLFlBQ2hCIiwiZmlsZSI6Ii9Vc2Vycy9yb25tYXNhcy9EZXNrdG9wL2Nvcm9uYWZvcm1zLm9yZy91aS9jb21wb25lbnRzL1NpZ25hdHVyZVBhZC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZVJlZiwgdXNlRWZmZWN0LCB1c2VTdGF0ZSwgRnJhZ21lbnQgfSBmcm9tIFwicmVhY3RcIjtcbmltcG9ydCBTaWduYXR1cmVQYWQgZnJvbSBcInNpZ25hdHVyZV9wYWRcIjtcblxuZXhwb3J0IGRlZmF1bHQgKHByb3BzKSA9PiB7XG4gICAgY29uc3QgZWwgPSB1c2VSZWYobnVsbCk7XG4gICAgY29uc3QgW3BhZCwgc2V0UGFkXSA9IHVzZVN0YXRlKG51bGwpO1xuXG4gICAgdXNlRWZmZWN0KCgpID0+IHtcbiAgICAgICAgbGV0IF8gPSBuZXcgU2lnbmF0dXJlUGFkKGVsLmN1cnJlbnQsIHtcbiAgICAgICAgICAgIG9uRW5kOiAoKSA9PiB7XG4gICAgICAgICAgICAgICAgcHJvcHMub25DaGFuZ2UoXy50b0RhdGFVUkwoXCJpbWFnZS9wbmdcIikpXG4gICAgICAgICAgICB9XG4gICAgICAgIH0pO1xuICAgICAgICBzZXRQYWQoXyk7XG4gICAgfSwgW10pO1xuXG4gICAgcmV0dXJuIDxGcmFnbWVudD5cbiAgICAgICAgPHN0eWxlIGpzeD57YFxuICAgICAgICAgICAgLnNpZ25hdHVyZV93cmFwcGVye1xuICAgICAgICAgICAgICAgIHdpZHRoOiAyNzVweDtcbiAgICAgICAgICAgICAgICBtYXJnaW46IGF1dG87XG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZDogI2VlZTtcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgICAgICAgYm9yZGVyOiAycHggc29saWQgI2NjYztcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIC5zaWduYXR1cmVfd3JhcHBlciBidXR0b257XG4gICAgICAgICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICAgICAgICAgIGxlZnQ6IDVweDtcbiAgICAgICAgICAgICAgICBib3R0b206IDVweDtcbiAgICAgICAgICAgICAgICBwYWRkaW5nOiA1cHggMTBweDtcbiAgICAgICAgICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICAgICAgICAgICAgb3V0bGluZTogbm9uZTtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiAjRjhENTdFO1xuICAgICAgICAgICAgICAgIGNvbG9yOiAjMDAwO1xuICAgICAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiAzcHg7XG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgICAgICAgICAgICAgIG9wYWNpdHk6IDAuNztcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIC5zaWduYXR1cmVfd3JhcHBlciBidXR0b246aG92ZXIge29wYWNpdHk6IDE7fVxuICAgICAgICBgfTwvc3R5bGU+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwic2lnbmF0dXJlX3dyYXBwZXJcIj5cbiAgICAgICAgICAgIDxjYW52YXMgd2lkdGg9XCIyNzVcIiBoZWlnaHQ9XCIxMDBcIiByZWY9e2VsfT48L2NhbnZhcz5cbiAgICAgICAgICAgIDxidXR0b24gb25DbGljaz17KCkgPT4gcGFkLmNsZWFyKCl9IHR5cGU9XCJidXR0b25cIj5SRVNFVDwvYnV0dG9uPlxuICAgICAgICA8L2Rpdj5cbiAgICA8L0ZyYWdtZW50Pjtcbn0iXX0= */\n/*@ sourceURL=/Users/ronmasas/Desktop/coronaforms.org/ui/components/SignaturePad.js */"), __jsx("div", {
+  }, ".signature_wrapper.jsx-2057520806{width:275px;margin:auto;background:#eee;position:relative;border:2px solid #ccc;}.signature_wrapper.jsx-2057520806 button.jsx-2057520806{position:absolute;left:5px;bottom:5px;padding:5px 10px;border:none;outline:none;background:#F8D57E;color:#000;cursor:pointer;border-radius:3px;font-size:14px;font-weight:bold;opacity:0.7;}.signature_wrapper.jsx-2057520806 button.jsx-2057520806:hover{opacity:1;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9yb25tYXNhcy9EZXNrdG9wL2Nvcm9uYWZvcm1zLm9yZy91aS9jb21wb25lbnRzL1NpZ25hdHVyZVBhZC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFrQm9CLEFBRzZCLEFBT00sQUFjb0IsVUFBQyxFQXBCM0IsTUFPSCxNQU5PLEdBT0wsV0FDTSxFQVBDLGVBUU4sR0FQVSxTQVFULGFBUGpCLEFBUXVCLG1CQUNSLFdBQ0ksZUFDRyxrQkFDSCxlQUNFLGlCQUNMLFlBQ2hCIiwiZmlsZSI6Ii9Vc2Vycy9yb25tYXNhcy9EZXNrdG9wL2Nvcm9uYWZvcm1zLm9yZy91aS9jb21wb25lbnRzL1NpZ25hdHVyZVBhZC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZVJlZiwgdXNlRWZmZWN0LCB1c2VTdGF0ZSwgRnJhZ21lbnQgfSBmcm9tIFwicmVhY3RcIjtcbmltcG9ydCBTaWduYXR1cmVQYWQgZnJvbSBcInNpZ25hdHVyZV9wYWRcIjtcbmltcG9ydCBzdHJpbmdzIGZyb20gXCIuLi9zdHJpbmdzLmpzb25cIjtcblxuZXhwb3J0IGRlZmF1bHQgKHByb3BzKSA9PiB7XG4gICAgY29uc3QgZWwgPSB1c2VSZWYobnVsbCk7XG4gICAgY29uc3QgW3BhZCwgc2V0UGFkXSA9IHVzZVN0YXRlKG51bGwpO1xuXG4gICAgdXNlRWZmZWN0KCgpID0+IHtcbiAgICAgICAgbGV0IF8gPSBuZXcgU2lnbmF0dXJlUGFkKGVsLmN1cnJlbnQsIHtcbiAgICAgICAgICAgIG9uRW5kOiAoKSA9PiB7XG4gICAgICAgICAgICAgICAgcHJvcHMub25DaGFuZ2UoXy50b0RhdGFVUkwoXCJpbWFnZS9wbmdcIikpXG4gICAgICAgICAgICB9XG4gICAgICAgIH0pO1xuICAgICAgICBzZXRQYWQoXyk7XG4gICAgfSwgW10pO1xuXG4gICAgcmV0dXJuIDxGcmFnbWVudD5cbiAgICAgICAgPHN0eWxlIGpzeD57YFxuICAgICAgICAgICAgLnNpZ25hdHVyZV93cmFwcGVye1xuICAgICAgICAgICAgICAgIHdpZHRoOiAyNzVweDtcbiAgICAgICAgICAgICAgICBtYXJnaW46IGF1dG87XG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZDogI2VlZTtcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICAgICAgICAgICAgYm9yZGVyOiAycHggc29saWQgI2NjYztcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIC5zaWduYXR1cmVfd3JhcHBlciBidXR0b257XG4gICAgICAgICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICAgICAgICAgIGxlZnQ6IDVweDtcbiAgICAgICAgICAgICAgICBib3R0b206IDVweDtcbiAgICAgICAgICAgICAgICBwYWRkaW5nOiA1cHggMTBweDtcbiAgICAgICAgICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICAgICAgICAgICAgb3V0bGluZTogbm9uZTtcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiAjRjhENTdFO1xuICAgICAgICAgICAgICAgIGNvbG9yOiAjMDAwO1xuICAgICAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgICAgICAgICBib3JkZXItcmFkaXVzOiAzcHg7XG4gICAgICAgICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgICAgICAgICAgICAgIG9wYWNpdHk6IDAuNztcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIC5zaWduYXR1cmVfd3JhcHBlciBidXR0b246aG92ZXIge29wYWNpdHk6IDE7fVxuICAgICAgICBgfTwvc3R5bGU+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwic2lnbmF0dXJlX3dyYXBwZXJcIj5cbiAgICAgICAgICAgIDxjYW52YXMgd2lkdGg9XCIyNzVcIiBoZWlnaHQ9XCIxMDBcIiByZWY9e2VsfT48L2NhbnZhcz5cbiAgICAgICAgICAgIDxidXR0b24gb25DbGljaz17KCkgPT4gcGFkLmNsZWFyKCl9IHR5cGU9XCJidXR0b25cIj57c3RyaW5nc1twcm9wcy5sYW5ndWFnZV0uQ29tbW9uLlJlc2V0fTwvYnV0dG9uPlxuICAgICAgICA8L2Rpdj5cbiAgICA8L0ZyYWdtZW50Pjtcbn0iXX0= */\n/*@ sourceURL=/Users/ronmasas/Desktop/coronaforms.org/ui/components/SignaturePad.js */"), __jsx("div", {
     className: "jsx-2057520806" + " " + "signature_wrapper",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 44,
       columnNumber: 9
     }
   }, __jsx("canvas", {
@@ -1231,7 +1245,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 45,
       columnNumber: 13
     }
   }), __jsx("button", {
@@ -1241,10 +1255,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 46,
       columnNumber: 13
     }
-  }, "RESET")));
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[props.language].Common.Reset)));
 });
 
 /***/ }),
@@ -1684,7 +1698,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 /*! exports provided: english, hebrew, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"english\":{\"Common\":{\"BankAccountNumber\":\"Bank Account Number\",\"AddAccountOwner\":\"Add Account Owner\",\"Leumi\":\"Leumi Bank\",\"Discount\":\"Discount Bank\",\"Jerusalem\":\"Jerusalem Bank\",\"AllMyMortgageLoans\":\"All My Mortgage Loans\",\"ChooseMortgageLoans\":\"Choose Mortgage Loans\",\"LoanNumbers\":\"Loan Numbers\",\"PhoneNumber\":\"Phone Number\",\"PreviewRequest\":\"Preview Request\",\"Remove\":\"Remove\",\"Next\":\"Next\",\"FullName\":\"Full Name\",\"IDNumber\":\"ID Number\",\"EmailAddressPlaceholder\":\"Email address\",\"SignUp\":\"Sign Up\",\"ComingSoon\":\"Coming soon\",\"PrivacyPolicy\":\"We respect your privacy and do not tolerate spam and will never sell your information.\"},\"Forms\":{\"ChooseBank\":{\"title\":\"Choose your bank\",\"subtitle\":\"We need to know what is your bank to get the right form.\"},\"Accounts\":{\"title\":\"Is this a sole or joint account?\",\"subtitle\":\"Make sure to add all the account owners.\"},\"MortgageTypeSelection\":{\"title\":\"Choose Mortgage Loans\",\"subtitle\":\"If you only have one choose \\\"All My Mortgage Loans\\\"\"},\"MortgageLoanNumbers\":{\"title\":\"Mortgage Loan numbers\",\"subtitle\":\"Enter the Mortgage loan numbers\"},\"BankAndContactInforamtion\":{\"title\":\"Bank & Contact Information\",\"subtitle\":\"Enter your bank account number, the near mortgage payment date and phone number.\",\"NextMortgagePaymentDate\":\"Next mortgage payment date\"},\"Signature\":{\"title\":\"We're almost done\",\"subtitle\":\"Draw your signature below.\"}},\"Header\":{\"OurMission\":\"Our mission\",\"Terms\":\"Terms\"},\"Hero\":{\"title\":\"The easiest way to find, fill and submit coronavirus related forms.\",\"subtitle\":\"The following forms are available in your region\",\"SmallBusinessAid\":\"Small Business Aid\",\"MortgageSuspension\":\"Mortgage Suspension\",\"NoFormsFound\":\"No forms were found in the current region, leave your email to get notified when new forms are available.\"},\"Countries\":{\"Israel\":\"Israel\"},\"OurMission\":{\"title\":\"The CoronaForms Mission\",\"p1\":\"We have seen the significant economic impact of the coronavirus on many people, typically the least well-paid and those self-employed or working in informal environments.\",\"p2\":\"Some governments and banks have announced economic measures to help with loans, safeguard jobs, guarantee wages and support the self-employed, but there is a lack of clarity in many countries about eligibility and the necessary paperwork behind it.\",\"p3\":\"is here to help! we use technology to make coronavirus relief more accessible for everyone.\"},\"Footer\":{\"MadeWithLoveInIsrael\":\"Made with ❤️ in Israel\"}},\"hebrew\":{\"Common\":{\"BankAccountNumber\":\"מספר חשבון בנק\",\"AddAccountOwner\":\"הוסף בעל חשבון\",\"Leumi\":\"בנק לאומי\",\"Discount\":\"בנק דיסקונט\",\"Jerusalem\":\"בנק ירושלים\",\"AllMyMortgageLoans\":\"כל המשכנתאות שלי\",\"ChooseMortgageLoans\":\"בחר הלוואות ספציפיות\",\"LoanNumbers\":\"מספרי הלוואות\",\"PhoneNumber\":\"מספר טלפון\",\"PreviewRequest\":\"תצוגה מקדימה\",\"Remove\":\"הסר\",\"Next\":\"הבא\",\"FullName\":\"שם מלא\",\"IDNumber\":\"מספר תעודת זהות\",\"EmailAddressPlaceholder\":\"כתובת מייל\",\"SignUp\":\"הירשם\",\"ComingSoon\":\"מגיע בקרוב\",\"PrivacyPolicy\":\"אנו מכבדים את פרטיותך ולעולם לא נמכור את המידע שלך.\"},\"Header\":{\"OurMission\":\"אודות\",\"Terms\":\"תנאי שימוש\"},\"Forms\":{\"ChooseBank\":{\"title\":\"בחר בנק\",\"subtitle\":\"בחר את הבנק ממנו לקחת משכנתא\"},\"Accounts\":{\"title\":\"בעלי החשבון\",\"subtitle\":\"האם זה חשבון יחיד או משותף? הוסף את כל בעלי החשבון\"},\"MortgageTypeSelection\":{\"title\":\"בחירת הלוואות\",\"subtitle\":\"אם יש לך רק משכנתא אחת בחר ״כל המשכנתאות שלי״\"},\"MortgageLoanNumbers\":{\"title\":\"מספרי הלוואות\",\"subtitle\":\"הכנס את מספרי הללואות\"},\"BankAndContactInforamtion\":{\"title\":\"מידע בנקאי ויצירת קשר\",\"subtitle\":\"הכנס את מספר חשבון הבנק שלך, תאריך חיוב המשכנתא הקרוב, ומספר הטלפון שלך.\",\"NextMortgagePaymentDate\":\"תאריך תשלום המשכנתא הבא\"},\"Signature\":{\"title\":\"כמעט סיימנו\",\"subtitle\":\"צייר את החתימה שלך למטה\"}},\"Hero\":{\"title\":\"הדרך הקלה ביותר למצוא, למלא ולשלוח טפסים בקשורים למשבר הקורונה.\",\"subtitle\":\"הטפסים הבאים זמינים במדינה שלך\",\"SmallBusinessAid\":\"עזרה לעסקים קטנים\",\"MortgageSuspension\":\"הקפאת משכנתא\",\"NoFormsFound\":\"לא נמצאו טפסים זמינים במדינה שלך, השאר את המייל שלך כדי לקבל עדכונים על טפסים חדשים.\"},\"Countries\":{\"Israel\":\"ישראל\"},\"OurMission\":{\"title\":\"המשימה שלנו\",\"p1\":\"ראינו את ההשפעה הכלכלית המשמעותית של נגיף הקורונה על אנשים רבים,אוכלוסיות מוחלשות, עצמאיים וכאלו שעובדים בעבודות לא רשמיות.\",\"p2\":\"חלק מהממשלות והבנקים הודיעו על צעדים כלכליים לסיוע בהלוואות, שמירה על משרות, הבטחת שכר ותמיכה בעצמאים, אך במדינות רבות יש חוסר בהירות לגבי הזכאות והניירת הנחוצה מאחוריה.\",\"p3\":\"כאן כדי לעזור! אנחנו משתמשים בטכנולוגיה כדי להנגיש את אותם בקלות לכולם.\"},\"Footer\":{\"MadeWithLoveInIsrael\":\"נבנה ב-❤️ בישראל\"}}}");
+module.exports = JSON.parse("{\"english\":{\"Common\":{\"Reset\":\"Clear\",\"Download\":\"Download\",\"BankAccountNumber\":\"Bank Account Number\",\"AddAccountOwner\":\"Add Account Owner\",\"Leumi\":\"Leumi Bank\",\"Discount\":\"Discount Bank\",\"Jerusalem\":\"Jerusalem Bank\",\"AllMyMortgageLoans\":\"All My Mortgage Loans\",\"ChooseMortgageLoans\":\"Choose Mortgage Loans\",\"LoanNumbers\":\"Loan Numbers\",\"PhoneNumber\":\"Phone Number\",\"PreviewRequest\":\"Preview Request\",\"Remove\":\"Remove\",\"Next\":\"Next\",\"FullName\":\"Full Name\",\"IDNumber\":\"ID Number\",\"EmailAddressPlaceholder\":\"Email address\",\"SignUp\":\"Sign Up\",\"ComingSoon\":\"Coming soon\",\"PrivacyPolicy\":\"We respect your privacy and do not tolerate spam and will never sell your information.\"},\"Forms\":{\"ChooseBank\":{\"title\":\"Choose your bank\",\"subtitle\":\"We need to know what is your bank to get the right form.\"},\"Accounts\":{\"title\":\"Is this a sole or joint account?\",\"subtitle\":\"Make sure to add all the account owners.\"},\"MortgageTypeSelection\":{\"title\":\"Choose Mortgage Loans\",\"subtitle\":\"If you only have one choose \\\"All My Mortgage Loans\\\"\"},\"MortgageLoanNumbers\":{\"title\":\"Mortgage Loan numbers\",\"subtitle\":\"Enter the Mortgage loan numbers\"},\"BankAndContactInforamtion\":{\"title\":\"Bank & Contact Information\",\"subtitle\":\"Enter your bank account number, the near mortgage payment date and phone number.\",\"NextMortgagePaymentDate\":\"Next mortgage payment date\"},\"Signature\":{\"title\":\"We're almost done\",\"subtitle\":\"Draw your signature below.\"}},\"Header\":{\"OurMission\":\"Our mission\",\"Terms\":\"Terms\"},\"Hero\":{\"title\":\"The easiest way to find, fill and submit coronavirus related forms.\",\"subtitle\":\"The following forms are available in your region\",\"SmallBusinessAid\":\"Small Business Aid\",\"MortgageSuspension\":\"Mortgage Suspension\",\"NoFormsFound\":\"No forms were found in the current region, leave your email to get notified when new forms are available.\"},\"Countries\":{\"Israel\":\"Israel\"},\"OurMission\":{\"title\":\"The CoronaForms Mission\",\"p1\":\"We have seen the significant economic impact of the coronavirus on many people, typically the least well-paid and those self-employed or working in informal environments.\",\"p2\":\"Some governments and banks have announced economic measures to help with loans, safeguard jobs, guarantee wages and support the self-employed, but there is a lack of clarity in many countries about eligibility and the necessary paperwork behind it.\",\"p3\":\"is here to help! we use technology to make coronavirus relief more accessible for everyone.\"},\"Footer\":{\"MadeWithLoveInIsrael\":\"Made with ❤️ in Israel\"}},\"hebrew\":{\"Common\":{\"Reset\":\"מחק\",\"Download\":\"הורדה\",\"BankAccountNumber\":\"מספר חשבון בנק\",\"AddAccountOwner\":\"הוסף בעל חשבון\",\"Leumi\":\"בנק לאומי\",\"Discount\":\"בנק דיסקונט\",\"Jerusalem\":\"בנק ירושלים\",\"AllMyMortgageLoans\":\"כל המשכנתאות שלי\",\"ChooseMortgageLoans\":\"בחר הלוואות ספציפיות\",\"LoanNumbers\":\"מספרי הלוואות\",\"PhoneNumber\":\"מספר טלפון\",\"PreviewRequest\":\"תצוגה מקדימה\",\"Remove\":\"הסר\",\"Next\":\"הבא\",\"FullName\":\"שם מלא\",\"IDNumber\":\"מספר תעודת זהות\",\"EmailAddressPlaceholder\":\"כתובת מייל\",\"SignUp\":\"הירשם\",\"ComingSoon\":\"מגיע בקרוב\",\"PrivacyPolicy\":\"אנו מכבדים את פרטיותך ולעולם לא נמכור את המידע שלך.\"},\"Header\":{\"OurMission\":\"אודות\",\"Terms\":\"תנאי שימוש\"},\"Forms\":{\"ChooseBank\":{\"title\":\"בחר בנק\",\"subtitle\":\"בחר את הבנק ממנו לקחת משכנתא\"},\"Accounts\":{\"title\":\"בעלי החשבון\",\"subtitle\":\"האם זה חשבון יחיד או משותף? הוסף את כל בעלי החשבון\"},\"MortgageTypeSelection\":{\"title\":\"בחירת הלוואות\",\"subtitle\":\"אם יש לך רק משכנתא אחת בחר ״כל המשכנתאות שלי״\"},\"MortgageLoanNumbers\":{\"title\":\"מספרי הלוואות\",\"subtitle\":\"הכנס את מספרי הללואות\"},\"BankAndContactInforamtion\":{\"title\":\"מידע בנקאי ויצירת קשר\",\"subtitle\":\"הכנס את מספר חשבון הבנק שלך, תאריך חיוב המשכנתא הקרוב, ומספר הטלפון שלך.\",\"NextMortgagePaymentDate\":\"תאריך תשלום המשכנתא הבא\"},\"Signature\":{\"title\":\"כמעט סיימנו\",\"subtitle\":\"צייר את החתימה שלך למטה\"}},\"Hero\":{\"title\":\"הדרך הקלה ביותר למצוא, למלא ולשלוח טפסים בקשורים למשבר הקורונה.\",\"subtitle\":\"הטפסים הבאים זמינים במדינה שלך\",\"SmallBusinessAid\":\"עזרה לעסקים קטנים\",\"MortgageSuspension\":\"הקפאת משכנתא\",\"NoFormsFound\":\"לא נמצאו טפסים זמינים במדינה שלך, השאר את המייל שלך כדי לקבל עדכונים על טפסים חדשים.\"},\"Countries\":{\"Israel\":\"ישראל\"},\"OurMission\":{\"title\":\"המשימה שלנו\",\"p1\":\"ראינו את ההשפעה הכלכלית המשמעותית של נגיף הקורונה על אנשים רבים,אוכלוסיות מוחלשות, עצמאיים וכאלו שעובדים בעבודות לא רשמיות.\",\"p2\":\"חלק מהממשלות והבנקים הודיעו על צעדים כלכליים לסיוע בהלוואות, שמירה על משרות, הבטחת שכר ותמיכה בעצמאים, אך במדינות רבות יש חוסר בהירות לגבי הזכאות והניירת הנחוצה מאחוריה.\",\"p3\":\"כאן כדי לעזור! אנחנו משתמשים בטכנולוגיה כדי להנגיש את אותם בקלות לכולם.\"},\"Footer\":{\"MadeWithLoveInIsrael\":\"נבנה ב-❤️ בישראל\"}}}");
 
 /***/ }),
 

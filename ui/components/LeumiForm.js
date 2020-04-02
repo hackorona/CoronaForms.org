@@ -41,12 +41,12 @@ export default (props) => {
     }
 
     function processPdfDocument(_download) {
-        setDownload(_download ? true : false);
+        setDownload(_download ? "1" : "0");
         formEl.current.submit();
     }
 
     return <Fragment>
-        <form style={{ display: "none" }} ref={formEl} method="POST" target="_blank" action={`https://api.coronaforms.org/api/v1/pdf/leumi${download ? "?download=1" : ""}`}>
+        <form style={{ display: "none" }} ref={formEl} method="POST" target="_blank" action="https://api.coronaforms.org/api/v1/pdf/leumi">
             <input type="text" name="full_name" value={fullName1} />
             <input type="text" name="full_name_2" value={fullName2} />
             <input type="text" name="full_name_3" value={fullName3} />
@@ -61,6 +61,7 @@ export default (props) => {
             <input type="text" name="phone_number" value={phoneNumber} />
             <input type="text" name="sig" value={signature} />
             <input type="text" name="current_date" value="1" />
+            <input type="text" name="download" value={download} />
         </form>
         {step === 0 && <Fragment>
             <h1 className="mb-2">{strings[props.language].Forms.Accounts.title}</h1>
@@ -111,7 +112,7 @@ export default (props) => {
         {step === 4 && <Fragment>
             <h1 className="mb-2">{strings[props.language].Forms.Signature.title}</h1>
             <h2 className="mb-2">{strings[props.language].Forms.Signature.subtitle}</h2>
-            <SignaturePad onChange={signatureDataURL => setSignature(signatureDataURL)} />
+            <SignaturePad language={props.language} onChange={signatureDataURL => setSignature(signatureDataURL)} />
             <Button rtl={props.language === "hebrew" ? true : false} onClick={() => processPdfDocument(false)} className="mt-2" arrow>{strings[props.language].Common.PreviewRequest}</Button>
             <Button rtl={props.language === "hebrew" ? true : false} onClick={() => processPdfDocument(true)} className="mt-2" arrow>{strings[props.language].Common.Download}</Button>
         </Fragment>}
