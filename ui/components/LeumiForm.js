@@ -44,7 +44,7 @@ export default (props) => {
     }
 
     return <Fragment>
-        <form style={{ display: "none" }} ref={formEl} method="POST" target="_blank" action="http://localhost:8080/api/v1/pdf/leumi">
+        <form style={{ display: "none" }} ref={formEl} method="POST" target="_blank" action="https://api.coronaforms.org/api/v1/pdf/leumi">
             <input type="text" name="full_name" value={fullName1} />
             <input type="text" name="full_name_2" value={fullName2} />
             <input type="text" name="full_name_3" value={fullName3} />
