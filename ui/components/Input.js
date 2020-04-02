@@ -58,6 +58,8 @@ export default props => {
             transition: .15s ease;
             box-sizing: border-box;
             -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
             transition-property: all;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
