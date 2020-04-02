@@ -36,7 +36,7 @@ export default () => {
     return language && <div className={language}>
         <Container>
             <Row className="header">
-                <Col xs={4}><img onClick={() => setStep("main")} src="/logo.svg" /></Col>
+                <Col xs={4}><img onTouchEnd={() => setStep("main")} onClick={() => setStep("main")} src="/logo.svg" /></Col>
                 <Col xs={8} className="menuItems">
                     <a href="#mission">{strings[language].Header.OurMission}</a>
                     <a href="#terms-of-use">{strings[language].Header.Terms}</a>

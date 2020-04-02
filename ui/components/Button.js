@@ -16,7 +16,7 @@ function Button(props) {
             transition: .15s ease;
             transition-property: all;
             background-color: #F8D57E;
-            margin-right: 26px;
+            margin-${props.rtl ? "left" : "right"}: 26px;
             ${props.arrow && props.rtl ? "padding-left: 30px;" : ""}
             ${props.arrow && !props.rtl ? "padding-right: 30px;" : ""}
         }
@@ -53,7 +53,7 @@ function Button(props) {
             button{
                 width: 100%;
                 margin-bottom: 13px;
-                margin-right: none;
+                margin-${props.rtl ? "left" : "right"}: 0px;
             }
             button:hover{transform: scale(1);}
             button .tooltip{

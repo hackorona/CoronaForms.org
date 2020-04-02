@@ -42,7 +42,7 @@ export default (props) => {
             .signature_wrapper button:hover {opacity: 1;}
         `}</style>
         <div className="signature_wrapper">
-            <canvas width="275" height="100" ref={el}></canvas>
+            <canvas width="275" height="150" ref={el}></canvas>
             <button onClick={() => pad.clear()} type="button">{strings[props.language].Common.Reset}</button>
         </div>
     </Fragment>;

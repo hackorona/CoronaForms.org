@@ -43,6 +43,7 @@ export default (props) => {
     function setStepOnSubmit(event, stepValue) {
         event.preventDefault();
         setStep(stepValue);
+        window.scrollTo(0, 0);
     }
 
     function processPdfDocument(_download) {
@@ -75,15 +76,15 @@ export default (props) => {
             <h2 className="mb-2">{strings[props.language].Forms.Accounts.subtitle}</h2>
             <form onSubmit={(e) => setStepOnSubmit(e, 1)}>
                 <Input rtl={props.language === "hebrew" ? true : false} autoFocus required value={fullName1} onChange={e => setFullName1(e.target.value)} className="field not-round" placeholder={strings[props.language].Common.FullName} />
-                <Input rtl={props.language === "hebrew" ? true : false} required value={IDNumber1} onChange={e => setIDNumber1(e.target.value)} className="field not-round" placeholder={strings[props.language].Common.IDNumber} />
+                <Input rtl={props.language === "hebrew" ? true : false} required type="tel" value={IDNumber1} onChange={e => setIDNumber1(e.target.value)} className="field not-round" placeholder={strings[props.language].Common.IDNumber} />
                 {accountVisible1 && <div className="mt-2 name_and_id">
                     <Input rtl={props.language === "hebrew" ? true : false} required value={fullName2} onChange={e => setFullName2(e.target.value)} className="field not-round" placeholder={strings[props.language].Common.FullName} />
-                    <Input rtl={props.language === "hebrew" ? true : false} required value={IDNumber2} onChange={e => setIDNumber2(e.target.value)} className="field not-round" placeholder={strings[props.language].Common.IDNumber} />
+                    <Input rtl={props.language === "hebrew" ? true : false} required type="tel" value={IDNumber2} onChange={e => setIDNumber2(e.target.value)} className="field not-round" placeholder={strings[props.language].Common.IDNumber} />
                     <Button rtl={props.language === "hebrew" ? true : false} onClick={() => setAccountVisible1(false)}>{strings[props.language].Common.Remove}</Button>
                 </div>}
                 {accountVisible2 && <div className="mt-2 mb-2 name_and_id">
                     <Input rtl={props.language === "hebrew" ? true : false} required value={fullName3} onChange={e => setFullName3(e.target.value)} className="field not-round" placeholder={strings[props.language].Common.FullName} />
-                    <Input rtl={props.language === "hebrew" ? true : false} required value={IDNumber3} onChange={e => setIDNumber3(e.target.value)} className="field not-round" placeholder={strings[props.language].Common.IDNumber} />
+                    <Input rtl={props.language === "hebrew" ? true : false} required type="tel" value={IDNumber3} onChange={e => setIDNumber3(e.target.value)} className="field not-round" placeholder={strings[props.language].Common.IDNumber} />
                     <Button rtl={props.language === "hebrew" ? true : false} onClick={() => setAccountVisible2(false)}>{strings[props.language].Common.Remove}</Button>
                 </div>}
                 <div className="mt-2">
@@ -110,9 +111,9 @@ export default (props) => {
             <form onSubmit={(e) => setStepOnSubmit(e, 4)}>
                 <h1 className="mb-2">{strings[props.language].Forms.BankAndContactInforamtion.title}</h1>
                 <h2 className="mb-2">{strings[props.language].Forms.BankAndContactInforamtion.subtitle}</h2>
-                <Input rtl={props.language === "hebrew" ? true : false} autoFocus value={bankAccountNumber} onChange={e => setBankAccountNumber(e.target.value)} required className="field not-round" placeholder={strings[props.language].Common.BankAccountNumber} />
+                <Input type="tel" rtl={props.language === "hebrew" ? true : false} autoFocus value={bankAccountNumber} onChange={e => setBankAccountNumber(e.target.value)} required className="field not-round" placeholder={strings[props.language].Common.BankAccountNumber} />
                 <Input rtl={props.language === "hebrew" ? true : false} value={nearMortgageDate} onChange={e => setNearMortgageDate(e.target.value)} label={strings[props.language].Forms.BankAndContactInforamtion.NextMortgagePaymentDate} type="date" required className="field not-round" />
-                <Input rtl={props.language === "hebrew" ? true : false} value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} required className="field not-round" placeholder={strings[props.language].Common.PhoneNumber} />
+                <Input type="tel" rtl={props.language === "hebrew" ? true : false} value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} required className="field not-round" placeholder={strings[props.language].Common.PhoneNumber} />
                 <Button rtl={props.language === "hebrew" ? true : false} className="mt-2" arrow onClick={() => setStep(3)}>{strings[props.language].Common.Next}</Button>
             </form>
         </Fragment>}
@@ -120,8 +121,10 @@ export default (props) => {
             <h1 className="mb-2">{strings[props.language].Forms.Signature.title}</h1>
             <h2 className="mb-2">{strings[props.language].Forms.Signature.subtitle}</h2>
             <SignaturePad language={props.language} onChange={signatureDataURL => setSignature(signatureDataURL)} />
-            <Button rtl={props.language === "hebrew" ? true : false} onClick={() => processPdfDocument(false)} className="mt-2" arrow>{strings[props.language].Common.PreviewRequest}</Button>
-            <Button rtl={props.language === "hebrew" ? true : false} onClick={() => processPdfDocument(true)} className="mt-2" arrow>{strings[props.language].Common.Download}</Button>
+            <div className="mt-2">
+                <Button rtl={props.language === "hebrew" ? true : false} onClick={() => processPdfDocument(false)} arrow>{strings[props.language].Common.PreviewRequest}</Button>
+                <Button rtl={props.language === "hebrew" ? true : false} onClick={() => processPdfDocument(true)} arrow>{strings[props.language].Common.Download}</Button>
+            </div>
         </Fragment>}
     </Fragment>
 }

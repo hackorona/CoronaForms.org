@@ -20,9 +20,10 @@ export default props => {
     }
 
     function handleLabelClick() {
+        el.current.focus();
         setTimeout(() => {
             el.current.focus();
-        }, 150);
+        }, 1);
     }
 
     return <Fragment>
@@ -46,10 +47,19 @@ export default props => {
             font-weight: bold;
             color: #000;
         }
+        .input-field input[type=date]{
+            color:#fff;
+        }
+        .input-field.focus input[type=date]{
+            color: #000;
+        }
         .input-field input{
             border: none;
             outline: none;
+            border-radius: 0px;
             width: 100%;
+            height: 68px;
+            box-sizing: border-box;
             padding: 20px;
             font-size: 24px;
             padding-top: 28px;
@@ -72,8 +82,8 @@ export default props => {
         }
         `}</style>
         <div className={["input-field", focus ? "focus" : ""].join(" ")}>
-            <label onClick={handleLabelClick}>{props.label || props.placeholder}</label>
-            <input autoFocus={props.autoFocus} required type={(props.type === "date" && focus) ? "date" : "text"} ref={el} value={value} onChange={handleChange} onFocus={() => setFocus(true)} onBlur={handleBlur} />
+            <label onClick={handleLabelClick} onTouchEnd={handleLabelClick}>{props.label || props.placeholder}</label>
+            <input autoFocus={props.autoFocus} required type={props.type} ref={el} value={value} onChange={handleChange} onFocus={() => setFocus(true)} onBlur={handleBlur} />
         </div>
     </Fragment>
 }
