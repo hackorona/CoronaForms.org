@@ -14,10 +14,8 @@ const app: Application = express();
 app.use(express.static('public'))
 app.use(urlencoded({ extended: false }));
 
-app.post("/api/v1/submit", cors({
-    origin: 'https://coronaforms.org',
-    optionsSuccessStatus: 200
-}), (req: Request, res: Response) => {
+app.options("/api/v1/submit", cors());
+app.post("/api/v1/submit", cors(), (req: Request, res: Response) => {
     let ip = req.headers["cf-connecting-ip"] || req.headers["x-forwarded-for"] || req.connection.remoteAddress;
     let geoData: any = geoipLite.lookup(ip.toString());
     let countryName = isoCountryCodes.get(geoData.country);
