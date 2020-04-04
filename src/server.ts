@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import bankPdf from "./bank-pdf";
 import geoipLite from "geoip-lite";
-import { urlencoded } from "body-parser";
+import { urlencoded, json } from "body-parser";
 import isoCountryCodes from "./iso-country-codes";
 import express, { Application, Request, Response } from "express";
 import { storagePath } from "./utils";
@@ -15,7 +15,7 @@ app.use(express.static('public'))
 app.use(urlencoded({ extended: false }));
 
 app.options("/api/v1/submit", cors());
-app.post("/api/v1/submit", cors(), (req: Request, res: Response) => {
+app.post("/api/v1/submit", cors(), json(), (req: Request, res: Response) => {
     let ip = req.headers["cf-connecting-ip"] || req.headers["x-forwarded-for"] || req.connection.remoteAddress;
     let geoData: any = geoipLite.lookup(ip.toString());
     let countryName = isoCountryCodes.get(geoData.country);
