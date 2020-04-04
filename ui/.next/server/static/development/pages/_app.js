@@ -225,7 +225,7 @@ function Hero(props) {
       headers: {
         "Content-Type": "application/json"
       },
-      mode: "no-cors",
+      mode: "cors",
       body: JSON.stringify({
         email: emailAddress,
         country: country
@@ -550,7 +550,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       headers: {
         "Content-Type": "application/json"
       },
-      mode: "no-cors",
+      mode: "cors",
       body: JSON.stringify({
         email: emailAddress,
         data: {
