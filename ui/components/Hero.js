@@ -13,6 +13,7 @@ function Hero(props) {
             headers: {
                 "Content-Type": "application/json"
             },
+            mode: "no-cors",
             body: JSON.stringify({
                 email: emailAddress,
                 country: country
