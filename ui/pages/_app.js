@@ -1,9 +1,10 @@
 import "./style.css";
+import Head from "next/head";
 import Hero from "../components/Hero";
 import strings from "../strings.json";
 import Button from "../components/Button";
-import { useState, Fragment, useEffect } from "react";
 import LeumiForm from "../components/LeumiForm";
+import { useState, Fragment, useEffect } from "react";
 import { Container, Row, Col } from "react-grid-system";
 
 export default () => {
@@ -35,6 +36,9 @@ export default () => {
 
     return language && <div className={language}>
         <Container>
+            <Head>
+                <title>CoronaForms</title>
+            </Head>
             <Row className="header">
                 <Col xs={4}><img onTouchEnd={() => setStep("main")} onClick={() => setStep("main")} src="/logo.svg" /></Col>
                 <Col xs={8} className="menuItems">

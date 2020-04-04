@@ -1,21 +1,21 @@
 {
   "devFiles": [],
   "lowPriorityFiles": [
-    "static/5kOlKAmUssQ6wqQfptdGC/_buildManifest.js",
-    "static/5kOlKAmUssQ6wqQfptdGC/_ssgManifest.js"
+    "static/Tj2qHhuE_O8u776SN-sa1/_buildManifest.js",
+    "static/Tj2qHhuE_O8u776SN-sa1/_ssgManifest.js"
   ],
   "pages": {
     "/_app": [
       "static/runtime/webpack-b65cab0b00afd201cbda.js",
       "static/chunks/framework.2689030919a9ba0449ff.js",
-      "static/chunks/commons.b0ce49c01c4ac5c30a65.js",
-      "static/css/2c267855382644253949.css",
+      "static/chunks/commons.6abe2e1a1bca6530693a.js",
+      "static/css/2be28d8b2029e905e3cd.css",
       "static/runtime/main-ae61d59960dd81da9c6e.js"
     ],
     "/_error": [
       "static/runtime/webpack-b65cab0b00afd201cbda.js",
       "static/chunks/framework.2689030919a9ba0449ff.js",
-      "static/chunks/commons.b0ce49c01c4ac5c30a65.js",
+      "static/chunks/commons.6abe2e1a1bca6530693a.js",
       "static/runtime/main-ae61d59960dd81da9c6e.js"
     ],
     "/_polyfills": [

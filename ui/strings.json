@@ -1,6 +1,9 @@
 {
     "english": {
         "Common": {
+            "Back": "Back",
+            "ThankYou": "Thank you, We'll keep you up to date about new forms.",
+            "StayUpToDate": "Stay up to date",
             "Reset": "Clear",
             "Download": "Download",
             "BankAccountNumber": "Bank Account Number",
@@ -47,6 +50,10 @@
             "Signature": {
                 "title": "We're almost done",
                 "subtitle": "Draw your signature below."
+            },
+            "StayUpToDate": {
+                "title": "One last step",
+                "subtitle": "Stay up to date on new forms in your country."
             }
         },
         "Header": {
@@ -75,6 +82,9 @@
     },
     "hebrew": {
         "Common": {
+            "Back": "חזור",
+            "ThankYou": "תודה, נעדכן אותך על טפסים חדשים.",
+            "StayUpToDate": "הישאר מעודכן",
             "Reset": "מחק",
             "Download": "הורדה",
             "BankAccountNumber": "מספר חשבון בנק",
@@ -125,10 +135,14 @@
             "Signature": {
                 "title": "כמעט סיימנו",
                 "subtitle": "צייר את החתימה שלך למטה"
+            },
+            "StayUpToDate": {
+                "title": "עוד צעד אחד",
+                "subtitle": "קבל עדכונים על טפסים חדשים במדינה שלך."
             }
         },
         "Hero": {
-            "title": "הדרך הקלה ביותר למצוא, למלא ולשלוח טפסים בקשורים למשבר הקורונה.",
+            "title": "הדרך הקלה ביותר למצוא, למלא ולשלוח טפסים הקשורים למשבר הקורונה.",
             "subtitle": "הטפסים הבאים זמינים במדינה שלך",
             "SmallBusinessAid": "עזרה לעסקים קטנים",
             "MortgageSuspension": "הקפאת משכנתא",

@@ -1,8 +1,9 @@
 import strings from "../strings.json";
+import Input from "../components/Input";
 import Button from "../components/Button";
 import { useState, Fragment, useRef } from "react";
-import Input from "../components/Input";
 import SignaturePad from "../components/SignaturePad";
+import NewsletterForm from "../components/NewsletterForm";
 
 export default (props) => {
     const formEl = useRef(null);
@@ -51,6 +52,27 @@ export default (props) => {
         setTimeout(() => {
             formEl.current.submit();
         }, 100);
+    }
+
+    async function handleSubmitRequest(emailAddress) {
+        const response = await fetch("https://api.coronaforms.org/api/v1/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: emailAddress,
+                data: {
+                    fullName1, fullName2, fullName3,
+                    IDNumber1, IDNumber2, IDNumber3, loanType,
+                    loanNumbers, bankAccountNumber, nearMortgageDate,
+                    phoneNumber, signature
+                }
+            })
+        });
+        if (response.status === 200) {
+            alert(strings[props.language].Common.ThankYou);
+        }
     }
 
     return <Fragment>
@@ -124,7 +146,14 @@ export default (props) => {
             <div className="mt-2">
                 <Button rtl={props.language === "hebrew" ? true : false} onClick={() => processPdfDocument(false)} arrow>{strings[props.language].Common.PreviewRequest}</Button>
                 <Button rtl={props.language === "hebrew" ? true : false} onClick={() => processPdfDocument(true)} arrow>{strings[props.language].Common.Download}</Button>
+                <Button rtl={props.language === "hebrew" ? true : false} onClick={() => setStep(5)} arrow>{strings[props.language].Common.StayUpToDate}</Button>
             </div>
+        </Fragment>}
+        {step === 5 && <Fragment>
+            <h1 className="mb-2">{strings[props.language].Forms.StayUpToDate.title}</h1>
+            <h2 className="mb-2">{strings[props.language].Forms.StayUpToDate.subtitle}</h2>
+            <NewsletterForm subtitle={strings[props.language].Common.PrivacyPolicy} onSubmit={handleSubmitRequest} rtl={props.language === "hebrew"} />
+            <Button className="mt-2" onClick={() => setStep(4)} arrow>{strings[props.language].Common.Back}</Button>
         </Fragment>}
     </Fragment>
 }

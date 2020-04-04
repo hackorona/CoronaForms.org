@@ -218,6 +218,24 @@ function Hero(props) {
     0: loading,
     1: setLoading
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true);
+
+  async function handleSubmitRequest(emailAddress) {
+    const response = await fetch("https://api.coronaforms.org/api/v1/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: emailAddress,
+        country: country
+      })
+    });
+
+    if (response.status === 200) {
+      alert(_strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.ThankYou);
+    }
+  }
+
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     async function fetchData() {
       const response = await fetch("https://api.coronaforms.org/api/v1/geo");
@@ -235,7 +253,7 @@ function Hero(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 38,
       columnNumber: 12
     }
   }, loading && __jsx("div", {
@@ -243,7 +261,7 @@ function Hero(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 39,
       columnNumber: 21
     }
   }, __jsx("img", {
@@ -252,21 +270,21 @@ function Hero(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 39,
       columnNumber: 46
     }
   })), !loading && country === "Israel" && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 40,
       columnNumber: 46
     }
   }, props.children), !loading && country !== "Israel" && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 43,
       columnNumber: 46
     }
   }, __jsx("h1", {
@@ -274,7 +292,7 @@ function Hero(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 44,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__.english.Hero.title), __jsx("h2", {
@@ -282,15 +300,16 @@ function Hero(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 45,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__.english.Hero.NoFormsFound), __jsx(_components_NewsletterForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    onSubmit: handleSubmitRequest,
     subtitle: _strings_json__WEBPACK_IMPORTED_MODULE_1__.english.Common.PrivacyPolicy,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 46,
       columnNumber: 13
     }
   })));
@@ -417,12 +436,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _strings_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../strings.json */ "./strings.json");
 var _strings_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../strings.json */ "./strings.json", 1);
-/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Button */ "./components/Button.js");
-/* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Input */ "./components/Input.js");
+/* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Input */ "./components/Input.js");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Button */ "./components/Button.js");
 /* harmony import */ var _components_SignaturePad__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/SignaturePad */ "./components/SignaturePad.js");
+/* harmony import */ var _components_NewsletterForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/NewsletterForm */ "./components/NewsletterForm.js");
 var _jsxFileName = "/Users/ronmasas/Desktop/coronaforms.org/ui/components/LeumiForm.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -522,11 +543,41 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     }, 100);
   }
 
+  async function handleSubmitRequest(emailAddress) {
+    const response = await fetch("https://api.coronaforms.org/api/v1/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: emailAddress,
+        data: {
+          fullName1,
+          fullName2,
+          fullName3,
+          IDNumber1,
+          IDNumber2,
+          IDNumber3,
+          loanType,
+          loanNumbers,
+          bankAccountNumber,
+          nearMortgageDate,
+          phoneNumber,
+          signature
+        }
+      })
+    });
+
+    if (response.status === 200) {
+      alert(_strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.ThankYou);
+    }
+  }
+
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 78,
       columnNumber: 12
     }
   }, __jsx("form", {
@@ -540,7 +591,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 79,
       columnNumber: 9
     }
   }, __jsx("input", {
@@ -550,7 +601,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 80,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -560,7 +611,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 81,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -570,7 +621,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 82,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -580,7 +631,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 83,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -590,7 +641,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 84,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -600,7 +651,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 85,
       columnNumber: 13
     }
   }), loanType === "all_loans" && __jsx("input", {
@@ -610,7 +661,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 86,
       columnNumber: 42
     }
   }), loanType === "specific_loans" && __jsx("input", {
@@ -620,7 +671,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 87,
       columnNumber: 47
     }
   }), __jsx("input", {
@@ -630,7 +681,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 88,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -640,7 +691,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 89,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -650,7 +701,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 90,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -660,7 +711,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 91,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -670,7 +721,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 92,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -680,7 +731,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 93,
       columnNumber: 13
     }
   }), __jsx("input", {
@@ -690,184 +741,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 94,
       columnNumber: 13
     }
   })), step === 0 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 74,
-      columnNumber: 24
-    }
-  }, __jsx("h1", {
-    className: "mb-2",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 75,
-      columnNumber: 13
-    }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Accounts.title), __jsx("h2", {
-    className: "mb-2",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 76,
-      columnNumber: 13
-    }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Accounts.subtitle), __jsx("form", {
-    onSubmit: e => setStepOnSubmit(e, 1),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 77,
-      columnNumber: 13
-    }
-  }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    autoFocus: true,
-    required: true,
-    value: fullName1,
-    onChange: e => setFullName1(e.target.value),
-    className: "field not-round",
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.FullName,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78,
-      columnNumber: 17
-    }
-  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    required: true,
-    type: "tel",
-    value: IDNumber1,
-    onChange: e => setIDNumber1(e.target.value),
-    className: "field not-round",
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.IDNumber,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 79,
-      columnNumber: 17
-    }
-  }), accountVisible1 && __jsx("div", {
-    className: "mt-2 name_and_id",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 80,
-      columnNumber: 37
-    }
-  }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    required: true,
-    value: fullName2,
-    onChange: e => setFullName2(e.target.value),
-    className: "field not-round",
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.FullName,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 81,
-      columnNumber: 21
-    }
-  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    required: true,
-    type: "tel",
-    value: IDNumber2,
-    onChange: e => setIDNumber2(e.target.value),
-    className: "field not-round",
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.IDNumber,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 82,
-      columnNumber: 21
-    }
-  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    onClick: () => setAccountVisible1(false),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 83,
-      columnNumber: 21
-    }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Remove)), accountVisible2 && __jsx("div", {
-    className: "mt-2 mb-2 name_and_id",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 85,
-      columnNumber: 37
-    }
-  }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    required: true,
-    value: fullName3,
-    onChange: e => setFullName3(e.target.value),
-    className: "field not-round",
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.FullName,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 86,
-      columnNumber: 21
-    }
-  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    required: true,
-    type: "tel",
-    value: IDNumber3,
-    onChange: e => setIDNumber3(e.target.value),
-    className: "field not-round",
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.IDNumber,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87,
-      columnNumber: 21
-    }
-  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    onClick: () => setAccountVisible2(false),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 88,
-      columnNumber: 21
-    }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Remove)), __jsx("div", {
-    className: "mt-2",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 90,
-      columnNumber: 17
-    }
-  }, (!accountVisible1 || !accountVisible2) && __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    onClick: addAccountOwner,
-    type: "button",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 91,
-      columnNumber: 64
-    }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.AddAccountOwner), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    arrow: true,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 92,
-      columnNumber: 21
-    }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Next)))), step === 1 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -882,7 +759,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       lineNumber: 97,
       columnNumber: 13
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageTypeSelection.title), __jsx("h2", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Accounts.title), __jsx("h2", {
     className: "mb-2",
     __self: undefined,
     __source: {
@@ -890,30 +767,204 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
       lineNumber: 98,
       columnNumber: 13
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageTypeSelection.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    rtl: props.language === "hebrew" ? true : false,
-    arrow: true,
-    onClick: () => (setLoanType("all_loans"), setStep(3)),
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Accounts.subtitle), __jsx("form", {
+    onSubmit: e => setStepOnSubmit(e, 1),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 99,
       columnNumber: 13
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.AllMyMortgageLoans), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    autoFocus: true,
+    required: true,
+    value: fullName1,
+    onChange: e => setFullName1(e.target.value),
+    className: "field not-round",
+    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.FullName,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100,
+      columnNumber: 17
+    }
+  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    required: true,
+    type: "tel",
+    value: IDNumber1,
+    onChange: e => setIDNumber1(e.target.value),
+    className: "field not-round",
+    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.IDNumber,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101,
+      columnNumber: 17
+    }
+  }), accountVisible1 && __jsx("div", {
+    className: "mt-2 name_and_id",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 102,
+      columnNumber: 37
+    }
+  }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    required: true,
+    value: fullName2,
+    onChange: e => setFullName2(e.target.value),
+    className: "field not-round",
+    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.FullName,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 103,
+      columnNumber: 21
+    }
+  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    required: true,
+    type: "tel",
+    value: IDNumber2,
+    onChange: e => setIDNumber2(e.target.value),
+    className: "field not-round",
+    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.IDNumber,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 104,
+      columnNumber: 21
+    }
+  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    onClick: () => setAccountVisible1(false),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105,
+      columnNumber: 21
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Remove)), accountVisible2 && __jsx("div", {
+    className: "mt-2 mb-2 name_and_id",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107,
+      columnNumber: 37
+    }
+  }, __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    required: true,
+    value: fullName3,
+    onChange: e => setFullName3(e.target.value),
+    className: "field not-round",
+    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.FullName,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 108,
+      columnNumber: 21
+    }
+  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    required: true,
+    type: "tel",
+    value: IDNumber3,
+    onChange: e => setIDNumber3(e.target.value),
+    className: "field not-round",
+    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.IDNumber,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 109,
+      columnNumber: 21
+    }
+  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    onClick: () => setAccountVisible2(false),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110,
+      columnNumber: 21
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Remove)), __jsx("div", {
+    className: "mt-2",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 112,
+      columnNumber: 17
+    }
+  }, (!accountVisible1 || !accountVisible2) && __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    onClick: addAccountOwner,
+    type: "button",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 113,
+      columnNumber: 64
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.AddAccountOwner), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    arrow: true,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 114,
+      columnNumber: 21
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Next)))), step === 1 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 118,
+      columnNumber: 24
+    }
+  }, __jsx("h1", {
+    className: "mb-2",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 119,
+      columnNumber: 13
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageTypeSelection.title), __jsx("h2", {
+    className: "mb-2",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 120,
+      columnNumber: 13
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageTypeSelection.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    arrow: true,
+    onClick: () => (setLoanType("all_loans"), setStep(3)),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 121,
+      columnNumber: 13
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.AllMyMortgageLoans), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     rtl: props.language === "hebrew" ? true : false,
     onClick: () => (setLoanType("specific_loans"), setStep(2)),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 122,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.ChooseMortgageLoans)), step === 2 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 124,
       columnNumber: 24
     }
   }, __jsx("form", {
@@ -921,7 +972,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 125,
       columnNumber: 13
     }
   }, __jsx("h1", {
@@ -929,7 +980,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 126,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageLoanNumbers.title), __jsx("h2", {
@@ -937,10 +988,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105,
+      lineNumber: 127,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageLoanNumbers.subtitle), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.MortgageLoanNumbers.subtitle), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
     rtl: props.language === "hebrew" ? true : false,
     autoFocus: true,
     value: loanNumbers,
@@ -951,24 +1002,24 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 128,
       columnNumber: 17
     }
-  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     rtl: props.language === "hebrew" ? true : false,
     className: "mt-2",
     arrow: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107,
+      lineNumber: 129,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Next))), step === 3 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 132,
       columnNumber: 24
     }
   }, __jsx("form", {
@@ -976,7 +1027,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 133,
       columnNumber: 13
     }
   }, __jsx("h1", {
@@ -984,7 +1035,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 134,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.BankAndContactInforamtion.title), __jsx("h2", {
@@ -992,10 +1043,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 135,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.BankAndContactInforamtion.subtitle), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.BankAndContactInforamtion.subtitle), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
     type: "tel",
     rtl: props.language === "hebrew" ? true : false,
     autoFocus: true,
@@ -1007,10 +1058,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 136,
       columnNumber: 17
     }
-  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
     rtl: props.language === "hebrew" ? true : false,
     value: nearMortgageDate,
     onChange: e => setNearMortgageDate(e.target.value),
@@ -1021,10 +1072,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 137,
       columnNumber: 17
     }
-  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
     type: "tel",
     rtl: props.language === "hebrew" ? true : false,
     value: phoneNumber,
@@ -1035,10 +1086,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 138,
       columnNumber: 17
     }
-  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     rtl: props.language === "hebrew" ? true : false,
     className: "mt-2",
     arrow: true,
@@ -1046,14 +1097,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117,
+      lineNumber: 139,
       columnNumber: 17
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Next))), step === 4 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120,
+      lineNumber: 142,
       columnNumber: 24
     }
   }, __jsx("h1", {
@@ -1061,7 +1112,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121,
+      lineNumber: 143,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Signature.title), __jsx("h2", {
@@ -1069,7 +1120,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122,
+      lineNumber: 144,
       columnNumber: 13
     }
   }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.Signature.subtitle), __jsx(_components_SignaturePad__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1078,7 +1129,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123,
+      lineNumber: 145,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -1086,30 +1137,83 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 146,
       columnNumber: 13
     }
-  }, __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     rtl: props.language === "hebrew" ? true : false,
     onClick: () => processPdfDocument(false),
     arrow: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125,
+      lineNumber: 147,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.PreviewRequest), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.PreviewRequest), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     rtl: props.language === "hebrew" ? true : false,
     onClick: () => processPdfDocument(true),
     arrow: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 148,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Download))));
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Download), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    rtl: props.language === "hebrew" ? true : false,
+    onClick: () => setStep(5),
+    arrow: true,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 149,
+      columnNumber: 17
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.StayUpToDate))), step === 5 && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 152,
+      columnNumber: 24
+    }
+  }, __jsx("h1", {
+    className: "mb-2",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 153,
+      columnNumber: 13
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.StayUpToDate.title), __jsx("h2", {
+    className: "mb-2",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 154,
+      columnNumber: 13
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Forms.StayUpToDate.subtitle), __jsx(_components_NewsletterForm__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    subtitle: _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.PrivacyPolicy,
+    onSubmit: handleSubmitRequest,
+    rtl: props.language === "hebrew",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 155,
+      columnNumber: 13
+    }
+  }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "mt-2",
+    onClick: () => setStep(4),
+    arrow: true,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 156,
+      columnNumber: 13
+    }
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_1__[props.language].Common.Back)));
 });
 
 /***/ }),
@@ -1127,9 +1231,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Button */ "./components/Button.js");
-/* harmony import */ var _strings_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../strings.json */ "./strings.json");
-var _strings_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../strings.json */ "./strings.json", 1);
+/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Input */ "./components/Input.js");
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Button */ "./components/Button.js");
+/* harmony import */ var _strings_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../strings.json */ "./strings.json");
+var _strings_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../strings.json */ "./strings.json", 1);
 var _jsxFileName = "/Users/ronmasas/Desktop/coronaforms.org/ui/components/NewsletterForm.js";
 
 
@@ -1138,14 +1243,24 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+
 function NewsletterForm(props) {
-  const el = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(null);
+  const {
+    0: value,
+    1: setValue
+  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null);
 
   function handleSubmit(event) {
     event.preventDefault();
 
     if (typeof props.onSubmit === "function") {
-      props.onSubmit(el.current.value);
+      props.onSubmit(value);
+    }
+  }
+
+  function handleChange(e) {
+    if (e && e.target) {
+      setValue(e.target.value);
     }
   }
 
@@ -1153,45 +1268,51 @@ function NewsletterForm(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 22,
       columnNumber: 12
     }
   }, __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-    id: "2025885668",
+    id: "2804353344",
+    dynamic: [props.rtl ? "right" : "left"],
     __self: this
-  }, "p.small.jsx-2025885668{font-size:15px;margin:0;margin-top:7.5px;text-align:left;color:#111;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9yb25tYXNhcy9EZXNrdG9wL2Nvcm9uYWZvcm1zLm9yZy91aS9jb21wb25lbnRzL05ld3NsZXR0ZXJGb3JtLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQWVvQixBQUNzQixlQUFRLFNBQWdCLGlCQUFlLGdCQUFVLFdBQUMiLCJmaWxlIjoiL1VzZXJzL3Jvbm1hc2FzL0Rlc2t0b3AvY29yb25hZm9ybXMub3JnL3VpL2NvbXBvbmVudHMvTmV3c2xldHRlckZvcm0uanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgQnV0dG9uIGZyb20gXCIuL0J1dHRvblwiO1xuaW1wb3J0IHN0cmluZ3MgZnJvbSBcIi4uL3N0cmluZ3MuanNvblwiO1xuaW1wb3J0IHsgdXNlUmVmLCBGcmFnbWVudCB9IGZyb20gXCJyZWFjdFwiO1xuXG5mdW5jdGlvbiBOZXdzbGV0dGVyRm9ybShwcm9wcykge1xuICAgIGNvbnN0IGVsID0gdXNlUmVmKG51bGwpO1xuXG4gICAgZnVuY3Rpb24gaGFuZGxlU3VibWl0KGV2ZW50KSB7XG4gICAgICAgIGV2ZW50LnByZXZlbnREZWZhdWx0KCk7XG4gICAgICAgIGlmICh0eXBlb2YgcHJvcHMub25TdWJtaXQgPT09IFwiZnVuY3Rpb25cIikge1xuICAgICAgICAgICAgcHJvcHMub25TdWJtaXQoZWwuY3VycmVudC52YWx1ZSk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICByZXR1cm4gPEZyYWdtZW50PlxuICAgICAgICA8c3R5bGUganN4PntgcC5zbWFsbHtmb250LXNpemU6MTVweDttYXJnaW46MDttYXJnaW4tdG9wOjcuNXB4O3RleHQtYWxpZ246bGVmdDtjb2xvcjojMTExO31gfTwvc3R5bGU+XG4gICAgICAgIDxmb3JtIG9uU3VibWl0PXtoYW5kbGVTdWJtaXR9IGNsYXNzTmFtZT1cIm5ld3NsZXR0ZXJcIj5cbiAgICAgICAgICAgIDxpbnB1dCBjbGFzc05hbWU9XCJmaWVsZFwiIHJlZj17ZWx9IHBsYWNlaG9sZGVyPXtzdHJpbmdzLmVuZ2xpc2guQ29tbW9uLkVtYWlsQWRkcmVzc1BsYWNlaG9sZGVyfSAvPlxuICAgICAgICAgICAgPEJ1dHRvbiBhcnJvdz57c3RyaW5ncy5lbmdsaXNoLkNvbW1vbi5TaWduVXB9PC9CdXR0b24+XG4gICAgICAgICAgICB7cHJvcHMuc3VidGl0bGUgJiYgPHAgY2xhc3NOYW1lPVwic21hbGxcIj57cHJvcHMuc3VidGl0bGV9PC9wPn1cbiAgICAgICAgICAgIHtwcm9wcy5jaGlsZHJlbn1cbiAgICAgICAgPC9mb3JtPlxuICAgIDwvRnJhZ21lbnQ+XG59XG5cbmV4cG9ydCBkZWZhdWx0IE5ld3NsZXR0ZXJGb3JtOyJdfQ== */\n/*@ sourceURL=/Users/ronmasas/Desktop/coronaforms.org/ui/components/NewsletterForm.js */"), __jsx("form", {
+  }, `p.small.__jsx-style-dynamic-selector{font-size:15px;margin:0;margin-top:7.5px;text-align:${props.rtl ? "right" : "left"};color:#111;}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9yb25tYXNhcy9EZXNrdG9wL2Nvcm9uYWZvcm1zLm9yZy91aS9jb21wb25lbnRzL05ld3NsZXR0ZXJGb3JtLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXNCb0IsQUFDc0IsZUFBUSxTQUFnQixpQkFBdUMsd0NBQVUsV0FBQyIsImZpbGUiOiIvVXNlcnMvcm9ubWFzYXMvRGVza3RvcC9jb3JvbmFmb3Jtcy5vcmcvdWkvY29tcG9uZW50cy9OZXdzbGV0dGVyRm9ybS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBJbnB1dCBmcm9tIFwiLi9JbnB1dFwiO1xuaW1wb3J0IEJ1dHRvbiBmcm9tIFwiLi9CdXR0b25cIjtcbmltcG9ydCBzdHJpbmdzIGZyb20gXCIuLi9zdHJpbmdzLmpzb25cIjtcbmltcG9ydCB7IHVzZVN0YXRlLCBGcmFnbWVudCB9IGZyb20gXCJyZWFjdFwiO1xuXG5mdW5jdGlvbiBOZXdzbGV0dGVyRm9ybShwcm9wcykge1xuICAgIGNvbnN0IFt2YWx1ZSwgc2V0VmFsdWVdID0gdXNlU3RhdGUobnVsbCk7XG5cbiAgICBmdW5jdGlvbiBoYW5kbGVTdWJtaXQoZXZlbnQpIHtcbiAgICAgICAgZXZlbnQucHJldmVudERlZmF1bHQoKTtcbiAgICAgICAgaWYgKHR5cGVvZiBwcm9wcy5vblN1Ym1pdCA9PT0gXCJmdW5jdGlvblwiKSB7XG4gICAgICAgICAgICBwcm9wcy5vblN1Ym1pdCh2YWx1ZSk7XG4gICAgICAgIH1cbiAgICB9XG5cbiAgICBmdW5jdGlvbiBoYW5kbGVDaGFuZ2UoZSkge1xuICAgICAgICBpZiAoZSAmJiBlLnRhcmdldCkge1xuICAgICAgICAgICAgc2V0VmFsdWUoZS50YXJnZXQudmFsdWUpO1xuICAgICAgICB9XG4gICAgfVxuXG4gICAgcmV0dXJuIDxGcmFnbWVudD5cbiAgICAgICAgPHN0eWxlIGpzeD57YHAuc21hbGx7Zm9udC1zaXplOjE1cHg7bWFyZ2luOjA7bWFyZ2luLXRvcDo3LjVweDt0ZXh0LWFsaWduOiR7cHJvcHMucnRsID8gXCJyaWdodFwiIDogXCJsZWZ0XCJ9O2NvbG9yOiMxMTE7fWB9PC9zdHlsZT5cbiAgICAgICAgPGZvcm0gb25TdWJtaXQ9e2hhbmRsZVN1Ym1pdH0gY2xhc3NOYW1lPVwibmV3c2xldHRlclwiPlxuICAgICAgICAgICAgPElucHV0IHR5cGU9XCJlbWFpbFwiIHJ0bD17cHJvcHMucnRsfSB2YWx1ZT17dmFsdWV9IG9uQ2hhbmdlPXtoYW5kbGVDaGFuZ2V9IGxhYmVsPXtzdHJpbmdzW3Byb3BzLnJ0bCA/IFwiaGVicmV3XCIgOiBcImVuZ2xpc2hcIl0uQ29tbW9uLkVtYWlsQWRkcmVzc1BsYWNlaG9sZGVyfSAvPlxuICAgICAgICAgICAgPEJ1dHRvbiBydGw9e3Byb3BzLnJ0bH0gYXJyb3c+e3N0cmluZ3NbcHJvcHMucnRsID8gXCJoZWJyZXdcIiA6IFwiZW5nbGlzaFwiXS5Db21tb25bcHJvcHMuYnV0dG9uVGV4dCB8fCBcIlNpZ25VcFwiXX08L0J1dHRvbj5cbiAgICAgICAgICAgIHtwcm9wcy5zdWJ0aXRsZSAmJiA8cCBjbGFzc05hbWU9XCJzbWFsbFwiPntwcm9wcy5zdWJ0aXRsZX08L3A+fVxuICAgICAgICAgICAge3Byb3BzLmNoaWxkcmVufVxuICAgICAgICA8L2Zvcm0+XG4gICAgPC9GcmFnbWVudD5cbn1cblxuZXhwb3J0IGRlZmF1bHQgTmV3c2xldHRlckZvcm07Il19 */
+/*@ sourceURL=/Users/ronmasas/Desktop/coronaforms.org/ui/components/NewsletterForm.js */`), __jsx("form", {
     onSubmit: handleSubmit,
-    className: "jsx-2025885668" + " " + "newsletter",
+    className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["2804353344", [props.rtl ? "right" : "left"]]]) + " " + "newsletter",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 24,
       columnNumber: 9
     }
-  }, __jsx("input", {
-    ref: el,
-    placeholder: _strings_json__WEBPACK_IMPORTED_MODULE_3__.english.Common.EmailAddressPlaceholder,
-    className: "jsx-2025885668" + " " + "field",
+  }, __jsx(_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    type: "email",
+    rtl: props.rtl,
+    value: value,
+    onChange: handleChange,
+    label: _strings_json__WEBPACK_IMPORTED_MODULE_4__[props.rtl ? "hebrew" : "english"].Common.EmailAddressPlaceholder,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 25,
       columnNumber: 13
     }
-  }), __jsx(_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), __jsx(_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    rtl: props.rtl,
     arrow: true,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 26,
       columnNumber: 13
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__.english.Common.SignUp), props.subtitle && __jsx("p", {
-    className: "jsx-2025885668" + " " + "small",
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[props.rtl ? "hebrew" : "english"].Common[props.buttonText || "SignUp"]), props.subtitle && __jsx("p", {
+    className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a.dynamic([["2804353344", [props.rtl ? "right" : "left"]]]) + " " + "small",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 27,
       columnNumber: 32
     }
   }, props.subtitle), props.children));
@@ -1297,16 +1418,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ "./pages/style.css");
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Hero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Hero */ "./components/Hero.js");
-/* harmony import */ var _strings_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../strings.json */ "./strings.json");
-var _strings_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../strings.json */ "./strings.json", 1);
-/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Button */ "./components/Button.js");
-/* harmony import */ var _components_LeumiForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/LeumiForm */ "./components/LeumiForm.js");
-/* harmony import */ var react_grid_system__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-grid-system */ "react-grid-system");
-/* harmony import */ var react_grid_system__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_grid_system__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Hero__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Hero */ "./components/Hero.js");
+/* harmony import */ var _strings_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../strings.json */ "./strings.json");
+var _strings_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../strings.json */ "./strings.json", 1);
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Button */ "./components/Button.js");
+/* harmony import */ var _components_LeumiForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/LeumiForm */ "./components/LeumiForm.js");
+/* harmony import */ var react_grid_system__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-grid-system */ "react-grid-system");
+/* harmony import */ var react_grid_system__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_grid_system__WEBPACK_IMPORTED_MODULE_7__);
 var _jsxFileName = "/Users/ronmasas/Desktop/coronaforms.org/ui/pages/_app.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -1355,30 +1479,44 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 37,
       columnNumber: 24
     }
-  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Container"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37,
-      columnNumber: 9
-    }
-  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Row"], {
-    className: "header",
+  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Container"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 38,
-      columnNumber: 13
+      columnNumber: 9
     }
-  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Col"], {
-    xs: 4,
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39,
+      columnNumber: 13
+    }
+  }, __jsx("title", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 17
+    }
+  }, "CoronaForms")), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Row"], {
+    className: "header",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 13
+    }
+  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Col"], {
+    xs: 4,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43,
       columnNumber: 17
     }
   }, __jsx("img", {
@@ -1388,16 +1526,16 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 43,
       columnNumber: 29
     }
-  })), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+  })), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Col"], {
     xs: 8,
     className: "menuItems",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 44,
       columnNumber: 17
     }
   }, __jsx("a", {
@@ -1405,37 +1543,37 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 45,
       columnNumber: 21
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Header.OurMission), __jsx("a", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Header.OurMission), __jsx("a", {
     href: "#terms-of-use",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 46,
       columnNumber: 21
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Header.Terms))), __jsx("div", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Header.Terms))), __jsx("div", {
     className: "text-center mt-2",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 49,
       columnNumber: 13
     }
-  }, __jsx(_components_Hero__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, __jsx(_components_Hero__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 50,
       columnNumber: 17
     }
   }, step === "main" && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 51,
       columnNumber: 41
     }
   }, __jsx("h1", {
@@ -1443,43 +1581,43 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 52,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Hero.title), __jsx("h2", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Hero.title), __jsx("h2", {
     className: "mb-2",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 53,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Hero.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Hero.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
     rtl: language == "hebrew",
     disabled: true,
-    tooltip: _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Common.ComingSoon,
+    tooltip: _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Common.ComingSoon,
     arrow: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 54,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Hero.SmallBusinessAid), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Hero.SmallBusinessAid), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
     rtl: language == "hebrew",
     arrow: true,
     onClick: () => setStep("choose_bank"),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 55,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Hero.MortgageSuspension)), step === "choose_bank" && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Hero.MortgageSuspension)), step === "choose_bank" && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 57,
       columnNumber: 48
     }
   }, __jsx("h1", {
@@ -1487,28 +1625,28 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 58,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Forms.ChooseBank.title), __jsx("h2", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Forms.ChooseBank.title), __jsx("h2", {
     className: "mb-2",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 59,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Forms.ChooseBank.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Forms.ChooseBank.subtitle), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
     rtl: language == "hebrew",
     onClick: () => (setBank("leumi"), setStep("bank_form")),
     arrow: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 60,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Common.Leumi), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Common.Leumi), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
     rtl: language == "hebrew",
     disabled: true,
     onClick: () => (setBank("discount"), setStep("bank_form")),
@@ -1516,10 +1654,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 61,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Common.Discount), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Common.Discount), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
     rtl: language == "hebrew",
     disabled: true,
     onClick: () => (setBank("jerusalem"), setStep("bank_form")),
@@ -1527,22 +1665,22 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 62,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Common.Jerusalem)), step === "bank_form" && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Common.Jerusalem)), step === "bank_form" && __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 64,
       columnNumber: 46
     }
-  }, bank === "leumi" && __jsx(_components_LeumiForm__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, bank === "leumi" && __jsx(_components_LeumiForm__WEBPACK_IMPORTED_MODULE_6__["default"], {
     language: language,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 65,
       columnNumber: 46
     }
   })))), __jsx("div", {
@@ -1551,50 +1689,50 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 69,
       columnNumber: 13
     }
   }, __jsx("h3", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 70,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].OurMission.title), __jsx("p", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].OurMission.title), __jsx("p", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 71,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].OurMission.p1), __jsx("p", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].OurMission.p1), __jsx("p", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 72,
       columnNumber: 17
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].OurMission.p2), __jsx("p", {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].OurMission.p2), __jsx("p", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 73,
       columnNumber: 17
     }
   }, __jsx("strong", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 73,
       columnNumber: 20
     }
-  }, "CoronaForms"), " ", _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].OurMission.p3), __jsx("div", {
+  }, "CoronaForms"), " ", _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].OurMission.p3), __jsx("div", {
     className: "text-right mt-3",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 74,
       columnNumber: 17
     }
   }, __jsx("img", {
@@ -1602,7 +1740,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 75,
       columnNumber: 21
     }
   })))), __jsx("div", {
@@ -1610,7 +1748,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 79,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -1618,29 +1756,29 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 80,
       columnNumber: 13
     }
-  }), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Container"], {
+  }), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Container"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 81,
       columnNumber: 13
     }
-  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Row"], {
+  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Row"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 82,
       columnNumber: 17
     }
-  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+  }, __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Col"], {
     md: 6,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 83,
       columnNumber: 21
     }
   }, __jsx("div", {
@@ -1648,7 +1786,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 84,
       columnNumber: 25
     }
   }, "CoronaForms.org ", new Date().getFullYear()), __jsx("div", {
@@ -1656,16 +1794,16 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 87,
       columnNumber: 25
     }
-  }, _strings_json__WEBPACK_IMPORTED_MODULE_3__[language].Footer.MadeWithLoveInIsrael)), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+  }, _strings_json__WEBPACK_IMPORTED_MODULE_4__[language].Footer.MadeWithLoveInIsrael)), __jsx(react_grid_system__WEBPACK_IMPORTED_MODULE_7__["Col"], {
     md: 6,
     className: "language-links",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 89,
       columnNumber: 21
     }
   }, language === "hebrew" && __jsx("a", {
@@ -1674,7 +1812,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 90,
       columnNumber: 51
     }
   }, "Also available in English"), language === "english" && __jsx("a", {
@@ -1683,7 +1821,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 91,
       columnNumber: 52
     }
   }, "\u05D6\u05DE\u05D9\u05DF \u05D2\u05DD \u05D1\u05E2\u05D1\u05E8\u05D9\u05EA")))), __jsx("div", {
@@ -1694,7 +1832,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 95,
       columnNumber: 13
     }
   })));
@@ -1720,7 +1858,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 /*! exports provided: english, hebrew, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"english\":{\"Common\":{\"Reset\":\"Clear\",\"Download\":\"Download\",\"BankAccountNumber\":\"Bank Account Number\",\"AddAccountOwner\":\"Add Account Owner\",\"Leumi\":\"Leumi Bank\",\"Discount\":\"Discount Bank\",\"Jerusalem\":\"Jerusalem Bank\",\"AllMyMortgageLoans\":\"All My Mortgage Loans\",\"ChooseMortgageLoans\":\"Choose Mortgage Loans\",\"LoanNumbers\":\"Loan Numbers\",\"PhoneNumber\":\"Phone Number\",\"PreviewRequest\":\"Preview Request\",\"Remove\":\"Remove\",\"Next\":\"Next\",\"FullName\":\"Full Name\",\"IDNumber\":\"ID Number\",\"EmailAddressPlaceholder\":\"Email address\",\"SignUp\":\"Sign Up\",\"ComingSoon\":\"Coming soon\",\"PrivacyPolicy\":\"We respect your privacy and do not tolerate spam and will never sell your information.\"},\"Forms\":{\"ChooseBank\":{\"title\":\"Choose your bank\",\"subtitle\":\"We need to know what is your bank to get the right form.\"},\"Accounts\":{\"title\":\"Is this a sole or joint account?\",\"subtitle\":\"Make sure to add all the account owners.\"},\"MortgageTypeSelection\":{\"title\":\"Choose Mortgage Loans\",\"subtitle\":\"If you only have one choose \\\"All My Mortgage Loans\\\"\"},\"MortgageLoanNumbers\":{\"title\":\"Mortgage Loan numbers\",\"subtitle\":\"Enter the Mortgage loan numbers\"},\"BankAndContactInforamtion\":{\"title\":\"Bank & Contact Information\",\"subtitle\":\"Enter your bank account number, the near mortgage payment date and phone number.\",\"NextMortgagePaymentDate\":\"Next mortgage payment date\"},\"Signature\":{\"title\":\"We're almost done\",\"subtitle\":\"Draw your signature below.\"}},\"Header\":{\"OurMission\":\"Our mission\",\"Terms\":\"Terms\"},\"Hero\":{\"title\":\"The easiest way to find, fill and submit coronavirus related forms.\",\"subtitle\":\"The following forms are available in your region\",\"SmallBusinessAid\":\"Small Business Aid\",\"MortgageSuspension\":\"Mortgage Suspension\",\"NoFormsFound\":\"No forms were found in the current region, leave your email to get notified when new forms are available.\"},\"Countries\":{\"Israel\":\"Israel\"},\"OurMission\":{\"title\":\"The CoronaForms Mission\",\"p1\":\"We have seen the significant economic impact of the coronavirus on many people, typically the least well-paid and those self-employed or working in informal environments.\",\"p2\":\"Some governments and banks have announced economic measures to help with loans, safeguard jobs, guarantee wages and support the self-employed, but there is a lack of clarity in many countries about eligibility and the necessary paperwork behind it.\",\"p3\":\"is here to help! we use technology to make coronavirus relief more accessible for everyone.\"},\"Footer\":{\"MadeWithLoveInIsrael\":\"Made with ❤️ in Israel\"}},\"hebrew\":{\"Common\":{\"Reset\":\"מחק\",\"Download\":\"הורדה\",\"BankAccountNumber\":\"מספר חשבון בנק\",\"AddAccountOwner\":\"הוסף בעל חשבון\",\"Leumi\":\"בנק לאומי\",\"Discount\":\"בנק דיסקונט\",\"Jerusalem\":\"בנק ירושלים\",\"AllMyMortgageLoans\":\"כל המשכנתאות שלי\",\"ChooseMortgageLoans\":\"בחר הלוואות ספציפיות\",\"LoanNumbers\":\"מספרי הלוואות\",\"PhoneNumber\":\"מספר טלפון\",\"PreviewRequest\":\"תצוגה מקדימה\",\"Remove\":\"הסר\",\"Next\":\"הבא\",\"FullName\":\"שם מלא\",\"IDNumber\":\"מספר תעודת זהות\",\"EmailAddressPlaceholder\":\"כתובת מייל\",\"SignUp\":\"הירשם\",\"ComingSoon\":\"מגיע בקרוב\",\"PrivacyPolicy\":\"אנו מכבדים את פרטיותך ולעולם לא נמכור את המידע שלך.\"},\"Header\":{\"OurMission\":\"אודות\",\"Terms\":\"תנאי שימוש\"},\"Forms\":{\"ChooseBank\":{\"title\":\"בחר בנק\",\"subtitle\":\"בחר את הבנק ממנו לקחת משכנתא\"},\"Accounts\":{\"title\":\"בעלי החשבון\",\"subtitle\":\"האם זה חשבון יחיד או משותף? הוסף את כל בעלי החשבון\"},\"MortgageTypeSelection\":{\"title\":\"בחירת הלוואות\",\"subtitle\":\"אם יש לך רק משכנתא אחת בחר ״כל המשכנתאות שלי״\"},\"MortgageLoanNumbers\":{\"title\":\"מספרי הלוואות\",\"subtitle\":\"הכנס את מספרי הללואות\"},\"BankAndContactInforamtion\":{\"title\":\"מידע בנקאי ויצירת קשר\",\"subtitle\":\"הכנס את מספר חשבון הבנק שלך, תאריך חיוב המשכנתא הקרוב, ומספר הטלפון שלך.\",\"NextMortgagePaymentDate\":\"תאריך תשלום המשכנתא הבא\"},\"Signature\":{\"title\":\"כמעט סיימנו\",\"subtitle\":\"צייר את החתימה שלך למטה\"}},\"Hero\":{\"title\":\"הדרך הקלה ביותר למצוא, למלא ולשלוח טפסים בקשורים למשבר הקורונה.\",\"subtitle\":\"הטפסים הבאים זמינים במדינה שלך\",\"SmallBusinessAid\":\"עזרה לעסקים קטנים\",\"MortgageSuspension\":\"הקפאת משכנתא\",\"NoFormsFound\":\"לא נמצאו טפסים זמינים במדינה שלך, השאר את המייל שלך כדי לקבל עדכונים על טפסים חדשים.\"},\"Countries\":{\"Israel\":\"ישראל\"},\"OurMission\":{\"title\":\"המשימה שלנו\",\"p1\":\"ראינו את ההשפעה הכלכלית המשמעותית של נגיף הקורונה על אנשים רבים,אוכלוסיות מוחלשות, עצמאיים וכאלו שעובדים בעבודות לא רשמיות.\",\"p2\":\"חלק מהממשלות והבנקים הודיעו על צעדים כלכליים לסיוע בהלוואות, שמירה על משרות, הבטחת שכר ותמיכה בעצמאים, אך במדינות רבות יש חוסר בהירות לגבי הזכאות והניירת הנחוצה מאחוריה.\",\"p3\":\"כאן כדי לעזור! אנחנו משתמשים בטכנולוגיה כדי להנגיש את אותם בקלות לכולם.\"},\"Footer\":{\"MadeWithLoveInIsrael\":\"נבנה עם ❤️ בישראל\"}}}");
+module.exports = JSON.parse("{\"english\":{\"Common\":{\"Back\":\"Back\",\"ThankYou\":\"Thank you, We'll keep you up to date about new forms.\",\"StayUpToDate\":\"Stay up to date\",\"Reset\":\"Clear\",\"Download\":\"Download\",\"BankAccountNumber\":\"Bank Account Number\",\"AddAccountOwner\":\"Add Account Owner\",\"Leumi\":\"Leumi Bank\",\"Discount\":\"Discount Bank\",\"Jerusalem\":\"Jerusalem Bank\",\"AllMyMortgageLoans\":\"All My Mortgage Loans\",\"ChooseMortgageLoans\":\"Choose Mortgage Loans\",\"LoanNumbers\":\"Loan Numbers\",\"PhoneNumber\":\"Phone Number\",\"PreviewRequest\":\"Preview Request\",\"Remove\":\"Remove\",\"Next\":\"Next\",\"FullName\":\"Full Name\",\"IDNumber\":\"ID Number\",\"EmailAddressPlaceholder\":\"Email address\",\"SignUp\":\"Sign Up\",\"ComingSoon\":\"Coming soon\",\"PrivacyPolicy\":\"We respect your privacy and do not tolerate spam and will never sell your information.\"},\"Forms\":{\"ChooseBank\":{\"title\":\"Choose your bank\",\"subtitle\":\"We need to know what is your bank to get the right form.\"},\"Accounts\":{\"title\":\"Is this a sole or joint account?\",\"subtitle\":\"Make sure to add all the account owners.\"},\"MortgageTypeSelection\":{\"title\":\"Choose Mortgage Loans\",\"subtitle\":\"If you only have one choose \\\"All My Mortgage Loans\\\"\"},\"MortgageLoanNumbers\":{\"title\":\"Mortgage Loan numbers\",\"subtitle\":\"Enter the Mortgage loan numbers\"},\"BankAndContactInforamtion\":{\"title\":\"Bank & Contact Information\",\"subtitle\":\"Enter your bank account number, the near mortgage payment date and phone number.\",\"NextMortgagePaymentDate\":\"Next mortgage payment date\"},\"Signature\":{\"title\":\"We're almost done\",\"subtitle\":\"Draw your signature below.\"},\"StayUpToDate\":{\"title\":\"One last step\",\"subtitle\":\"Stay up to date on new forms in your country.\"}},\"Header\":{\"OurMission\":\"Our mission\",\"Terms\":\"Terms\"},\"Hero\":{\"title\":\"The easiest way to find, fill and submit coronavirus related forms.\",\"subtitle\":\"The following forms are available in your region\",\"SmallBusinessAid\":\"Small Business Aid\",\"MortgageSuspension\":\"Mortgage Suspension\",\"NoFormsFound\":\"No forms were found in the current region, leave your email to get notified when new forms are available.\"},\"Countries\":{\"Israel\":\"Israel\"},\"OurMission\":{\"title\":\"The CoronaForms Mission\",\"p1\":\"We have seen the significant economic impact of the coronavirus on many people, typically the least well-paid and those self-employed or working in informal environments.\",\"p2\":\"Some governments and banks have announced economic measures to help with loans, safeguard jobs, guarantee wages and support the self-employed, but there is a lack of clarity in many countries about eligibility and the necessary paperwork behind it.\",\"p3\":\"is here to help! we use technology to make coronavirus relief more accessible for everyone.\"},\"Footer\":{\"MadeWithLoveInIsrael\":\"Made with ❤️ in Israel\"}},\"hebrew\":{\"Common\":{\"Back\":\"חזור\",\"ThankYou\":\"תודה, נעדכן אותך על טפסים חדשים.\",\"StayUpToDate\":\"הישאר מעודכן\",\"Reset\":\"מחק\",\"Download\":\"הורדה\",\"BankAccountNumber\":\"מספר חשבון בנק\",\"AddAccountOwner\":\"הוסף בעל חשבון\",\"Leumi\":\"בנק לאומי\",\"Discount\":\"בנק דיסקונט\",\"Jerusalem\":\"בנק ירושלים\",\"AllMyMortgageLoans\":\"כל המשכנתאות שלי\",\"ChooseMortgageLoans\":\"בחר הלוואות ספציפיות\",\"LoanNumbers\":\"מספרי הלוואות\",\"PhoneNumber\":\"מספר טלפון\",\"PreviewRequest\":\"תצוגה מקדימה\",\"Remove\":\"הסר\",\"Next\":\"הבא\",\"FullName\":\"שם מלא\",\"IDNumber\":\"מספר תעודת זהות\",\"EmailAddressPlaceholder\":\"כתובת מייל\",\"SignUp\":\"הירשם\",\"ComingSoon\":\"מגיע בקרוב\",\"PrivacyPolicy\":\"אנו מכבדים את פרטיותך ולעולם לא נמכור את המידע שלך.\"},\"Header\":{\"OurMission\":\"אודות\",\"Terms\":\"תנאי שימוש\"},\"Forms\":{\"ChooseBank\":{\"title\":\"בחר בנק\",\"subtitle\":\"בחר את הבנק ממנו לקחת משכנתא\"},\"Accounts\":{\"title\":\"בעלי החשבון\",\"subtitle\":\"האם זה חשבון יחיד או משותף? הוסף את כל בעלי החשבון\"},\"MortgageTypeSelection\":{\"title\":\"בחירת הלוואות\",\"subtitle\":\"אם יש לך רק משכנתא אחת בחר ״כל המשכנתאות שלי״\"},\"MortgageLoanNumbers\":{\"title\":\"מספרי הלוואות\",\"subtitle\":\"הכנס את מספרי הללואות\"},\"BankAndContactInforamtion\":{\"title\":\"מידע בנקאי ויצירת קשר\",\"subtitle\":\"הכנס את מספר חשבון הבנק שלך, תאריך חיוב המשכנתא הקרוב, ומספר הטלפון שלך.\",\"NextMortgagePaymentDate\":\"תאריך תשלום המשכנתא הבא\"},\"Signature\":{\"title\":\"כמעט סיימנו\",\"subtitle\":\"צייר את החתימה שלך למטה\"},\"StayUpToDate\":{\"title\":\"עוד צעד אחד\",\"subtitle\":\"קבל עדכונים על טפסים חדשים במדינה שלך.\"}},\"Hero\":{\"title\":\"הדרך הקלה ביותר למצוא, למלא ולשלוח טפסים הקשורים למשבר הקורונה.\",\"subtitle\":\"הטפסים הבאים זמינים במדינה שלך\",\"SmallBusinessAid\":\"עזרה לעסקים קטנים\",\"MortgageSuspension\":\"הקפאת משכנתא\",\"NoFormsFound\":\"לא נמצאו טפסים זמינים במדינה שלך, השאר את המייל שלך כדי לקבל עדכונים על טפסים חדשים.\"},\"Countries\":{\"Israel\":\"ישראל\"},\"OurMission\":{\"title\":\"המשימה שלנו\",\"p1\":\"ראינו את ההשפעה הכלכלית המשמעותית של נגיף הקורונה על אנשים רבים,אוכלוסיות מוחלשות, עצמאיים וכאלו שעובדים בעבודות לא רשמיות.\",\"p2\":\"חלק מהממשלות והבנקים הודיעו על צעדים כלכליים לסיוע בהלוואות, שמירה על משרות, הבטחת שכר ותמיכה בעצמאים, אך במדינות רבות יש חוסר בהירות לגבי הזכאות והניירת הנחוצה מאחוריה.\",\"p3\":\"כאן כדי לעזור! אנחנו משתמשים בטכנולוגיה כדי להנגיש את אותם בקלות לכולם.\"},\"Footer\":{\"MadeWithLoveInIsrael\":\"נבנה עם ❤️ בישראל\"}}}");
 
 /***/ }),
 
@@ -1733,6 +1871,17 @@ module.exports = JSON.parse("{\"english\":{\"Common\":{\"Reset\":\"Clear\",\"Dow
 
 module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_app.js");
 
+
+/***/ }),
+
+/***/ "next/head":
+/*!****************************!*\
+  !*** external "next/head" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
 
 /***/ }),
 

